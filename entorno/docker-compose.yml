@@ -63,3 +63,25 @@ services:
       MARIADB_PASSWORD: wp
       MARIADB_ROOT_PASSWORD: root
     networks: [audit_net]
+
+  simplerisk-db:
+    image: mariadb:11
+    container_name: si084_srdb
+    environment:
+      MARIADB_ROOT_PASSWORD: SimpleRisk_lab
+      MARIADB_DATABASE: simplerisk
+      MARIADB_USER: simplerisk
+      MARIADB_PASSWORD: SimpleRisk_lab
+    networks:
+      - audit_net
+
+  simplerisk:
+    image: simplerisk/simplerisk:latest
+    container_name: si084_simplerisk
+    depends_on:
+      - simplerisk-db
+    ports:
+      - "127.0.0.1:8083:80"
+      - "127.0.0.1:8443:443"
+    networks:
+      - audit_net
