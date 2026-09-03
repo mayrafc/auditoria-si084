@@ -1,0 +1,185 @@
+IP,Hostname,Port,Port Protocol,CVSS,Severity,QoD,Solution Type,NVT Name,Summary,Specific Result,NVT OID,CVEs,Task ID,Task Name,Timestamp,Result ID,Impact,Solution,Affected Software/OS,Vulnerability Insight,Vulnerability Detection Method,Product Detection Result,BIDs,CERTs,Other References
+172.18.0.6,,,,10.0,Critical,80,"Mitigation","Operating System (OS) End of Life (EOL) Detection","The Operating System (OS) on the remote host has reached the end
+  of life (EOL) and should not be used anymore.","The ""Debian GNU/Linux"" Operating System on the remote host has reached the end of life.
+
+CPE:               cpe:/o:debian:debian_linux:9
+Installed version,
+build or SP:       9
+EOL date:          2022-06-30
+EOL info:          https://en.wikipedia.org/wiki/List_of_Debian_releases#Release_table
+",1.3.6.1.4.1.25623.1.0.103674,"",5286eb36-ab55-4c21-b67f-d5d2d8d9a0b5,"SI084 - Escaneo no autenticado",2026-09-03T00:06:47Z,ee8a3135-be65-46ab-b33c-dd998c1aad0c,"An EOL version of an OS is not receiving any security updates
+  from the vendor. Unfixed security vulnerabilities might be leveraged by an attacker to compromise
+  the security of this host.","Update the OS on the remote host to a version which is still
+  supported and receiving security updates by the vendor.
+
+  Note / Important: Please create an override for this result if the target host is a:
+
+  - Windows system with Extended Security Updates (ESU)
+
+  - System with additional 3rd-party / non-vendor security updates like e.g. from 'TuxCare',
+  'Freexian Extended LTS' or similar","","","Checks if an EOL version of an OS is present on the target
+  host.
+Details:
+Operating System (OS) End of Life (EOL) Detection
+(OID: 1.3.6.1.4.1.25623.1.0.103674)
+Version used: 2025-05-21T05:40:19Z
+","Product: cpe:/o:debian:debian_linux:9
+Method: OS Detection Consolidation and Reporting
+(OID: 1.3.6.1.4.1.25623.1.0.105937)
+","","",""
+172.18.0.6,,80,tcp,5.0,Medium,70,"Mitigation","Missing HttpOnly Cookie Attribute (HTTP)","The remote HTTP web server / application is missing to set the
+  'HttpOnly' cookie attribute for one or more sent HTTP cookie.","The cookie(s):
+
+Set-Cookie: PHPSESSID=***replaced***; path=/
+Set-Cookie: PHPSESSID=***replaced***; path=/
+Set-Cookie: security=low
+
+is/are missing the ""HttpOnly"" cookie attribute.
+",1.3.6.1.4.1.25623.1.0.105925,"",5286eb36-ab55-4c21-b67f-d5d2d8d9a0b5,"SI084 - Escaneo no autenticado",2026-09-03T00:06:47Z,193be8d0-5474-434f-b34f-81b2266d0261,"","'- Set the 'HttpOnly' cookie attribute for any session cookie
+
+  - Evaluate / do an own assessment of the security impact on the web server / application and create
+  an override for this result if there is none (this can't be checked automatically by this VT)","Any web application with session handling in cookies.","The flaw exists if a session cookie is not using the 'HttpOnly'
+  cookie attribute.
+
+  This allows a cookie to be accessed by JavaScript which could lead to session hijacking
+  attacks.","Checks all cookies sent by the remote HTTP web server /
+  application for a missing 'HttpOnly' cookie attribute.
+Details:
+Missing 'HttpOnly' Cookie Attribute (HTTP)
+(OID: 1.3.6.1.4.1.25623.1.0.105925)
+Version used: 2024-01-12T16:12:12Z
+","","","",""
+172.18.0.6,,80,tcp,4.8,Medium,80,"Workaround","Cleartext Transmission of Sensitive Information via HTTP","The host / application transmits sensitive information (username, passwords) in
+  cleartext via HTTP.","The following input fields were identified (URL:input name):
+
+http://172.18.0.6/login.php:password
+",1.3.6.1.4.1.25623.1.0.108440,"",5286eb36-ab55-4c21-b67f-d5d2d8d9a0b5,"SI084 - Escaneo no autenticado",2026-09-03T00:06:47Z,6e3f8dd3-ef6c-4392-b006-f9507b2b6e97,"An attacker could use this situation to compromise or eavesdrop on the
+  HTTP communication between the client and the server using a man-in-the-middle attack to get access to
+  sensitive data like usernames or passwords.","Enforce the transmission of sensitive data via an encrypted SSL/TLS connection.
+  Additionally make sure the host / application is redirecting all users to the secured SSL/TLS connection before
+  allowing to input sensitive data into the mentioned functions.","Hosts / applications which doesn't enforce the transmission of sensitive data via an
+  encrypted SSL/TLS connection.","","Evaluate previous collected information and check if the host / application is not
+  enforcing the transmission of sensitive data via an encrypted SSL/TLS connection.
+
+  The script is currently checking the following:
+
+  - HTTP Basic Authentication (Basic Auth)
+
+  - HTTP Forms (e.g. Login) with input field of type 'password'
+Details:
+Cleartext Transmission of Sensitive Information via HTTP
+(OID: 1.3.6.1.4.1.25623.1.0.108440)
+Version used: 2023-09-07T05:05:21Z
+","","","",""
+172.18.0.8,,,,2.6,Low,80,"Mitigation","TCP Timestamps Information Disclosure","The remote host implements TCP timestamps and therefore allows
+  to compute the uptime.","It was detected that the host implements RFC1323/RFC7323.
+
+The following timestamps were retrieved with a delay of 1 seconds in-between:
+Packet 1: 1730880278
+Packet 2: 1041892755
+",1.3.6.1.4.1.25623.1.0.80091,"",5286eb36-ab55-4c21-b67f-d5d2d8d9a0b5,"SI084 - Escaneo no autenticado",2026-09-03T00:06:47Z,ef54b84e-d60d-43df-a097-90102dd86ec5,"A side effect of this feature is that the uptime of the remote
+  host can sometimes be computed.","To disable TCP timestamps on linux add the line
+  'net.ipv4.tcp_timestamps = 0' to /etc/sysctl.conf. Execute 'sysctl -p' to apply the settings at
+  runtime.
+
+  To disable TCP timestamps on Windows execute 'netsh int tcp set global timestamps=disabled'
+
+  Starting with Windows Server 2008 and Vista, the timestamp can not be completely disabled.
+
+  The default behavior of the TCP/IP stack on this Systems is to not use the Timestamp options when
+  initiating TCP connections, but use them if the TCP peer that is initiating communication includes
+  them in their synchronize (SYN) segment.
+
+  See the references for more information.","TCP implementations that implement RFC1323/RFC7323.","The remote host implements TCP timestamps, as defined by
+  RFC1323/RFC7323.","Special IP packets are forged and sent with a little delay in
+  between to the target IP. The responses are searched for a timestamps. If found, the timestamps
+  are reported.
+Details:
+TCP Timestamps Information Disclosure
+(OID: 1.3.6.1.4.1.25623.1.0.80091)
+Version used: 2023-12-15T16:10:08Z
+","","","",""
+172.18.0.5,,,,2.6,Low,80,"Mitigation","TCP Timestamps Information Disclosure","The remote host implements TCP timestamps and therefore allows
+  to compute the uptime.","It was detected that the host implements RFC1323/RFC7323.
+
+The following timestamps were retrieved with a delay of 1 seconds in-between:
+Packet 1: 217015775
+Packet 2: 2044693415
+",1.3.6.1.4.1.25623.1.0.80091,"",5286eb36-ab55-4c21-b67f-d5d2d8d9a0b5,"SI084 - Escaneo no autenticado",2026-09-03T00:06:47Z,44b83183-2943-44d2-9f36-fd64cbccee27,"A side effect of this feature is that the uptime of the remote
+  host can sometimes be computed.","To disable TCP timestamps on linux add the line
+  'net.ipv4.tcp_timestamps = 0' to /etc/sysctl.conf. Execute 'sysctl -p' to apply the settings at
+  runtime.
+
+  To disable TCP timestamps on Windows execute 'netsh int tcp set global timestamps=disabled'
+
+  Starting with Windows Server 2008 and Vista, the timestamp can not be completely disabled.
+
+  The default behavior of the TCP/IP stack on this Systems is to not use the Timestamp options when
+  initiating TCP connections, but use them if the TCP peer that is initiating communication includes
+  them in their synchronize (SYN) segment.
+
+  See the references for more information.","TCP implementations that implement RFC1323/RFC7323.","The remote host implements TCP timestamps, as defined by
+  RFC1323/RFC7323.","Special IP packets are forged and sent with a little delay in
+  between to the target IP. The responses are searched for a timestamps. If found, the timestamps
+  are reported.
+Details:
+TCP Timestamps Information Disclosure
+(OID: 1.3.6.1.4.1.25623.1.0.80091)
+Version used: 2023-12-15T16:10:08Z
+","","","",""
+172.18.0.6,,,,2.6,Low,80,"Mitigation","TCP Timestamps Information Disclosure","The remote host implements TCP timestamps and therefore allows
+  to compute the uptime.","It was detected that the host implements RFC1323/RFC7323.
+
+The following timestamps were retrieved with a delay of 1 seconds in-between:
+Packet 1: 3271769743
+Packet 2: 3563206346
+",1.3.6.1.4.1.25623.1.0.80091,"",5286eb36-ab55-4c21-b67f-d5d2d8d9a0b5,"SI084 - Escaneo no autenticado",2026-09-03T00:06:47Z,297aa0c3-c207-4b27-9912-126259053191,"A side effect of this feature is that the uptime of the remote
+  host can sometimes be computed.","To disable TCP timestamps on linux add the line
+  'net.ipv4.tcp_timestamps = 0' to /etc/sysctl.conf. Execute 'sysctl -p' to apply the settings at
+  runtime.
+
+  To disable TCP timestamps on Windows execute 'netsh int tcp set global timestamps=disabled'
+
+  Starting with Windows Server 2008 and Vista, the timestamp can not be completely disabled.
+
+  The default behavior of the TCP/IP stack on this Systems is to not use the Timestamp options when
+  initiating TCP connections, but use them if the TCP peer that is initiating communication includes
+  them in their synchronize (SYN) segment.
+
+  See the references for more information.","TCP implementations that implement RFC1323/RFC7323.","The remote host implements TCP timestamps, as defined by
+  RFC1323/RFC7323.","Special IP packets are forged and sent with a little delay in
+  between to the target IP. The responses are searched for a timestamps. If found, the timestamps
+  are reported.
+Details:
+TCP Timestamps Information Disclosure
+(OID: 1.3.6.1.4.1.25623.1.0.80091)
+Version used: 2023-12-15T16:10:08Z
+","","","",""
+172.18.0.4,,,,2.6,Low,80,"Mitigation","TCP Timestamps Information Disclosure","The remote host implements TCP timestamps and therefore allows
+  to compute the uptime.","It was detected that the host implements RFC1323/RFC7323.
+
+The following timestamps were retrieved with a delay of 1 seconds in-between:
+Packet 1: 2754945342
+Packet 2: 280748842
+",1.3.6.1.4.1.25623.1.0.80091,"",5286eb36-ab55-4c21-b67f-d5d2d8d9a0b5,"SI084 - Escaneo no autenticado",2026-09-03T00:06:47Z,089ba5f4-c6fc-4f8e-8d25-08c06f6104a7,"A side effect of this feature is that the uptime of the remote
+  host can sometimes be computed.","To disable TCP timestamps on linux add the line
+  'net.ipv4.tcp_timestamps = 0' to /etc/sysctl.conf. Execute 'sysctl -p' to apply the settings at
+  runtime.
+
+  To disable TCP timestamps on Windows execute 'netsh int tcp set global timestamps=disabled'
+
+  Starting with Windows Server 2008 and Vista, the timestamp can not be completely disabled.
+
+  The default behavior of the TCP/IP stack on this Systems is to not use the Timestamp options when
+  initiating TCP connections, but use them if the TCP peer that is initiating communication includes
+  them in their synchronize (SYN) segment.
+
+  See the references for more information.","TCP implementations that implement RFC1323/RFC7323.","The remote host implements TCP timestamps, as defined by
+  RFC1323/RFC7323.","Special IP packets are forged and sent with a little delay in
+  between to the target IP. The responses are searched for a timestamps. If found, the timestamps
+  are reported.
+Details:
+TCP Timestamps Information Disclosure
+(OID: 1.3.6.1.4.1.25623.1.0.80091)
+Version used: 2023-12-15T16:10:08Z
+","","","",""
