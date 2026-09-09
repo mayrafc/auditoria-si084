@@ -3,9 +3,9 @@
   "Trivy": {
     "Version": "0.74.0"
   },
-  "ReportID": "01a0881b-563a-7cd4-94c4-f44590308e81",
-  "CreatedAt": "2026-09-09T21:38:08.058842769Z",
-  "ArtifactID": "sha256:6d36951db22c295a655ddc4dee216a8b7d5d1ed0646c1f0cd3ac41c0092a0ff0",
+  "ReportID": "01a08861-ff0e-76d4-8533-e4f68dd38c25",
+  "CreatedAt": "2026-09-09T22:55:18.79844962Z",
+  "ArtifactID": "sha256:87ef05eb0a26245979dcc7abc43509b56a9586b86c92070e64d6a686acbe552a",
   "ArtifactName": "postgres:16",
   "ArtifactType": "container_image",
   "Metadata": {
@@ -14,7 +14,7 @@
       "Family": "debian",
       "Name": "13.6"
     },
-    "ImageID": "sha256:c1b3783309b6499c795eed7c20135a1a4d25cae1b575c3d52c6f536129a1b109",
+    "ImageID": "sha256:80f4c7a5e91618546dce5b4fe60cf03b14c0f9efa7e40157278d122772ced8d2",
     "DiffIDs": [
       "sha256:411a86676185cb54d695a805b238194a64e9b77e0c723f3802fbb87d333ea0b3",
       "sha256:ce64abdeb50944e6e83f7faf990b6eed9c129749449f87539793147c31d4e9ce",
@@ -35,7 +35,7 @@
       "postgres:16"
     ],
     "RepoDigests": [
-      "postgres@sha256:c1b3783309b6499c795eed7c20135a1a4d25cae1b575c3d52c6f536129a1b109"
+      "postgres@sha256:f1c3376c26f2609ab9f29f71f824103fe2fcd8ee0346485cb6122a4f93df6f94"
     ],
     "Reference": "postgres:16",
     "ImageConfig": {
@@ -48,132 +48,132 @@
           "comment": "debuerreotype 0.17"
         },
         {
-          "created": "2026-08-25T00:41:29Z",
+          "created": "2026-08-25T00:41:29.462758425Z",
           "created_by": "RUN /bin/sh -c set -eux; \tgroupadd -r postgres --gid=999; \tuseradd -r -g postgres --uid=999 --home-dir=/var/lib/postgresql --shell=/bin/bash postgres; \tinstall --verbose --directory --owner postgres --group postgres --mode 1777 /var/lib/postgresql # buildkit",
           "comment": "buildkit.dockerfile.v0"
         },
         {
-          "created": "2026-08-25T00:41:34Z",
+          "created": "2026-08-25T00:41:34.864341587Z",
           "created_by": "RUN /bin/sh -c set -ex; \tapt-get update; \tapt-get install -y --no-install-recommends \t\tgnupg \t\tless \t; \trm -rf /var/lib/apt/lists/* # buildkit",
           "comment": "buildkit.dockerfile.v0"
         },
         {
-          "created": "2026-08-25T00:41:41Z",
+          "created": "2026-08-25T00:41:41.289776451Z",
           "created_by": "ENV GOSU_VERSION=1.19",
           "comment": "buildkit.dockerfile.v0",
           "empty_layer": true
         },
         {
-          "created": "2026-08-25T00:41:41Z",
+          "created": "2026-08-25T00:41:41.289776451Z",
           "created_by": "RUN /bin/sh -c set -eux; \tsavedAptMark=\"$(apt-mark showmanual)\"; \tapt-get update; \tapt-get install -y --no-install-recommends ca-certificates wget; \trm -rf /var/lib/apt/lists/*; \tdpkgArch=\"$(dpkg --print-architecture | awk -F- '{ print $NF }')\"; \twget -O /usr/local/bin/gosu \"https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch\"; \twget -O /usr/local/bin/gosu.asc \"https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch.asc\"; \texport GNUPGHOME=\"$(mktemp -d)\"; \tgpg --batch --keyserver hkps://keys.openpgp.org --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4; \tgpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu; \tgpgconf --kill all; \trm -rf \"$GNUPGHOME\" /usr/local/bin/gosu.asc; \tapt-mark auto '.*' \u003e /dev/null; \t[ -z \"$savedAptMark\" ] || apt-mark manual $savedAptMark \u003e /dev/null; \tapt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; \tchmod +x /usr/local/bin/gosu; \tgosu --version; \tgosu nobody true # buildkit",
           "comment": "buildkit.dockerfile.v0"
         },
         {
-          "created": "2026-08-25T00:41:45Z",
+          "created": "2026-08-25T00:41:45.721459602Z",
           "created_by": "RUN /bin/sh -c set -eux; \tif [ -f /etc/dpkg/dpkg.cfg.d/docker ]; then \t\tgrep -q '/usr/share/locale' /etc/dpkg/dpkg.cfg.d/docker; \t\tsed -ri '/\\/usr\\/share\\/locale/d' /etc/dpkg/dpkg.cfg.d/docker; \t\t! grep -q '/usr/share/locale' /etc/dpkg/dpkg.cfg.d/docker; \tfi; \tapt-get update; apt-get install -y --no-install-recommends locales; rm -rf /var/lib/apt/lists/*; \techo 'en_US.UTF-8 UTF-8' \u003e\u003e /etc/locale.gen; \tlocale-gen; \tlocale -a | grep 'en_US.utf8' # buildkit",
           "comment": "buildkit.dockerfile.v0"
         },
         {
-          "created": "2026-08-25T00:41:45Z",
+          "created": "2026-08-25T00:41:45.721459602Z",
           "created_by": "ENV LANG=en_US.utf8",
           "comment": "buildkit.dockerfile.v0",
           "empty_layer": true
         },
         {
-          "created": "2026-08-25T00:41:48Z",
+          "created": "2026-08-25T00:41:48.544839543Z",
           "created_by": "RUN /bin/sh -c set -eux; \tapt-get update; \tapt-get install -y --no-install-recommends \t\tlibnss-wrapper \t\txz-utils \t\tzstd \t; \trm -rf /var/lib/apt/lists/* # buildkit",
           "comment": "buildkit.dockerfile.v0"
         },
         {
-          "created": "2026-08-25T00:41:48Z",
+          "created": "2026-08-25T00:41:48.654603968Z",
           "created_by": "RUN /bin/sh -c mkdir /docker-entrypoint-initdb.d # buildkit",
           "comment": "buildkit.dockerfile.v0"
         },
         {
-          "created": "2026-08-25T00:41:49Z",
+          "created": "2026-08-25T00:41:49.205679423Z",
           "created_by": "RUN /bin/sh -c set -ex; \tkey='B97B0AFCAA1A47F044F244A07FCC7D46ACCC4CF8'; \texport GNUPGHOME=\"$(mktemp -d)\"; \tmkdir -p /usr/local/share/keyrings/; \tgpg --batch --keyserver keyserver.ubuntu.com --recv-keys \"$key\"; \tgpg --batch --export --armor \"$key\" \u003e /usr/local/share/keyrings/postgres.gpg.asc; \tgpgconf --kill all; \trm -rf \"$GNUPGHOME\" # buildkit",
           "comment": "buildkit.dockerfile.v0"
         },
         {
-          "created": "2026-08-25T00:41:49Z",
+          "created": "2026-08-25T00:41:49.205679423Z",
           "created_by": "ENV PG_MAJOR=16",
           "comment": "buildkit.dockerfile.v0",
           "empty_layer": true
         },
         {
-          "created": "2026-08-25T00:41:49Z",
+          "created": "2026-08-25T00:41:49.205679423Z",
           "created_by": "ENV PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/lib/postgresql/16/bin",
           "comment": "buildkit.dockerfile.v0",
           "empty_layer": true
         },
         {
-          "created": "2026-08-25T00:41:49Z",
+          "created": "2026-08-25T00:41:49.205679423Z",
           "created_by": "ENV PG_VERSION=16.15-1.pgdg13+2",
           "comment": "buildkit.dockerfile.v0",
           "empty_layer": true
         },
         {
-          "created": "2026-08-25T00:42:01Z",
+          "created": "2026-08-25T00:42:01.347982185Z",
           "created_by": "RUN /bin/sh -c set -ex; \t\texport PYTHONDONTWRITEBYTECODE=1; \t\tdpkgArch=\"$(dpkg --print-architecture)\"; \taptRepo=\"[ signed-by=/usr/local/share/keyrings/postgres.gpg.asc ] http://apt.postgresql.org/pub/repos/apt trixie-pgdg main $PG_MAJOR\"; \tcase \"$dpkgArch\" in \t\tamd64 | arm64 | loong64 | ppc64el) \t\t\techo \"deb $aptRepo\" \u003e /etc/apt/sources.list.d/pgdg.list; \t\t\tapt-get update; \t\t\t;; \t\t*) \t\t\techo \"deb-src $aptRepo\" \u003e /etc/apt/sources.list.d/pgdg.list; \t\t\t\t\t\tsavedAptMark=\"$(apt-mark showmanual)\"; \t\t\t\t\t\ttempDir=\"$(mktemp -d)\"; \t\t\tcd \"$tempDir\"; \t\t\t\t\t\tapt-get update; \t\t\tapt-get install -y --no-install-recommends dpkg-dev; \t\t\techo \"deb [ trusted=yes ] file://$tempDir ./\" \u003e /etc/apt/sources.list.d/temp.list; \t\t\t_update_repo() { \t\t\t\tdpkg-scanpackages . \u003e Packages; \t\t\t\tapt-get -o Acquire::GzipIndexes=false update; \t\t\t}; \t\t\t_update_repo; \t\t\t\t\t\tnproc=\"$(nproc)\"; \t\t\texport DEB_BUILD_OPTIONS=\"nocheck parallel=$nproc\"; \t\t\tapt-get build-dep -y postgresql-common-dev; \t\t\tapt-get source --compile postgresql-common-dev; \t\t\t_update_repo; \t\t\tapt-get build-dep -y \"postgresql-$PG_MAJOR=$PG_VERSION\"; \t\t\tapt-get source --compile \"postgresql-$PG_MAJOR=$PG_VERSION\"; \t\t\t\t\t\t\t\t\tapt-mark showmanual | xargs apt-mark auto \u003e /dev/null; \t\t\tapt-mark manual $savedAptMark; \t\t\t\t\t\tls -lAFh; \t\t\t_update_repo; \t\t\tgrep '^Package: ' Packages; \t\t\tcd /; \t\t\t;; \tesac; \t\tapt-get install -y --no-install-recommends postgresql-common; \tsed -ri 's/#(create_main_cluster) .*$/\\1 = false/' /etc/postgresql-common/createcluster.conf; \tapt-get install -y --no-install-recommends \t\t\"postgresql-$PG_MAJOR=$PG_VERSION\" \t; \t\trm -rf /var/lib/apt/lists/*; \t\tif [ -n \"$tempDir\" ]; then \t\tapt-get purge -y --auto-remove; \t\trm -rf \"$tempDir\" /etc/apt/sources.list.d/temp.list; \tfi; \t\tfind /usr -name '*.pyc' -type f -exec bash -c 'for pyc; do dpkg -S \"$pyc\" \u0026\u003e /dev/null || rm -vf \"$pyc\"; done' -- '{}' +; \t\tpostgres --version # buildkit",
           "comment": "buildkit.dockerfile.v0"
         },
         {
-          "created": "2026-08-25T00:42:01Z",
+          "created": "2026-08-25T00:42:01.480057233Z",
           "created_by": "RUN /bin/sh -c set -eux; \tdpkg-divert --add --rename --divert \"/usr/share/postgresql/postgresql.conf.sample.dpkg\" \"/usr/share/postgresql/$PG_MAJOR/postgresql.conf.sample\"; \tcp -v /usr/share/postgresql/postgresql.conf.sample.dpkg /usr/share/postgresql/postgresql.conf.sample; \tln -sv ../postgresql.conf.sample \"/usr/share/postgresql/$PG_MAJOR/\"; \tsed -ri \"s!^#?(listen_addresses)\\s*=\\s*\\S+.*!\\1 = '*'!\" /usr/share/postgresql/postgresql.conf.sample; \tgrep -F \"listen_addresses = '*'\" /usr/share/postgresql/postgresql.conf.sample # buildkit",
           "comment": "buildkit.dockerfile.v0"
         },
         {
-          "created": "2026-08-25T00:42:01Z",
+          "created": "2026-08-25T00:42:01.586805432Z",
           "created_by": "RUN /bin/sh -c install --verbose --directory --owner postgres --group postgres --mode 3777 /var/run/postgresql # buildkit",
           "comment": "buildkit.dockerfile.v0"
         },
         {
-          "created": "2026-08-25T00:42:01Z",
+          "created": "2026-08-25T00:42:01.586805432Z",
           "created_by": "ENV PGDATA=/var/lib/postgresql/data",
           "comment": "buildkit.dockerfile.v0",
           "empty_layer": true
         },
         {
-          "created": "2026-08-25T00:42:01Z",
+          "created": "2026-08-25T00:42:01.690326627Z",
           "created_by": "RUN /bin/sh -c install --verbose --directory --owner postgres --group postgres --mode 1777 \"$PGDATA\" # buildkit",
           "comment": "buildkit.dockerfile.v0"
         },
         {
-          "created": "2026-08-25T00:42:01Z",
+          "created": "2026-08-25T00:42:01.690326627Z",
           "created_by": "VOLUME [/var/lib/postgresql/data]",
           "comment": "buildkit.dockerfile.v0",
           "empty_layer": true
         },
         {
-          "created": "2026-08-25T00:42:01Z",
+          "created": "2026-08-25T00:42:01.747002934Z",
           "created_by": "COPY docker-entrypoint.sh docker-ensure-initdb.sh /usr/local/bin/ # buildkit",
           "comment": "buildkit.dockerfile.v0"
         },
         {
-          "created": "2026-08-25T00:42:01Z",
+          "created": "2026-08-25T00:42:01.8414474Z",
           "created_by": "RUN /bin/sh -c ln -sT docker-ensure-initdb.sh /usr/local/bin/docker-enforce-initdb.sh # buildkit",
           "comment": "buildkit.dockerfile.v0"
         },
         {
-          "created": "2026-08-25T00:42:01Z",
+          "created": "2026-08-25T00:42:01.8414474Z",
           "created_by": "ENTRYPOINT [\"docker-entrypoint.sh\"]",
           "comment": "buildkit.dockerfile.v0",
           "empty_layer": true
         },
         {
-          "created": "2026-08-25T00:42:01Z",
+          "created": "2026-08-25T00:42:01.8414474Z",
           "created_by": "STOPSIGNAL SIGINT",
           "comment": "buildkit.dockerfile.v0",
           "empty_layer": true
         },
         {
-          "created": "2026-08-25T00:42:01Z",
+          "created": "2026-08-25T00:42:01.8414474Z",
           "created_by": "EXPOSE map[5432/tcp:{}]",
           "comment": "buildkit.dockerfile.v0",
           "empty_layer": true
         },
         {
-          "created": "2026-08-25T00:42:01Z",
+          "created": "2026-08-25T00:42:01.8414474Z",
           "created_by": "CMD [\"postgres\"]",
           "comment": "buildkit.dockerfile.v0",
           "empty_layer": true
@@ -15260,7 +15260,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:9db5bacf9654e11768a8cadff4402eb4d589447286cbba8b7b0ec4de56f09b91",
+          "Fingerprint": "sha256:066d60ae0a75689754c3bc67ea3cab5e47e95d95380fff990684016668b9f6d8",
           "Title": "util-linux: util-linux: failed external mount helper still runs privileged X-mount post-hooks",
           "Description": "util-linux versions through 2.41.5 and 2.42.2 fail to check mount helper exit status before running post-mount hooks, allowing unprivileged users to execute privileged operations on pre-existing filesystems. Attackers can exploit X-mount.idmap or X-mount.owner hooks to clone filesystems with inherited suid bits or modify target inode permissions after a helper fails, achieving privilege escalation.",
           "Severity": "HIGH",
@@ -15312,7 +15312,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:89817edc3f7013a3c52e2d9b881e362f94f99ca3e5136a4a6c0dedb12c9ac6b4",
+          "Fingerprint": "sha256:1ad47faee489f498fbe6b7afd0bd493572dacee7e57f8221c6d00d0e4d393231",
           "Title": "util-linux: util-linux: nsenter --join-cgroup leaks root cgroup migration authority",
           "Description": "The nsenter --join-cgroup option opens the target cgroup.procs file as root and leaves that file descriptor open across later namespace and credential changes and across execve(). Because the kernel checks later cgroup migrations using the credentials from the original open, a program run in an attacker-controlled target can inherit root's ability to move host processes between cgroups. After a privileged operator uses --join-cgroup against that target, an unprivileged user can migrate and terminate unrelated root processes.",
           "Severity": "HIGH",
@@ -15360,7 +15360,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:0761d0084b3940cbaf43a3e2764127b5407ea5ada50bed45e624e1dec9d5b04d",
+          "Fingerprint": "sha256:feab81a649e6bdfd8794f3283a8417f79b14da446e556f3097629d885d43ab51",
           "Title": "util-linux: util-linux: X-mount.subdir detached-tree resolution can escape via intermediate symlinks",
           "Description": "The X-mount.subdir option uses a detached-tree fast path on Linux 6.15 and later and passes the configured subdirectory to open_tree() with AT_SYMLINK_NOFOLLOW. That flag does not stop intermediate symlink traversal or keep resolution inside the newly mounted filesystem. A local unprivileged user with an fstab-authorized X-mount.subdir entry can attach a host path at the intended mountpoint.",
           "Severity": "HIGH",
@@ -15407,7 +15407,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:81c7a03bd2d95e3b04fe9d0baf4d93ca300793e27309295119cfede563209c1d",
+          "Fingerprint": "sha256:bc2f7c8cf0cf5be9d3d517006fdda776a5c3c96038e0b2edff5fe02f9ee33adc",
           "Title": "util-linux: util-linux: restricted bind mounts do not pin the source, allowing X-mount.owner/group/mode redirection",
           "Description": "A flaw was found in util-linux. Restricted bind mounts take the source path from fstab but do not pin that source before the privileged mount. A local unprivileged user who can replace the authorized source or a writable ancestor can redirect SUID mount(8) to bind another host directory. If the fstab entry also sets X-mount.owner, X-mount.group, or X-mount.mode, root then changes ownership or mode on that redirected inode.",
           "Severity": "HIGH",
@@ -15455,7 +15455,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:eb86720d9706af10a7d7bb9d6df1b4d7984fe02b8ff63fcde6419ff9c49eb5ea",
+          "Fingerprint": "sha256:7f801132c149da024dd9c70be7ecfacbfd04d2a0603b3b7e89137c7f07c282d4",
           "Title": "GnuPG: GnuPG: Stack-based buffer overflow in tpm2daemon allows arbitrary code execution",
           "Description": "In GnuPG before 2.5.17, a stack-based buffer overflow exists in tpm2daemon during handling of the PKDECRYPT command for TPM-backed RSA and ECC keys.",
           "Severity": "HIGH",
@@ -15527,7 +15527,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:6b489d2a38c056f0d15558462e9ae7c8410aba439fa2478e2975d9b563fb1708",
+          "Fingerprint": "sha256:8937a7c47199ab1a752062d8b87b905a35ac50475baf8b1926e9cd5ca06ee061",
           "Title": "GnuPG: GnuPG: Stack-based buffer overflow in tpm2daemon allows arbitrary code execution",
           "Description": "In GnuPG before 2.5.17, a stack-based buffer overflow exists in tpm2daemon during handling of the PKDECRYPT command for TPM-backed RSA and ECC keys.",
           "Severity": "HIGH",
@@ -15599,7 +15599,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:2420bc928b65995e2182b8dabaa39d04dd2681acff058c1e351d20e83a78369a",
+          "Fingerprint": "sha256:f6b64b01198ddfb3a844cc50923bdd58e3e67015532363ac48c746b7a2ddffa4",
           "Title": "GnuPG: GnuPG: Stack-based buffer overflow in tpm2daemon allows arbitrary code execution",
           "Description": "In GnuPG before 2.5.17, a stack-based buffer overflow exists in tpm2daemon during handling of the PKDECRYPT command for TPM-backed RSA and ECC keys.",
           "Severity": "HIGH",
@@ -15671,7 +15671,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:1edd749cb919bab7e555bc048a61527bad51fc6b1b98e4f259cb8fc9f86cebcd",
+          "Fingerprint": "sha256:c6541d7309e63d51377fc05f0c16293f4281567cd8cfa21ef96f7c8f68ac34fa",
           "Title": "GnuPG: GnuPG: Stack-based buffer overflow in tpm2daemon allows arbitrary code execution",
           "Description": "In GnuPG before 2.5.17, a stack-based buffer overflow exists in tpm2daemon during handling of the PKDECRYPT command for TPM-backed RSA and ECC keys.",
           "Severity": "HIGH",
@@ -15743,7 +15743,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:a737a05b209df57e8150831a8e71a0cc2c12fe095ebfc332550eec50de2d3ac0",
+          "Fingerprint": "sha256:a8c6d25012e80976073778241ab50a06fd8fd689a1c9846a8a689e4fcfa5e0c9",
           "Title": "GnuPG: GnuPG: Stack-based buffer overflow in tpm2daemon allows arbitrary code execution",
           "Description": "In GnuPG before 2.5.17, a stack-based buffer overflow exists in tpm2daemon during handling of the PKDECRYPT command for TPM-backed RSA and ECC keys.",
           "Severity": "HIGH",
@@ -15815,7 +15815,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:8124391aad8d7f09515002617971c8b274e91ac48ec872f4ab2bba7f1e78eb3a",
+          "Fingerprint": "sha256:0a558701f1780ff307ee5e6ea93e2b67e3f047612f5631b7923ddffe06626837",
           "Title": "GnuPG: GnuPG: Stack-based buffer overflow in tpm2daemon allows arbitrary code execution",
           "Description": "In GnuPG before 2.5.17, a stack-based buffer overflow exists in tpm2daemon during handling of the PKDECRYPT command for TPM-backed RSA and ECC keys.",
           "Severity": "HIGH",
@@ -15887,7 +15887,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:483e7e6895acb4ac1dd11476fc587eeaaa4533f9af814fa2e41115258b489b1f",
+          "Fingerprint": "sha256:b20c983dee16b66abcfec61120bd4a49d732b6e73ffb0272c6bddd2c64315e6a",
           "Title": "GnuPG: GnuPG: Stack-based buffer overflow in tpm2daemon allows arbitrary code execution",
           "Description": "In GnuPG before 2.5.17, a stack-based buffer overflow exists in tpm2daemon during handling of the PKDECRYPT command for TPM-backed RSA and ECC keys.",
           "Severity": "HIGH",
@@ -15959,7 +15959,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:7b42a79b70e23e665d8f78bfe985130fb042ee8489975941f651e6a0f8626410",
+          "Fingerprint": "sha256:4f3511d567d1ad8124ac374b2890c8e426ca0587ca4bb594187f4485362ce2b9",
           "Title": "gzip: gzip: Information disclosure via global buffer overflow in LZH decompression",
           "Description": "GNU gzip contains a global buffer overflow vulnerability in the LZH decompression logic caused by improper reuse of shared global state between different decompression formats within a single execution. GNU gzip maintains a global array that is shared across the LZ77, LZW, and LZH decompression routines and is not reinitialized between files processed in the same invocation.\nBy decompressing a specially crafted LZW file followed by a specially crafted LZH file in a single gzip -d command, an attacker can poison the shared global state and subsequently trigger an out‑of‑bounds read in the LZH decoder. The LZH decompression logic follows stale values left in the shared array, causing reads past the end of the allocated global buffer.\n\nThis issue has been fixed in commits 63dbf6b3b9e6e781df1a6a64e609b10e23969681 and e7378c2d421be6a286922374425680bbe9ad8b7d.",
           "Severity": "HIGH",
@@ -16044,7 +16044,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:8bf667593eef4774825c3c574ab853d261d49f169a6f357e52f1d3690df6b79e",
+          "Fingerprint": "sha256:ce90f93b9574873dfc081766263902e874c027668c07f63042f8affeb720556a",
           "Title": "acl: Symlink traversal privilege escalation via libacl functions",
           "Description": "acl before version 2.4.0 contains a symlink traversal vulnerability in the libacl pathname-based functions acl_get_file(), acl_set_file(), acl_extended_file(), and acl_delete_def_file() that allows local attackers to escalate privileges by replacing any pathname component with a symbolic link. Attackers who control any component of a pathname processed by a privileged caller can redirect ACL read or write operations to arbitrary files or directories, enabling unauthorized manipulation of access control lists and local privilege escalation.",
           "Severity": "HIGH",
@@ -16120,7 +16120,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:c877a72f14144981b7d4a91b546e5012de4bbf63c522758c674041087522d2f9",
+          "Fingerprint": "sha256:41ff12018e61b15222ed918ea7c41630e70784d45b0381d049b95ba064c18e86",
           "Title": "util-linux: util-linux: failed external mount helper still runs privileged X-mount post-hooks",
           "Description": "util-linux versions through 2.41.5 and 2.42.2 fail to check mount helper exit status before running post-mount hooks, allowing unprivileged users to execute privileged operations on pre-existing filesystems. Attackers can exploit X-mount.idmap or X-mount.owner hooks to clone filesystems with inherited suid bits or modify target inode permissions after a helper fails, achieving privilege escalation.",
           "Severity": "HIGH",
@@ -16172,7 +16172,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:b1ea185a5071dfa0905037607d8c270770f17993c3b12072583d1c67ab9bcd3a",
+          "Fingerprint": "sha256:20be78c913e86021159d1df4ca8172534c7d443c4d9e24edac62434d63cb2792",
           "Title": "util-linux: util-linux: nsenter --join-cgroup leaks root cgroup migration authority",
           "Description": "The nsenter --join-cgroup option opens the target cgroup.procs file as root and leaves that file descriptor open across later namespace and credential changes and across execve(). Because the kernel checks later cgroup migrations using the credentials from the original open, a program run in an attacker-controlled target can inherit root's ability to move host processes between cgroups. After a privileged operator uses --join-cgroup against that target, an unprivileged user can migrate and terminate unrelated root processes.",
           "Severity": "HIGH",
@@ -16220,7 +16220,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:e7e6a96ec480f762c617fe3b41244519b414aeb9f8e5bcda339c88798c3e88ab",
+          "Fingerprint": "sha256:ce41208bee89c609424266fee70b4ef591296a74a1d3c7e28b8c2e4ab3d3bc07",
           "Title": "util-linux: util-linux: X-mount.subdir detached-tree resolution can escape via intermediate symlinks",
           "Description": "The X-mount.subdir option uses a detached-tree fast path on Linux 6.15 and later and passes the configured subdirectory to open_tree() with AT_SYMLINK_NOFOLLOW. That flag does not stop intermediate symlink traversal or keep resolution inside the newly mounted filesystem. A local unprivileged user with an fstab-authorized X-mount.subdir entry can attach a host path at the intended mountpoint.",
           "Severity": "HIGH",
@@ -16267,7 +16267,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:b2eedc8bf1e4c66221647aaffee8ad4af7fee0a2525cdfc1bc464b999b7260c2",
+          "Fingerprint": "sha256:7384eecc631c49db8752ccb4f1d85a7a17fc0e2801b997b25143cfa5fb000749",
           "Title": "util-linux: util-linux: restricted bind mounts do not pin the source, allowing X-mount.owner/group/mode redirection",
           "Description": "A flaw was found in util-linux. Restricted bind mounts take the source path from fstab but do not pin that source before the privileged mount. A local unprivileged user who can replace the authorized source or a writable ancestor can redirect SUID mount(8) to bind another host directory. If the fstab entry also sets X-mount.owner, X-mount.group, or X-mount.mode, root then changes ownership or mode on that redirected inode.",
           "Severity": "HIGH",
@@ -16314,7 +16314,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:47e2e0c358ed894db1d8b11d51f24cad1f1adf64daee3b4bf2797089f4b8aa6c",
+          "Fingerprint": "sha256:332d6999e3cee2765ccee97f25c8c4678b85c36d434b012ab0e518a99c249054",
           "Title": "util-linux: util-linux: failed external mount helper still runs privileged X-mount post-hooks",
           "Description": "util-linux versions through 2.41.5 and 2.42.2 fail to check mount helper exit status before running post-mount hooks, allowing unprivileged users to execute privileged operations on pre-existing filesystems. Attackers can exploit X-mount.idmap or X-mount.owner hooks to clone filesystems with inherited suid bits or modify target inode permissions after a helper fails, achieving privilege escalation.",
           "Severity": "HIGH",
@@ -16366,7 +16366,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:b7c5e11e9212b2c6f99400ebf1749ad91f4fdac644811aa49859da864b5def1a",
+          "Fingerprint": "sha256:325eef0dff506f1ee1193bedab38f86271134d285ce47bbb8e396b37ef5bfc87",
           "Title": "util-linux: util-linux: nsenter --join-cgroup leaks root cgroup migration authority",
           "Description": "The nsenter --join-cgroup option opens the target cgroup.procs file as root and leaves that file descriptor open across later namespace and credential changes and across execve(). Because the kernel checks later cgroup migrations using the credentials from the original open, a program run in an attacker-controlled target can inherit root's ability to move host processes between cgroups. After a privileged operator uses --join-cgroup against that target, an unprivileged user can migrate and terminate unrelated root processes.",
           "Severity": "HIGH",
@@ -16414,7 +16414,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:a6682702b8f9d15f4fc1552c6235489115468c1752305071760f76221448339e",
+          "Fingerprint": "sha256:0f0d821828e4f7f332b6d8602e2096ce47ce82b23347641dd5198640a1dfdca5",
           "Title": "util-linux: util-linux: X-mount.subdir detached-tree resolution can escape via intermediate symlinks",
           "Description": "The X-mount.subdir option uses a detached-tree fast path on Linux 6.15 and later and passes the configured subdirectory to open_tree() with AT_SYMLINK_NOFOLLOW. That flag does not stop intermediate symlink traversal or keep resolution inside the newly mounted filesystem. A local unprivileged user with an fstab-authorized X-mount.subdir entry can attach a host path at the intended mountpoint.",
           "Severity": "HIGH",
@@ -16461,7 +16461,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:3778b35ac2d7af1549cd29addba037f781cdf5d1aba513230f5e4b8221eb40f2",
+          "Fingerprint": "sha256:7c2d98c34a2be98f45d1dc8d4fbfa9cf65544106c5b5f3b162e2655b7e1fedcc",
           "Title": "util-linux: util-linux: restricted bind mounts do not pin the source, allowing X-mount.owner/group/mode redirection",
           "Description": "A flaw was found in util-linux. Restricted bind mounts take the source path from fstab but do not pin that source before the privileged mount. A local unprivileged user who can replace the authorized source or a writable ancestor can redirect SUID mount(8) to bind another host directory. If the fstab entry also sets X-mount.owner, X-mount.group, or X-mount.mode, root then changes ownership or mode on that redirected inode.",
           "Severity": "HIGH",
@@ -16508,7 +16508,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:e9c08b9b7703451039c12bd5899b87689981f7468ec527a755b2e833d30e88b3",
+          "Fingerprint": "sha256:72fb81661c16604a33ba8c5719ffba5ebb71e2792d8df030d4ba6ef44695c7a9",
           "Title": "util-linux: util-linux: failed external mount helper still runs privileged X-mount post-hooks",
           "Description": "util-linux versions through 2.41.5 and 2.42.2 fail to check mount helper exit status before running post-mount hooks, allowing unprivileged users to execute privileged operations on pre-existing filesystems. Attackers can exploit X-mount.idmap or X-mount.owner hooks to clone filesystems with inherited suid bits or modify target inode permissions after a helper fails, achieving privilege escalation.",
           "Severity": "HIGH",
@@ -16560,7 +16560,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:bd4e1549362a3b1777190333c3c38d34bdb8df56b23df13190397989d78c1085",
+          "Fingerprint": "sha256:19af22f8f68fa01a1db1a8d13c11d5d0e5111af4764ed8461494e6358854d6ea",
           "Title": "util-linux: util-linux: nsenter --join-cgroup leaks root cgroup migration authority",
           "Description": "The nsenter --join-cgroup option opens the target cgroup.procs file as root and leaves that file descriptor open across later namespace and credential changes and across execve(). Because the kernel checks later cgroup migrations using the credentials from the original open, a program run in an attacker-controlled target can inherit root's ability to move host processes between cgroups. After a privileged operator uses --join-cgroup against that target, an unprivileged user can migrate and terminate unrelated root processes.",
           "Severity": "HIGH",
@@ -16608,7 +16608,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:cd70fc1365e5dfac99fb5c7299d13dd435b2651dda59e090e5a8adcb5fb90b3c",
+          "Fingerprint": "sha256:22ee7b6a869450381172b012ed5ff569b71fd021d20b9e1f0ecd642ab1032ccd",
           "Title": "util-linux: util-linux: X-mount.subdir detached-tree resolution can escape via intermediate symlinks",
           "Description": "The X-mount.subdir option uses a detached-tree fast path on Linux 6.15 and later and passes the configured subdirectory to open_tree() with AT_SYMLINK_NOFOLLOW. That flag does not stop intermediate symlink traversal or keep resolution inside the newly mounted filesystem. A local unprivileged user with an fstab-authorized X-mount.subdir entry can attach a host path at the intended mountpoint.",
           "Severity": "HIGH",
@@ -16655,7 +16655,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:28707d6bea3d01452b5e294f7f3746f5babe244501cddbbfe5fc7ef469bed61d",
+          "Fingerprint": "sha256:310dfdf7daa884b415db7caf29e07f2a39c9c37f96d439ded73cbb9c3db1ce9c",
           "Title": "util-linux: util-linux: restricted bind mounts do not pin the source, allowing X-mount.owner/group/mode redirection",
           "Description": "A flaw was found in util-linux. Restricted bind mounts take the source path from fstab but do not pin that source before the privileged mount. A local unprivileged user who can replace the authorized source or a writable ancestor can redirect SUID mount(8) to bind another host directory. If the fstab entry also sets X-mount.owner, X-mount.group, or X-mount.mode, root then changes ownership or mode on that redirected inode.",
           "Severity": "HIGH",
@@ -16703,7 +16703,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:257cc39563e1113f2b4dcc1dd883cb674b61b3a42d897c3605c3f9902d4f9a9a",
+          "Fingerprint": "sha256:dcdfed9d5a8ce5eb7d9048a74c86f274bfc8a01e4844ff75881750885a1e6b1a",
           "Title": "ncurses: ncurses: Buffer overflow vulnerability may lead to arbitrary code execution.",
           "Description": "The infocmp command-line tool in ncurses before 6.5-20251213 has a stack-based buffer overflow in analyze_string in progs/infocmp.c.",
           "Severity": "HIGH",
@@ -16786,7 +16786,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:19feaa4afa0c8a03c8b949a8f5075ed23ca64558b651c970091f494cb2d1bbd0",
+          "Fingerprint": "sha256:d8f4736e389c7e3d97c42312ab98bc717b046b2e8d3613aec7f36573e70123a7",
           "Title": "perl: Perl: Incorrect regular expression processing via large regular expressions",
           "Description": "Perl versions before 5.40.5-RC1, from 5.41.0 before 5.42.3-RC1, from 5.43.0 before 5.43.10 produce silently incorrect regular expression matches when an alternation of more than 65535 fixed string branches is compiled into a trie in Perl_study_chunk.\n\nWhen such branches are combined into a trie, the delta between the first branch and the shared tail is stored in a 16-bit field. A branch count above 65535 overflows the field, and the trie's match decision table is truncated with no warning or error.\n\nA pattern of this shape produces false positive matches (matching strings it should not) and false negative matches (failing to match strings it should). When such a pattern gates an access or filtering decision, the result is wrong.",
           "Severity": "CRITICAL",
@@ -16845,7 +16845,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:b53ccebfdf785097c57a4f4bae189f017e9b7f43bb628ccbbb9f7b547414a095",
+          "Fingerprint": "sha256:58feecb347aeef83b95ecc63d18b72f1ad045b699abc90776c263c8ddf86267d",
           "Title": "perl-archive-tar: perl-archive-tar: Path traversal via crafted symlinks allows arbitrary file access",
           "Description": "Archive::Tar versions before 3.08 for Perl extract symlinks with attacker controlled targets outside the extraction directory.\n\n_make_special_file() passes the tar header's linkname to symlink() without validating it against absolute paths or .. segments. The secure-extract mode check that guards regular file extraction does not cover the symlink target.\n\nA subsequent open through the extracted name reads or writes the attacker chosen path.",
           "Severity": "CRITICAL",
@@ -16920,7 +16920,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:554c92d0657123afd89a8710ed7c8408960da524dad2b1822e524c244d73432f",
+          "Fingerprint": "sha256:d88b609e9cebd86dc9e41633ac6f7c05838b4e12749f3674621beb36192e0920",
           "Title": "perl: Perl: Heap buffer overflow when compiling regular expressions on 32-bit builds",
           "Description": "Perl versions before 5.40.5-RC1, from 5.41.0 before 5.42.3-RC1, from 5.43.0 before 5.43.11 have a heap buffer overflow when compiling regular expressions with a repeated fixed string on 32-bit builds.\n\nPerl_study_chunk in regcomp_study.c checked the size of the joined substring buffer in characters rather than bytes. For a quantified fixed substring with a large minimum count, the byte length mincount * l could overflow SSize_t, producing an undersized SvGROW allocation; the subsequent copy writes past the end of the buffer.\n\nA caller that compiles an attacker-controlled regular expression on a 32-bit perl build triggers a heap buffer overflow at compile time.",
           "Severity": "CRITICAL",
@@ -16978,7 +16978,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:ac2b3c1a2425db6a575c9be7b0cd6b3dfcd3283f6cf7f81056145692d956cadc",
+          "Fingerprint": "sha256:4647f4aadeccd4c96247f3f7a39636906b5b8cf4828c61df12655af4668dff24",
           "Title": "perl-Archive-Tar: perl-Archive-Tar: Arbitrary file modification via crafted hardlinks during archive extraction",
           "Description": "Archive::Tar versions before 3.08 for Perl extract hardlinks to attacker controlled paths outside the extraction directory.\n\n_make_special_file() passes the tar header's linkname to link() without validating it against absolute paths or .. segments, creating a hardlink that shares the victim file's inode.\n\nA subsequent write through the extracted name modifies the victim file, and the post-extraction chmod, chown, and utime block in _extract_file() (guarded only against symlinks via -l) applies the tar header's mode, owner, and timestamps to the shared inode during extraction alone.",
           "Severity": "HIGH",
@@ -17035,7 +17035,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:eb67ea9d47f5597ba8e3d0093f4da978bfdd5f4c289892baf66ca50c1d98ecf1",
+          "Fingerprint": "sha256:23d323db6768fd38280d82837f901166fe12bb08bd580072f511e560ca474e06",
           "Title": "perl-IO-Compress: perl-IO-Compress: Arbitrary code execution via attacker-controlled output glob",
           "Description": "IO::Compress versions before 2.220 for Perl can execute arbitrary code in File::GlobMapper via an attacker-controlled output glob.\n\n_parseOutputGlob() wraps the caller-supplied output glob string in double quotes and stores it in the parser state; _getFiles() then runs the stored expression through eval STRING. A literal double quote in the output glob closes the dquote wrapper, and the characters that follow are evaluated as Perl.\n\nArbitrary Perl in the output glob executes at the calling process's privilege.",
           "Severity": "HIGH",
@@ -17114,7 +17114,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:6bedd57c3fa16e70b89693f5002c777954a669e261cbb2e9d3f66be1a228a13c",
+          "Fingerprint": "sha256:512084446089828b86042129c7b6b91cbadb1efcd3d155eb727da8a565a9bdb1",
           "Title": "perl: Perl: Information disclosure via integer overflow in pack/unpack operations",
           "Description": "Perl versions before 5.40.5-RC1, from 5.41.0 before 5.42.3-RC1, from 5.43.0 before 5.43.11 have an integer overflow in S_measure_struct leading to an out-of-bounds heap read in pack and unpack.\n\nS_measure_struct adds each item's size times its repeat count to a running total with no overflow check, so a large repeat count in a pack or unpack template wraps the signed SSize_t total negative. The @, X, and x position codes then guard their moves with a signed length comparison that passes when the length is negative, advancing the buffer pointer out of bounds.\n\nA template derived from untrusted input can read heap memory past the buffer and return it to the caller.",
           "Severity": "HIGH",
@@ -17173,7 +17173,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:c065a47e84848d9dc44886ecc5e644f8979c53b3625490b291880a9a014d1cad",
+          "Fingerprint": "sha256:a254feaf7b23aba47f5e734c8cab48c8ebe8834e8f4ee35f8a7a93ab33d4f0a6",
           "Title": "Storable: Storable: Denial of Service via signed integer overflow in deserialization",
           "Description": "Storable versions before 3.41 for Perl have a signed integer overflow when deserializing a crafted SX_HOOK record.\n\nretrieve_hook_common reads a signed 32-bit item count from an SX_HOOK record and calls av_extend with that count plus one. A count of I32_MAX wraps the addition to a negative value.\n\nA crafted blob passed to thaw or retrieve triggers the overflow; av_extend receives the negative count and dies with a panic, terminating the deserialization.",
           "Severity": "HIGH",
@@ -17225,7 +17225,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:af80e78150c8c78dc61056a1bc1a19c4c7170f50bbd652575c0642d4f50b8838",
+          "Fingerprint": "sha256:c8b4c15b0d2bc39038f69f6e80a423e45096d1a787d34b84b6fde8c67db46513",
           "Title": "perl-Archive-Tar: perl-Archive-Tar: Denial of Service via crafted tar header with large entry size",
           "Description": "Archive::Tar versions before 3.10 for Perl allow memory exhaustion via attacker controlled entry size field in tar header.\n\n_read_tar() reads each entry's payload with $handle-\u003eread($$data, $block), where $block is derived from the entry's 12-byte size field in the tar header with no upper bound on that value.\n\nA crafted header declaring a multi-gigabyte size causes Perl to allocate a scalar of that size.",
           "Severity": "HIGH",
@@ -17293,7 +17293,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:c3aa465eb5208ad54fc61bc256acc6300a2eb817a9cb7d6c6602e84bbaa47c72",
+          "Fingerprint": "sha256:8631ed721e5135ef5d2585accf460ac6eadf7a301d192a193409edd2b7e8e5aa",
           "Title": "util-linux: util-linux: failed external mount helper still runs privileged X-mount post-hooks",
           "Description": "util-linux versions through 2.41.5 and 2.42.2 fail to check mount helper exit status before running post-mount hooks, allowing unprivileged users to execute privileged operations on pre-existing filesystems. Attackers can exploit X-mount.idmap or X-mount.owner hooks to clone filesystems with inherited suid bits or modify target inode permissions after a helper fails, achieving privilege escalation.",
           "Severity": "HIGH",
@@ -17345,7 +17345,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:f471ae8f7e1fad443728672a460093e3ee56f8db3a2c72e608e759b4c4b4380c",
+          "Fingerprint": "sha256:2447ff16681780b06a69106a47141195f250d8732a2999a6651a303a26c461ae",
           "Title": "util-linux: util-linux: nsenter --join-cgroup leaks root cgroup migration authority",
           "Description": "The nsenter --join-cgroup option opens the target cgroup.procs file as root and leaves that file descriptor open across later namespace and credential changes and across execve(). Because the kernel checks later cgroup migrations using the credentials from the original open, a program run in an attacker-controlled target can inherit root's ability to move host processes between cgroups. After a privileged operator uses --join-cgroup against that target, an unprivileged user can migrate and terminate unrelated root processes.",
           "Severity": "HIGH",
@@ -17393,7 +17393,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:0253472539312e31ba4bbc12b7c766d6b549a4becaf270f21391ab4dbec62008",
+          "Fingerprint": "sha256:751476071bdbf3c1732047d4327045142a6e43d0a9cab110a8753cc112dc8fc6",
           "Title": "util-linux: util-linux: X-mount.subdir detached-tree resolution can escape via intermediate symlinks",
           "Description": "The X-mount.subdir option uses a detached-tree fast path on Linux 6.15 and later and passes the configured subdirectory to open_tree() with AT_SYMLINK_NOFOLLOW. That flag does not stop intermediate symlink traversal or keep resolution inside the newly mounted filesystem. A local unprivileged user with an fstab-authorized X-mount.subdir entry can attach a host path at the intended mountpoint.",
           "Severity": "HIGH",
@@ -17440,7 +17440,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:40d7ec43bb3dc4ba130f518593025db739d8075a9953ac153f25ffe462d68b05",
+          "Fingerprint": "sha256:c2c64f840683a16bff7c1092ceca71f3669c4d443b79134d1bf0a6967371611a",
           "Title": "util-linux: util-linux: restricted bind mounts do not pin the source, allowing X-mount.owner/group/mode redirection",
           "Description": "A flaw was found in util-linux. Restricted bind mounts take the source path from fstab but do not pin that source before the privileged mount. A local unprivileged user who can replace the authorized source or a writable ancestor can redirect SUID mount(8) to bind another host directory. If the fstab entry also sets X-mount.owner, X-mount.group, or X-mount.mode, root then changes ownership or mode on that redirected inode.",
           "Severity": "HIGH",
@@ -17487,7 +17487,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:9aab62e8b1dbac90f4ddf204ef01dffee8d1fe9a4ed9a6546e6510d7bc017295",
+          "Fingerprint": "sha256:257c4c5e7adba6fd0002445d0a27c8884199007c680768b1bed1006fdd0dcd0f",
           "Title": "sqlite: SQLite: Arbitrary code execution via crafted FTS5 full-text search data",
           "Description": "SQLite before 3.53.2 contains memory corruption vulnerabilities in the FTS5 full-text search extension that allow attackers to cause process crashes, memory exhaustion, or arbitrary code execution by supplying a crafted database with malformed FTS5 page data. Attackers can trigger an out-of-bounds read in fts5LeafSeek() via an attacker-controlled loop bound and a heap buffer overflow write in fts5ChunkIterate() through a crafted continuation page causing an integer underflow, exploitable when an FTS5 MATCH query is executed against the malicious database.",
           "Severity": "HIGH",
@@ -17558,7 +17558,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:23a142046c6a9bd1d322c3567a69dfdf9a5d8286de91119e6f41c57df85c4e1f",
+          "Fingerprint": "sha256:895682e2944cd7cce97ee041e1fc0ea144a9fbd6e28a7192f19caa4d9f47690e",
           "Title": "sqlite: SQLite: Arbitrary code execution and crash via heap-based buffer overflow in FTS5",
           "Description": "SQLite before 3.53.2 contains a heap-based buffer overflow vulnerability in the FTS5 full-text search extension that allows attackers to cause a crash or execute arbitrary code by supplying a crafted database with malicious continuation page metadata specifying a szLeaf value smaller than 4. Attackers can trigger an integer underflow in fts5ChunkIterate() causing an inflated remaining byte count during FTS5 MATCH query processing, leading to a heap buffer overflow of attacker-controlled data in applications compiled with SQLITE_ENABLE_FTS5.",
           "Severity": "HIGH",
@@ -17633,7 +17633,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:1dd926407f746ef3c982f22594f69c19412ea2113d30133d3b0797119e560ab6",
+          "Fingerprint": "sha256:132bdbdea5f53269e9a459c647883919ddd5a42e56280f8bdb3d86253820e074",
           "Title": "openssl: OpenSSL: Denial of Service via unbounded memory growth in QUIC server",
           "Description": "Issue summary: When an OpenSSL QUIC server (Listener SSL object) processes\nvalid QUIC Initial packets for unknown destination connection IDs, it\ncan allocate and queue new incoming channels without enforcing any limit.\n\nImpact summary: A remote peer that can make many Initial packets reach the\nserver listener faster than the application accepts connections, can cause the\nmemory allocated to store the per-channel state to grow without any limits,\npotentially making the QUIC listener unavailable and causing Denial of Service.\n\nCWE: CWE-770: Allocation of Resources Without Limits or Throttling\n\nDescription: The function that handles inbound QUIC packets uses\nConnection-Id from the packet header to find an existing connection\n(QUIC channel). If no existing connection is found and the packet\ntype is INITIAL, the function treats the packet as a new connection. It\nallocates a new channel object and inserts it into a queue where it\nwaits to be accepted by the local application with SSL_accept(3ossl).\nThe memory occupied by these initial channel objects may grow\nwithout bounds if the application is not able to call SSL_accept()\nfrequently enough to serve these inbound connection requests.\n\nThe issue is present since OpenSSL 3.5 when the QUIC server implementation\nwas added.\n\nThe fix introduces a limit for pending connections. The default limit is set\nto 256 pending connections (waiting to be accepted by the local application).\nApplications may change the default by calling SSL_set_value_uint(3ossl).\n\nFIPS impact: no\nThe FIPS module is not affected as the QUIC implementation is outside of\nthe OpenSSL FIPS module boundary.",
           "Severity": "HIGH",
@@ -17686,7 +17686,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:695052d5c6d03649a01201701a433b18ff9b6f7d3df63d2eab996a49a2eed1ec",
+          "Fingerprint": "sha256:f954c6a79e5ddb5c6bb3e774b3b962ba25be78fcf38bff982eec2b3b8341a9cd",
           "Title": "systemd: systemd-homed: Local privilege escalation via missing home-record signature verification",
           "Description": "systemd-homed contains a local privilege escalation bug via arbitrary system group addition to a local, logged in, homed-managed user",
           "Severity": "HIGH",
@@ -17735,7 +17735,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:d6d4ce17d591b9d18aa2d7285d4216a8d8cccab2f4601610c482a3eb846da31d",
+          "Fingerprint": "sha256:46a2154b4d82c132e74a719359b7ad39f1941c3416b590073773df54990e015f",
           "Title": "ncurses: ncurses: Buffer overflow vulnerability may lead to arbitrary code execution.",
           "Description": "The infocmp command-line tool in ncurses before 6.5-20251213 has a stack-based buffer overflow in analyze_string in progs/infocmp.c.",
           "Severity": "HIGH",
@@ -17817,7 +17817,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:ab4d35e619d3ab7c471a6350830db90618b00399ad209e94d1a5c8cfe1ce1037",
+          "Fingerprint": "sha256:1f93e02f6b47d6c9fe6c9bed414d7594b893fcb11f4b211572bd1be5967d07ed",
           "Title": "systemd: systemd-homed: Local privilege escalation via missing home-record signature verification",
           "Description": "systemd-homed contains a local privilege escalation bug via arbitrary system group addition to a local, logged in, homed-managed user",
           "Severity": "HIGH",
@@ -17865,7 +17865,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:1e349d8f21779fc694c9598641b9e115c2810513bd74db007f7ebaac072d6189",
+          "Fingerprint": "sha256:9178d3608e4bbdfe07e9eb4307847ef076cb2eb67d7d4bd69086745e8a4896b3",
           "Title": "util-linux: util-linux: failed external mount helper still runs privileged X-mount post-hooks",
           "Description": "util-linux versions through 2.41.5 and 2.42.2 fail to check mount helper exit status before running post-mount hooks, allowing unprivileged users to execute privileged operations on pre-existing filesystems. Attackers can exploit X-mount.idmap or X-mount.owner hooks to clone filesystems with inherited suid bits or modify target inode permissions after a helper fails, achieving privilege escalation.",
           "Severity": "HIGH",
@@ -17917,7 +17917,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:987e933d0f2e2cc31b1d37ce4b9aaa3c645f418071572d0a44818fb7ec41200b",
+          "Fingerprint": "sha256:1fee6e0ba51b6f85e0a50d3218bc6128d49a9ef68115907a97df6f6b2d8f0674",
           "Title": "util-linux: util-linux: nsenter --join-cgroup leaks root cgroup migration authority",
           "Description": "The nsenter --join-cgroup option opens the target cgroup.procs file as root and leaves that file descriptor open across later namespace and credential changes and across execve(). Because the kernel checks later cgroup migrations using the credentials from the original open, a program run in an attacker-controlled target can inherit root's ability to move host processes between cgroups. After a privileged operator uses --join-cgroup against that target, an unprivileged user can migrate and terminate unrelated root processes.",
           "Severity": "HIGH",
@@ -17965,7 +17965,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:66aa712315812c337a4f80d40db5223a3f8a5aa6dc3def08a135745faf02c47a",
+          "Fingerprint": "sha256:1ff81fe21e906c66769dc40713e67de0e869c7037a91110a768c42e4d2a7a174",
           "Title": "util-linux: util-linux: X-mount.subdir detached-tree resolution can escape via intermediate symlinks",
           "Description": "The X-mount.subdir option uses a detached-tree fast path on Linux 6.15 and later and passes the configured subdirectory to open_tree() with AT_SYMLINK_NOFOLLOW. That flag does not stop intermediate symlink traversal or keep resolution inside the newly mounted filesystem. A local unprivileged user with an fstab-authorized X-mount.subdir entry can attach a host path at the intended mountpoint.",
           "Severity": "HIGH",
@@ -18012,7 +18012,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:cd0c8f234eb89f93b366d2ea917549920b4c300bfcd6eb32cefda845fa66dba8",
+          "Fingerprint": "sha256:72c4e33154bf431404a735dded0d0cfe494a99ada689718e58a18ebc75fc4ae2",
           "Title": "util-linux: util-linux: restricted bind mounts do not pin the source, allowing X-mount.owner/group/mode redirection",
           "Description": "A flaw was found in util-linux. Restricted bind mounts take the source path from fstab but do not pin that source before the privileged mount. A local unprivileged user who can replace the authorized source or a writable ancestor can redirect SUID mount(8) to bind another host directory. If the fstab entry also sets X-mount.owner, X-mount.group, or X-mount.mode, root then changes ownership or mode on that redirected inode.",
           "Severity": "HIGH",
@@ -18060,7 +18060,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:be2928ec7c83bcd40ac08001cea9aad9aec1a66432fc2fa40612f30d3b19db66",
+          "Fingerprint": "sha256:fc6a6ae15a76edc1199d1e281b9ee04750609757706d23607e2145e223f812bc",
           "Title": "libxml2: mingw-libxml2: libxml2: Denial of Service via crafted XML input due to use-after-free",
           "Description": "Use After Free in libxml2's xmlParseInternalSubset from GNOME libxml2 version 2.9.11 to 2.11.0 allows a remote attacker to cause a denial-of-service via maliciously crafted XML input with improper entity resolution handling.",
           "Severity": "CRITICAL",
@@ -18137,7 +18137,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:b2926652cf9a137f2c6e308b8e48101e4c7404f2332e65d6559cf409ca0483d6",
+          "Fingerprint": "sha256:4939351d0ec5524d0930fc8ae25deff6ca8f98e2ca73efb6747521cd0a6c6b4a",
           "Title": "libxml2: libxml2: Arbitrary code execution via stack-based buffer overflow in xmlSnprintfElements",
           "Description": "In libxml2 before 2.15.4, xmlSnprintfElements in valid.c has a strcat stack-based buffer overflow.",
           "Severity": "HIGH",
@@ -18183,7 +18183,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:f8771cba3563b5920f6b9541f4f53b7eabfbc9c5fbac2f322ad0beb8783889dc",
+          "Fingerprint": "sha256:311d6d0c0519f34d1b452314908b6e42e5ee3eb52bd43f76c1655c56131eb226",
           "Title": "util-linux: util-linux: failed external mount helper still runs privileged X-mount post-hooks",
           "Description": "util-linux versions through 2.41.5 and 2.42.2 fail to check mount helper exit status before running post-mount hooks, allowing unprivileged users to execute privileged operations on pre-existing filesystems. Attackers can exploit X-mount.idmap or X-mount.owner hooks to clone filesystems with inherited suid bits or modify target inode permissions after a helper fails, achieving privilege escalation.",
           "Severity": "HIGH",
@@ -18235,7 +18235,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:0254080c4d22e243ceb1acabc392bedc9e3fbdd8b9f51c689c3933edf8436341",
+          "Fingerprint": "sha256:dd984ddc4e524b3f888b57eac43b751d02acde4da23bf2f22fbdd5efe8cc1742",
           "Title": "util-linux: util-linux: nsenter --join-cgroup leaks root cgroup migration authority",
           "Description": "The nsenter --join-cgroup option opens the target cgroup.procs file as root and leaves that file descriptor open across later namespace and credential changes and across execve(). Because the kernel checks later cgroup migrations using the credentials from the original open, a program run in an attacker-controlled target can inherit root's ability to move host processes between cgroups. After a privileged operator uses --join-cgroup against that target, an unprivileged user can migrate and terminate unrelated root processes.",
           "Severity": "HIGH",
@@ -18283,7 +18283,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:e24be18960ad2fc7dd5722265fc508c0ed129b7042782cbf06f094ad66325ce2",
+          "Fingerprint": "sha256:0016668e8f02d44bf8adde3ba3a97c679afe371292cf5602a083ab4b4683f755",
           "Title": "util-linux: util-linux: X-mount.subdir detached-tree resolution can escape via intermediate symlinks",
           "Description": "The X-mount.subdir option uses a detached-tree fast path on Linux 6.15 and later and passes the configured subdirectory to open_tree() with AT_SYMLINK_NOFOLLOW. That flag does not stop intermediate symlink traversal or keep resolution inside the newly mounted filesystem. A local unprivileged user with an fstab-authorized X-mount.subdir entry can attach a host path at the intended mountpoint.",
           "Severity": "HIGH",
@@ -18330,7 +18330,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:7c0eaec5d7da62dc3b5319b1a100e7750a624ad1ffeea5910af039b004c901b9",
+          "Fingerprint": "sha256:11ba4ce112b6e723579719de95ca631f7c69b902ead3e3c1a098c16c6fe16661",
           "Title": "util-linux: util-linux: restricted bind mounts do not pin the source, allowing X-mount.owner/group/mode redirection",
           "Description": "A flaw was found in util-linux. Restricted bind mounts take the source path from fstab but do not pin that source before the privileged mount. A local unprivileged user who can replace the authorized source or a writable ancestor can redirect SUID mount(8) to bind another host directory. If the fstab entry also sets X-mount.owner, X-mount.group, or X-mount.mode, root then changes ownership or mode on that redirected inode.",
           "Severity": "HIGH",
@@ -18377,7 +18377,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:c80e9b263a95ae4b0e0b9338f2c1a39613f69ac5b04b118dd7478c8fe6090247",
+          "Fingerprint": "sha256:d96451e8e3bae0515dcd5d085b7e8f854263f9eac13090e6d533b210ca1ccfb3",
           "Title": "util-linux: util-linux: failed external mount helper still runs privileged X-mount post-hooks",
           "Description": "util-linux versions through 2.41.5 and 2.42.2 fail to check mount helper exit status before running post-mount hooks, allowing unprivileged users to execute privileged operations on pre-existing filesystems. Attackers can exploit X-mount.idmap or X-mount.owner hooks to clone filesystems with inherited suid bits or modify target inode permissions after a helper fails, achieving privilege escalation.",
           "Severity": "HIGH",
@@ -18429,7 +18429,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:1913f690620a75132b9121e22aa56b3381cc8ef5318945ab1d44c860ad19070f",
+          "Fingerprint": "sha256:7dcc9eb5c0dcfc288d0f8dded008e610ac88f139692ea3843a2b9aa4925d2a58",
           "Title": "util-linux: util-linux: nsenter --join-cgroup leaks root cgroup migration authority",
           "Description": "The nsenter --join-cgroup option opens the target cgroup.procs file as root and leaves that file descriptor open across later namespace and credential changes and across execve(). Because the kernel checks later cgroup migrations using the credentials from the original open, a program run in an attacker-controlled target can inherit root's ability to move host processes between cgroups. After a privileged operator uses --join-cgroup against that target, an unprivileged user can migrate and terminate unrelated root processes.",
           "Severity": "HIGH",
@@ -18477,7 +18477,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:bb5b16f65e1d48730c38eea5472a19799b08e35c71f6bafdd6d30732600da1e6",
+          "Fingerprint": "sha256:1b52e3783d91884b781555d47246ffa18f8db63d194cb929097875de56bab954",
           "Title": "util-linux: util-linux: X-mount.subdir detached-tree resolution can escape via intermediate symlinks",
           "Description": "The X-mount.subdir option uses a detached-tree fast path on Linux 6.15 and later and passes the configured subdirectory to open_tree() with AT_SYMLINK_NOFOLLOW. That flag does not stop intermediate symlink traversal or keep resolution inside the newly mounted filesystem. A local unprivileged user with an fstab-authorized X-mount.subdir entry can attach a host path at the intended mountpoint.",
           "Severity": "HIGH",
@@ -18524,7 +18524,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:4cc285ed18fd158f1e631a06f24735b34a5f53a9715c620ac9ce9bcdc474045a",
+          "Fingerprint": "sha256:b18b22e172f1c850433ffcc3be3d3d562a63de4dfdad84aadab1163ba8cf95ba",
           "Title": "util-linux: util-linux: restricted bind mounts do not pin the source, allowing X-mount.owner/group/mode redirection",
           "Description": "A flaw was found in util-linux. Restricted bind mounts take the source path from fstab but do not pin that source before the privileged mount. A local unprivileged user who can replace the authorized source or a writable ancestor can redirect SUID mount(8) to bind another host directory. If the fstab entry also sets X-mount.owner, X-mount.group, or X-mount.mode, root then changes ownership or mode on that redirected inode.",
           "Severity": "HIGH",
@@ -18572,7 +18572,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:5efc52a4807a1b8ea23545c6fb313feb6069596a31ff96fd26df92c5d0f99e00",
+          "Fingerprint": "sha256:eebf159ee81193cf50107c23fbc640d0f0e9f84c2dc0fb6712476ff340ae1d0e",
           "Title": "ncurses: ncurses: Buffer overflow vulnerability may lead to arbitrary code execution.",
           "Description": "The infocmp command-line tool in ncurses before 6.5-20251213 has a stack-based buffer overflow in analyze_string in progs/infocmp.c.",
           "Severity": "HIGH",
@@ -18655,7 +18655,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:90833ca4bf9cdd413d4783829c68ea4fdbd4fb465cf38c1c8bfc7d7528f988f5",
+          "Fingerprint": "sha256:7978d67b653eeabbf6aef630277e371ec1f466132321001b82e0fa025418ac27",
           "Title": "ncurses: ncurses: Buffer overflow vulnerability may lead to arbitrary code execution.",
           "Description": "The infocmp command-line tool in ncurses before 6.5-20251213 has a stack-based buffer overflow in analyze_string in progs/infocmp.c.",
           "Severity": "HIGH",
@@ -18741,7 +18741,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:e26fdb59bbbef00f75b9ccf963389e9934de797ac61e5215668ded089a86bf21",
+          "Fingerprint": "sha256:5aab9dd346a24e8ecffe4c9f0fc4403fba395fd375e5b2f46dc12d5d0b986287",
           "Title": "openssl: OpenSSL: Denial of Service via unbounded memory growth in QUIC server",
           "Description": "Issue summary: When an OpenSSL QUIC server (Listener SSL object) processes\nvalid QUIC Initial packets for unknown destination connection IDs, it\ncan allocate and queue new incoming channels without enforcing any limit.\n\nImpact summary: A remote peer that can make many Initial packets reach the\nserver listener faster than the application accepts connections, can cause the\nmemory allocated to store the per-channel state to grow without any limits,\npotentially making the QUIC listener unavailable and causing Denial of Service.\n\nCWE: CWE-770: Allocation of Resources Without Limits or Throttling\n\nDescription: The function that handles inbound QUIC packets uses\nConnection-Id from the packet header to find an existing connection\n(QUIC channel). If no existing connection is found and the packet\ntype is INITIAL, the function treats the packet as a new connection. It\nallocates a new channel object and inserts it into a queue where it\nwaits to be accepted by the local application with SSL_accept(3ossl).\nThe memory occupied by these initial channel objects may grow\nwithout bounds if the application is not able to call SSL_accept()\nfrequently enough to serve these inbound connection requests.\n\nThe issue is present since OpenSSL 3.5 when the QUIC server implementation\nwas added.\n\nThe fix introduces a limit for pending connections. The default limit is set\nto 256 pending connections (waiting to be accepted by the local application).\nApplications may change the default by calling SSL_set_value_uint(3ossl).\n\nFIPS impact: no\nThe FIPS module is not affected as the QUIC implementation is outside of\nthe OpenSSL FIPS module boundary.",
           "Severity": "HIGH",
@@ -18798,7 +18798,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:1e5bf42abc98939e26bd8c27059d9cbbdd234ac231e5bd234b7f5b090c4a5d95",
+          "Fingerprint": "sha256:91f8a64dbbc5d328eb19dc2c0b31b680bfd6bca14daf331e8c406c51855885c1",
           "Title": "openssl: OpenSSL: Denial of Service via unbounded memory growth in QUIC server",
           "Description": "Issue summary: When an OpenSSL QUIC server (Listener SSL object) processes\nvalid QUIC Initial packets for unknown destination connection IDs, it\ncan allocate and queue new incoming channels without enforcing any limit.\n\nImpact summary: A remote peer that can make many Initial packets reach the\nserver listener faster than the application accepts connections, can cause the\nmemory allocated to store the per-channel state to grow without any limits,\npotentially making the QUIC listener unavailable and causing Denial of Service.\n\nCWE: CWE-770: Allocation of Resources Without Limits or Throttling\n\nDescription: The function that handles inbound QUIC packets uses\nConnection-Id from the packet header to find an existing connection\n(QUIC channel). If no existing connection is found and the packet\ntype is INITIAL, the function treats the packet as a new connection. It\nallocates a new channel object and inserts it into a queue where it\nwaits to be accepted by the local application with SSL_accept(3ossl).\nThe memory occupied by these initial channel objects may grow\nwithout bounds if the application is not able to call SSL_accept()\nfrequently enough to serve these inbound connection requests.\n\nThe issue is present since OpenSSL 3.5 when the QUIC server implementation\nwas added.\n\nThe fix introduces a limit for pending connections. The default limit is set\nto 256 pending connections (waiting to be accepted by the local application).\nApplications may change the default by calling SSL_set_value_uint(3ossl).\n\nFIPS impact: no\nThe FIPS module is not affected as the QUIC implementation is outside of\nthe OpenSSL FIPS module boundary.",
           "Severity": "HIGH",
@@ -18852,7 +18852,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:09b4e2c4cf839bc11ea95b7aed273b45cbd244f08c5c4a20e707bfcde8a5f162",
+          "Fingerprint": "sha256:05de5df3233e1b647379dc475fe7d7d61cc6100a22ab6d35ad832c65f6165627",
           "Title": "perl: Perl: Incorrect regular expression processing via large regular expressions",
           "Description": "Perl versions before 5.40.5-RC1, from 5.41.0 before 5.42.3-RC1, from 5.43.0 before 5.43.10 produce silently incorrect regular expression matches when an alternation of more than 65535 fixed string branches is compiled into a trie in Perl_study_chunk.\n\nWhen such branches are combined into a trie, the delta between the first branch and the shared tail is stored in a 16-bit field. A branch count above 65535 overflows the field, and the trie's match decision table is truncated with no warning or error.\n\nA pattern of this shape produces false positive matches (matching strings it should not) and false negative matches (failing to match strings it should). When such a pattern gates an access or filtering decision, the result is wrong.",
           "Severity": "CRITICAL",
@@ -18911,7 +18911,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:c4204c33e20cda576a60f71a4c93a10f91d3ca0787a5379d1db2bf53d3621d31",
+          "Fingerprint": "sha256:92994f826e69d848b221216cef8da6298be1fd893890d7b83bd0aa52afeda4fc",
           "Title": "perl-archive-tar: perl-archive-tar: Path traversal via crafted symlinks allows arbitrary file access",
           "Description": "Archive::Tar versions before 3.08 for Perl extract symlinks with attacker controlled targets outside the extraction directory.\n\n_make_special_file() passes the tar header's linkname to symlink() without validating it against absolute paths or .. segments. The secure-extract mode check that guards regular file extraction does not cover the symlink target.\n\nA subsequent open through the extracted name reads or writes the attacker chosen path.",
           "Severity": "CRITICAL",
@@ -18986,7 +18986,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:65b4e95d7a9cf81172fc4fcec5013368d642037bb31030b5123a5aa117ef9631",
+          "Fingerprint": "sha256:9219403bff115772bf8376ddac2704c026f70c39a61126343f0474862fa69b81",
           "Title": "perl: Perl: Heap buffer overflow when compiling regular expressions on 32-bit builds",
           "Description": "Perl versions before 5.40.5-RC1, from 5.41.0 before 5.42.3-RC1, from 5.43.0 before 5.43.11 have a heap buffer overflow when compiling regular expressions with a repeated fixed string on 32-bit builds.\n\nPerl_study_chunk in regcomp_study.c checked the size of the joined substring buffer in characters rather than bytes. For a quantified fixed substring with a large minimum count, the byte length mincount * l could overflow SSize_t, producing an undersized SvGROW allocation; the subsequent copy writes past the end of the buffer.\n\nA caller that compiles an attacker-controlled regular expression on a 32-bit perl build triggers a heap buffer overflow at compile time.",
           "Severity": "CRITICAL",
@@ -19044,7 +19044,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:f94be1f4c98cd8e0c55dc174d8b0080ba103c821af0fbff81c806ad7c08b418d",
+          "Fingerprint": "sha256:525f107064ee7bf0d4e8140eec57f07256afdf772f263aaeb2a390458faf762b",
           "Title": "perl-Archive-Tar: perl-Archive-Tar: Arbitrary file modification via crafted hardlinks during archive extraction",
           "Description": "Archive::Tar versions before 3.08 for Perl extract hardlinks to attacker controlled paths outside the extraction directory.\n\n_make_special_file() passes the tar header's linkname to link() without validating it against absolute paths or .. segments, creating a hardlink that shares the victim file's inode.\n\nA subsequent write through the extracted name modifies the victim file, and the post-extraction chmod, chown, and utime block in _extract_file() (guarded only against symlinks via -l) applies the tar header's mode, owner, and timestamps to the shared inode during extraction alone.",
           "Severity": "HIGH",
@@ -19101,7 +19101,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:76678b13c15782e6244fffffc04998a58acc0536f32831ffb9ae4b99c0af719b",
+          "Fingerprint": "sha256:e034f68bc95f51dc4a04e68815790c84e1dd92cf0a8303187337a4332095c177",
           "Title": "perl-IO-Compress: perl-IO-Compress: Arbitrary code execution via attacker-controlled output glob",
           "Description": "IO::Compress versions before 2.220 for Perl can execute arbitrary code in File::GlobMapper via an attacker-controlled output glob.\n\n_parseOutputGlob() wraps the caller-supplied output glob string in double quotes and stores it in the parser state; _getFiles() then runs the stored expression through eval STRING. A literal double quote in the output glob closes the dquote wrapper, and the characters that follow are evaluated as Perl.\n\nArbitrary Perl in the output glob executes at the calling process's privilege.",
           "Severity": "HIGH",
@@ -19180,7 +19180,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:587260ec0f639011d372225af6edba9c24f16739c9c86ec96c927dfdced65b06",
+          "Fingerprint": "sha256:38229f1604a552ff8f1d3d3f3810663a3230eb304a0f363e067b9e1ed094e697",
           "Title": "perl: Perl: Information disclosure via integer overflow in pack/unpack operations",
           "Description": "Perl versions before 5.40.5-RC1, from 5.41.0 before 5.42.3-RC1, from 5.43.0 before 5.43.11 have an integer overflow in S_measure_struct leading to an out-of-bounds heap read in pack and unpack.\n\nS_measure_struct adds each item's size times its repeat count to a running total with no overflow check, so a large repeat count in a pack or unpack template wraps the signed SSize_t total negative. The @, X, and x position codes then guard their moves with a signed length comparison that passes when the length is negative, advancing the buffer pointer out of bounds.\n\nA template derived from untrusted input can read heap memory past the buffer and return it to the caller.",
           "Severity": "HIGH",
@@ -19239,7 +19239,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:20a4d4022d1b81ef8d52d0956458ca8073bf3ce892e7ddf533e59476a5b02bde",
+          "Fingerprint": "sha256:ce6875c6b8550a5ab987cd5d05051f50484c5f507c938f36ebbc880e0f0447b4",
           "Title": "Storable: Storable: Denial of Service via signed integer overflow in deserialization",
           "Description": "Storable versions before 3.41 for Perl have a signed integer overflow when deserializing a crafted SX_HOOK record.\n\nretrieve_hook_common reads a signed 32-bit item count from an SX_HOOK record and calls av_extend with that count plus one. A count of I32_MAX wraps the addition to a negative value.\n\nA crafted blob passed to thaw or retrieve triggers the overflow; av_extend receives the negative count and dies with a panic, terminating the deserialization.",
           "Severity": "HIGH",
@@ -19291,7 +19291,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:9e04ce1f0e2a62ba672bd6b4cac1eb411fe5783cf767da4fe027caa6421fcc1b",
+          "Fingerprint": "sha256:dcc689462b78da441ebbd1c0408556025efbb17d3da864842a0425eefc636dad",
           "Title": "perl-Archive-Tar: perl-Archive-Tar: Denial of Service via crafted tar header with large entry size",
           "Description": "Archive::Tar versions before 3.10 for Perl allow memory exhaustion via attacker controlled entry size field in tar header.\n\n_read_tar() reads each entry's payload with $handle-\u003eread($$data, $block), where $block is derived from the entry's 12-byte size field in the tar header with no upper bound on that value.\n\nA crafted header declaring a multi-gigabyte size causes Perl to allocate a scalar of that size.",
           "Severity": "HIGH",
@@ -19360,7 +19360,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:2b9ded8530a4bb46738d4a37416332bd51a4e733b0923a685796c687ad28c9b4",
+          "Fingerprint": "sha256:4629646e5f12f559000b1ab58b4f1748beb33d858c901568c025f9a5124d5aeb",
           "Title": "perl: Perl: Incorrect regular expression processing via large regular expressions",
           "Description": "Perl versions before 5.40.5-RC1, from 5.41.0 before 5.42.3-RC1, from 5.43.0 before 5.43.10 produce silently incorrect regular expression matches when an alternation of more than 65535 fixed string branches is compiled into a trie in Perl_study_chunk.\n\nWhen such branches are combined into a trie, the delta between the first branch and the shared tail is stored in a 16-bit field. A branch count above 65535 overflows the field, and the trie's match decision table is truncated with no warning or error.\n\nA pattern of this shape produces false positive matches (matching strings it should not) and false negative matches (failing to match strings it should). When such a pattern gates an access or filtering decision, the result is wrong.",
           "Severity": "CRITICAL",
@@ -19419,7 +19419,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:dd0be4873df084669d10982d70c014340242fd093046ac9cb46095a59707f228",
+          "Fingerprint": "sha256:c465d55ae674a3cda5983915a6da6e0754fa3fda5f74cf5b8e1c66755e8418c0",
           "Title": "perl-archive-tar: perl-archive-tar: Path traversal via crafted symlinks allows arbitrary file access",
           "Description": "Archive::Tar versions before 3.08 for Perl extract symlinks with attacker controlled targets outside the extraction directory.\n\n_make_special_file() passes the tar header's linkname to symlink() without validating it against absolute paths or .. segments. The secure-extract mode check that guards regular file extraction does not cover the symlink target.\n\nA subsequent open through the extracted name reads or writes the attacker chosen path.",
           "Severity": "CRITICAL",
@@ -19494,7 +19494,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:fe775a875d2181db3254b0b9edf28152f612eac20df5238ac7921851e822c6a0",
+          "Fingerprint": "sha256:b31c96a62c7c42ef7f6f4d6f6241f60780609ca5db90c8b09212aaf8bd54bb5a",
           "Title": "perl: Perl: Heap buffer overflow when compiling regular expressions on 32-bit builds",
           "Description": "Perl versions before 5.40.5-RC1, from 5.41.0 before 5.42.3-RC1, from 5.43.0 before 5.43.11 have a heap buffer overflow when compiling regular expressions with a repeated fixed string on 32-bit builds.\n\nPerl_study_chunk in regcomp_study.c checked the size of the joined substring buffer in characters rather than bytes. For a quantified fixed substring with a large minimum count, the byte length mincount * l could overflow SSize_t, producing an undersized SvGROW allocation; the subsequent copy writes past the end of the buffer.\n\nA caller that compiles an attacker-controlled regular expression on a 32-bit perl build triggers a heap buffer overflow at compile time.",
           "Severity": "CRITICAL",
@@ -19552,7 +19552,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:223bf4fce6e0221621c04697d6e0378711239de0a7235fe1ebe19a42576deb09",
+          "Fingerprint": "sha256:cd09dafda00dea38934c2d79389dc79be27299b5c7d369cb78263fd7b5f4ab9e",
           "Title": "perl-Archive-Tar: perl-Archive-Tar: Arbitrary file modification via crafted hardlinks during archive extraction",
           "Description": "Archive::Tar versions before 3.08 for Perl extract hardlinks to attacker controlled paths outside the extraction directory.\n\n_make_special_file() passes the tar header's linkname to link() without validating it against absolute paths or .. segments, creating a hardlink that shares the victim file's inode.\n\nA subsequent write through the extracted name modifies the victim file, and the post-extraction chmod, chown, and utime block in _extract_file() (guarded only against symlinks via -l) applies the tar header's mode, owner, and timestamps to the shared inode during extraction alone.",
           "Severity": "HIGH",
@@ -19609,7 +19609,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:921dda186e953e31bb8347412c4f3523bf2043fe718432dc37e6de03f63dbf1c",
+          "Fingerprint": "sha256:bc08017bec982ced8b85d5bb4988b763c9f2934fddbeaeb20c9b58c9cb626932",
           "Title": "perl-IO-Compress: perl-IO-Compress: Arbitrary code execution via attacker-controlled output glob",
           "Description": "IO::Compress versions before 2.220 for Perl can execute arbitrary code in File::GlobMapper via an attacker-controlled output glob.\n\n_parseOutputGlob() wraps the caller-supplied output glob string in double quotes and stores it in the parser state; _getFiles() then runs the stored expression through eval STRING. A literal double quote in the output glob closes the dquote wrapper, and the characters that follow are evaluated as Perl.\n\nArbitrary Perl in the output glob executes at the calling process's privilege.",
           "Severity": "HIGH",
@@ -19688,7 +19688,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:3968fb22824530c8edd1eeff2877a2b79abeda0eea67b3b91ed735df27045ae7",
+          "Fingerprint": "sha256:305d34c85a42aec9dd8c1207bc6b538a4996720f99ed69eedfcbf9fac86c94e1",
           "Title": "perl: Perl: Information disclosure via integer overflow in pack/unpack operations",
           "Description": "Perl versions before 5.40.5-RC1, from 5.41.0 before 5.42.3-RC1, from 5.43.0 before 5.43.11 have an integer overflow in S_measure_struct leading to an out-of-bounds heap read in pack and unpack.\n\nS_measure_struct adds each item's size times its repeat count to a running total with no overflow check, so a large repeat count in a pack or unpack template wraps the signed SSize_t total negative. The @, X, and x position codes then guard their moves with a signed length comparison that passes when the length is negative, advancing the buffer pointer out of bounds.\n\nA template derived from untrusted input can read heap memory past the buffer and return it to the caller.",
           "Severity": "HIGH",
@@ -19747,7 +19747,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:49c0f10ba0f78d49569683a48006a3b49d91201c8d63225b3ac68f4783f2c59f",
+          "Fingerprint": "sha256:d103ff732887c0872bb51a883733992f47535e4a7e17c9c9dfbcc3e0ef0067be",
           "Title": "Storable: Storable: Denial of Service via signed integer overflow in deserialization",
           "Description": "Storable versions before 3.41 for Perl have a signed integer overflow when deserializing a crafted SX_HOOK record.\n\nretrieve_hook_common reads a signed 32-bit item count from an SX_HOOK record and calls av_extend with that count plus one. A count of I32_MAX wraps the addition to a negative value.\n\nA crafted blob passed to thaw or retrieve triggers the overflow; av_extend receives the negative count and dies with a panic, terminating the deserialization.",
           "Severity": "HIGH",
@@ -19799,7 +19799,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:19094310a3450ee64f522adc71eb358b85c13b1cf09e5f44ec8dc6daaad1e74c",
+          "Fingerprint": "sha256:6d168105a2fe1050825e65532047dbe7ba3f80437c5c4cfe6e38e966d95d3321",
           "Title": "perl-Archive-Tar: perl-Archive-Tar: Denial of Service via crafted tar header with large entry size",
           "Description": "Archive::Tar versions before 3.10 for Perl allow memory exhaustion via attacker controlled entry size field in tar header.\n\n_read_tar() reads each entry's payload with $handle-\u003eread($$data, $block), where $block is derived from the entry's 12-byte size field in the tar header with no upper bound on that value.\n\nA crafted header declaring a multi-gigabyte size causes Perl to allocate a scalar of that size.",
           "Severity": "HIGH",
@@ -19868,7 +19868,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:2df2b8305efa4c5ad1729593f5a7d524844fc094465b679b03560000f73c36de",
+          "Fingerprint": "sha256:e0cc846d9fd117febe3a077a6b74627bae3aa6eb2832a220fc15358c3baedced",
           "Title": "perl: Perl: Incorrect regular expression processing via large regular expressions",
           "Description": "Perl versions before 5.40.5-RC1, from 5.41.0 before 5.42.3-RC1, from 5.43.0 before 5.43.10 produce silently incorrect regular expression matches when an alternation of more than 65535 fixed string branches is compiled into a trie in Perl_study_chunk.\n\nWhen such branches are combined into a trie, the delta between the first branch and the shared tail is stored in a 16-bit field. A branch count above 65535 overflows the field, and the trie's match decision table is truncated with no warning or error.\n\nA pattern of this shape produces false positive matches (matching strings it should not) and false negative matches (failing to match strings it should). When such a pattern gates an access or filtering decision, the result is wrong.",
           "Severity": "CRITICAL",
@@ -19927,7 +19927,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:e076c885c834f9adc23cef89f2fb31aad131f82e67e6be56ce88ece545c5ae9c",
+          "Fingerprint": "sha256:43942544f94798edf66167b24a03cb5582f65183033979fea9cb863fe7903895",
           "Title": "perl-archive-tar: perl-archive-tar: Path traversal via crafted symlinks allows arbitrary file access",
           "Description": "Archive::Tar versions before 3.08 for Perl extract symlinks with attacker controlled targets outside the extraction directory.\n\n_make_special_file() passes the tar header's linkname to symlink() without validating it against absolute paths or .. segments. The secure-extract mode check that guards regular file extraction does not cover the symlink target.\n\nA subsequent open through the extracted name reads or writes the attacker chosen path.",
           "Severity": "CRITICAL",
@@ -20002,7 +20002,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:301fee837d230952ae36a1aa78f95d31b49324bdd6f1e5db291c129bbd228701",
+          "Fingerprint": "sha256:49aec11e3a1075c4c9be99369958ff5ceb17a5043730dac066bd7ec8e2c9cbff",
           "Title": "perl: Perl: Heap buffer overflow when compiling regular expressions on 32-bit builds",
           "Description": "Perl versions before 5.40.5-RC1, from 5.41.0 before 5.42.3-RC1, from 5.43.0 before 5.43.11 have a heap buffer overflow when compiling regular expressions with a repeated fixed string on 32-bit builds.\n\nPerl_study_chunk in regcomp_study.c checked the size of the joined substring buffer in characters rather than bytes. For a quantified fixed substring with a large minimum count, the byte length mincount * l could overflow SSize_t, producing an undersized SvGROW allocation; the subsequent copy writes past the end of the buffer.\n\nA caller that compiles an attacker-controlled regular expression on a 32-bit perl build triggers a heap buffer overflow at compile time.",
           "Severity": "CRITICAL",
@@ -20060,7 +20060,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:36e95f9ef973c3892284ae26e2c05b19e73d9ee5bfe99be717f39954db9a04b1",
+          "Fingerprint": "sha256:8ccc9fbe21df40a8956f3c317e253df300b0cc2bbb493199c1867a189433e263",
           "Title": "perl-Archive-Tar: perl-Archive-Tar: Arbitrary file modification via crafted hardlinks during archive extraction",
           "Description": "Archive::Tar versions before 3.08 for Perl extract hardlinks to attacker controlled paths outside the extraction directory.\n\n_make_special_file() passes the tar header's linkname to link() without validating it against absolute paths or .. segments, creating a hardlink that shares the victim file's inode.\n\nA subsequent write through the extracted name modifies the victim file, and the post-extraction chmod, chown, and utime block in _extract_file() (guarded only against symlinks via -l) applies the tar header's mode, owner, and timestamps to the shared inode during extraction alone.",
           "Severity": "HIGH",
@@ -20117,7 +20117,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:a75fe1cfe74c38cc8e927eacabc3c968795b599c1268cec38c27df53fe09c67d",
+          "Fingerprint": "sha256:26fc13cf932eb939da1effb5a9a777f153a7a3f9a809856342583a85c37b2634",
           "Title": "perl-IO-Compress: perl-IO-Compress: Arbitrary code execution via attacker-controlled output glob",
           "Description": "IO::Compress versions before 2.220 for Perl can execute arbitrary code in File::GlobMapper via an attacker-controlled output glob.\n\n_parseOutputGlob() wraps the caller-supplied output glob string in double quotes and stores it in the parser state; _getFiles() then runs the stored expression through eval STRING. A literal double quote in the output glob closes the dquote wrapper, and the characters that follow are evaluated as Perl.\n\nArbitrary Perl in the output glob executes at the calling process's privilege.",
           "Severity": "HIGH",
@@ -20196,7 +20196,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:6e5a4de3d8e8490b3ac89dfef86bea97bca73277543325c47ac1c47381ae7a64",
+          "Fingerprint": "sha256:887b9520646441f2475868a96b4a3d23a78ea0ff850c674e3d508c2df2a641a3",
           "Title": "perl: Perl: Information disclosure via integer overflow in pack/unpack operations",
           "Description": "Perl versions before 5.40.5-RC1, from 5.41.0 before 5.42.3-RC1, from 5.43.0 before 5.43.11 have an integer overflow in S_measure_struct leading to an out-of-bounds heap read in pack and unpack.\n\nS_measure_struct adds each item's size times its repeat count to a running total with no overflow check, so a large repeat count in a pack or unpack template wraps the signed SSize_t total negative. The @, X, and x position codes then guard their moves with a signed length comparison that passes when the length is negative, advancing the buffer pointer out of bounds.\n\nA template derived from untrusted input can read heap memory past the buffer and return it to the caller.",
           "Severity": "HIGH",
@@ -20255,7 +20255,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:57fcdd40b90b4814a1f7f421beff24a750b6017b8497cac7d144ba64baff6a36",
+          "Fingerprint": "sha256:4d68b52e40e6961b7d909541a9d86bb4665bd5b8dd10b50c76853d0378a37633",
           "Title": "Storable: Storable: Denial of Service via signed integer overflow in deserialization",
           "Description": "Storable versions before 3.41 for Perl have a signed integer overflow when deserializing a crafted SX_HOOK record.\n\nretrieve_hook_common reads a signed 32-bit item count from an SX_HOOK record and calls av_extend with that count plus one. A count of I32_MAX wraps the addition to a negative value.\n\nA crafted blob passed to thaw or retrieve triggers the overflow; av_extend receives the negative count and dies with a panic, terminating the deserialization.",
           "Severity": "HIGH",
@@ -20307,7 +20307,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:3b66eb769f6d5ec7a4c90b7f328729d6708542eed8ac718869d227b2b501a8b5",
+          "Fingerprint": "sha256:4da37ac6fb2ff97f0cc7f48fe5cdae6f890bff8fa19c564efaa17610afdbe325",
           "Title": "perl-Archive-Tar: perl-Archive-Tar: Denial of Service via crafted tar header with large entry size",
           "Description": "Archive::Tar versions before 3.10 for Perl allow memory exhaustion via attacker controlled entry size field in tar header.\n\n_read_tar() reads each entry's payload with $handle-\u003eread($$data, $block), where $block is derived from the entry's 12-byte size field in the tar header with no upper bound on that value.\n\nA crafted header declaring a multi-gigabyte size causes Perl to allocate a scalar of that size.",
           "Severity": "HIGH",
@@ -20375,7 +20375,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:350ac04210669c0cd5963185d814d76b1d3b050a247734095e363af00dc2aa09",
+          "Fingerprint": "sha256:d7c1c4dad220258329f14b2d93d2dfc59cbb998253acd4f68d9d87c35a5817c3",
           "Title": "util-linux: util-linux: failed external mount helper still runs privileged X-mount post-hooks",
           "Description": "util-linux versions through 2.41.5 and 2.42.2 fail to check mount helper exit status before running post-mount hooks, allowing unprivileged users to execute privileged operations on pre-existing filesystems. Attackers can exploit X-mount.idmap or X-mount.owner hooks to clone filesystems with inherited suid bits or modify target inode permissions after a helper fails, achieving privilege escalation.",
           "Severity": "HIGH",
@@ -20427,7 +20427,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:624edbb29f64c33dd04e9211ca71ec3bf4c67fe8b2ea1089f04ddca5874c471f",
+          "Fingerprint": "sha256:d2738dc7e098bbf66be1e76b6b4eaf683a8940a939b501d64c21f5417fc16393",
           "Title": "util-linux: util-linux: nsenter --join-cgroup leaks root cgroup migration authority",
           "Description": "The nsenter --join-cgroup option opens the target cgroup.procs file as root and leaves that file descriptor open across later namespace and credential changes and across execve(). Because the kernel checks later cgroup migrations using the credentials from the original open, a program run in an attacker-controlled target can inherit root's ability to move host processes between cgroups. After a privileged operator uses --join-cgroup against that target, an unprivileged user can migrate and terminate unrelated root processes.",
           "Severity": "HIGH",
@@ -20475,7 +20475,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:aa07da1023fca7c02425686b64d3acbbfad9fde3785c9b8ee49a294f083a8c7c",
+          "Fingerprint": "sha256:fb98592ddaf4557f6d367af1c0aeb938025f29bf72c9ca19cf2a7f3d74151ad9",
           "Title": "util-linux: util-linux: X-mount.subdir detached-tree resolution can escape via intermediate symlinks",
           "Description": "The X-mount.subdir option uses a detached-tree fast path on Linux 6.15 and later and passes the configured subdirectory to open_tree() with AT_SYMLINK_NOFOLLOW. That flag does not stop intermediate symlink traversal or keep resolution inside the newly mounted filesystem. A local unprivileged user with an fstab-authorized X-mount.subdir entry can attach a host path at the intended mountpoint.",
           "Severity": "HIGH",
@@ -20522,7 +20522,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:1030461edeedfc76a6f4bd5f65d6279d2c45e853f1a4072d000b5ef8587a265a",
+          "Fingerprint": "sha256:b7ab1f04d414cdb4ee6ab635b8742219c044fe39ab4541c269f45817755f7e3e",
           "Title": "util-linux: util-linux: restricted bind mounts do not pin the source, allowing X-mount.owner/group/mode redirection",
           "Description": "A flaw was found in util-linux. Restricted bind mounts take the source path from fstab but do not pin that source before the privileged mount. A local unprivileged user who can replace the authorized source or a writable ancestor can redirect SUID mount(8) to bind another host directory. If the fstab entry also sets X-mount.owner, X-mount.group, or X-mount.mode, root then changes ownership or mode on that redirected inode.",
           "Severity": "HIGH",
@@ -20646,7 +20646,7 @@
             "Name": "The Go Vulnerability Database",
             "URL": "https://pkg.go.dev/vuln/"
           },
-          "Fingerprint": "sha256:c146c5434c463866462eadc0b3735f695dcb554ff4201b83194b61664c215aa2",
+          "Fingerprint": "sha256:c8014e81479a05bfc820fa054637a43516e3a0c7fb1daf35de2952efbdea159c",
           "Title": "crypto/tls: crypto/tls: Incorrect certificate validation during TLS session resumption",
           "Description": "During session resumption in crypto/tls, if the underlying Config has its ClientCAs or RootCAs fields mutated between the initial handshake and the resumed handshake, the resumed handshake may succeed when it should have failed. This may happen when a user calls Config.Clone and mutates the returned Config, or uses Config.GetConfigForClient. This can cause a client to resume a session with a server that it would not have resumed with during the initial handshake, or cause a server to resume a session with a client that it would not have resumed with during the initial handshake.",
           "Severity": "CRITICAL",
@@ -20730,7 +20730,7 @@
             "Name": "The Go Vulnerability Database",
             "URL": "https://pkg.go.dev/vuln/"
           },
-          "Fingerprint": "sha256:2c9c9c498791040e534f5b647d107e8e638f4515b21e26abdacc8fd057c92d79",
+          "Fingerprint": "sha256:53217bd553167cf219a50bc4d47690c479f770cd23211733ecba23b1aca61531",
           "Title": "golang: net/url: Memory exhaustion in query parameter parsing in net/url",
           "Description": "The net/url package does not set a limit on the number of query parameters in a query. While the maximum size of query parameters in URLs is generally limited by the maximum request header size, the net/http.Request.ParseForm method can parse large URL-encoded forms. Parsing a large form containing many unique query parameters can cause excessive memory consumption.",
           "Severity": "HIGH",
@@ -21086,7 +21086,7 @@
             "Name": "The Go Vulnerability Database",
             "URL": "https://pkg.go.dev/vuln/"
           },
-          "Fingerprint": "sha256:363cc0c4d9ea4574e9a5d2a563e0aac3f8463266b2f2bf7aa1471ea811d5a503",
+          "Fingerprint": "sha256:8aee96daad57fd4b1ae54cc501e11db38b8d44f9e2c8683538e4a59071d3a171",
           "Title": "crypto/x509: golang: Denial of Service due to excessive resource consumption via crafted certificate",
           "Description": "Within HostnameError.Error(), when constructing an error string, there is no limit to the number of hosts that will be printed out. Furthermore, the error string is constructed by repeated string concatenation, leading to quadratic runtime. Therefore, a certificate provided by a malicious actor can result in excessive resource consumption.",
           "Severity": "HIGH",
@@ -21165,7 +21165,7 @@
             "Name": "The Go Vulnerability Database",
             "URL": "https://pkg.go.dev/vuln/"
           },
-          "Fingerprint": "sha256:87b72c43c502e255601b8c6adfab7a51beae5da2b526303409e52447e82cd6ea",
+          "Fingerprint": "sha256:10557bbb1ffdda7f5cae9eec365dcca97ee1cbcb4c23d21a686bad7584b4df3a",
           "Title": "net/url: Incorrect parsing of IPv6 host literals in net/url",
           "Description": "url.Parse insufficiently validated the host/authority component and accepted some invalid URLs.",
           "Severity": "HIGH",
@@ -21490,7 +21490,7 @@
             "Name": "The Go Vulnerability Database",
             "URL": "https://pkg.go.dev/vuln/"
           },
-          "Fingerprint": "sha256:fcb8a0657512c571806a5c07c514c0763ab57c4a5aa62b9ba0ef3c82428c6874",
+          "Fingerprint": "sha256:6686030e2745d8c800d51ececcae0fafe83d42bc20938a23c71767cb05e1f66d",
           "Title": "crypto/x509: golang: golang crypto/x509: Denial of Service via excessive processing of DNS SAN entries",
           "Description": "(*x509.Certificate).VerifyHostname previously called matchHostnames in a loop over all DNS Subject Alternative Name (SAN) entries. This caused strings.Split(host, \".\") to execute repeatedly on the same input hostname. With a large DNS SAN list, verification costs scaled quadratically based on the number of SAN entries multiplied by the hostname's label count. Because x509.Verify validates hostnames before building the certificate chain, this overhead occurred even for untrusted certificates.",
           "Severity": "HIGH",
@@ -21655,7 +21655,7 @@
             "Name": "The Go Vulnerability Database",
             "URL": "https://pkg.go.dev/vuln/"
           },
-          "Fingerprint": "sha256:06611459ef4236e80e80f53e4bfbfeabbb9002acd2356edeaca09124fa2abed9",
+          "Fingerprint": "sha256:c9ebb8ee9fc8ef6324f49e65a0710c9aa61999b655f5b740136a6e175163e025",
           "Title": "crypto/x509: crypto/tls: golang: Go: Denial of Service vulnerability in certificate chain building",
           "Description": "During chain building, the amount of work that is done is not correctly limited when a large number of intermediate certificates are passed in VerifyOptions.Intermediates, which can lead to a denial of service. This affects both direct users of crypto/x509 and users of crypto/tls.",
           "Severity": "HIGH",
@@ -21918,7 +21918,7 @@
             "Name": "The Go Vulnerability Database",
             "URL": "https://pkg.go.dev/vuln/"
           },
-          "Fingerprint": "sha256:88d937033b600dc6e280daa41928712c07cc8aa870b149619edbd0e0dd552f52",
+          "Fingerprint": "sha256:4f9e22f4d481129a628798f8a71c53bad7c0ba31a232ec1ec8f329ca5a4070cd",
           "Title": "crypto/x509: golang: Go crypto/x509: Denial of Service via inefficient certificate chain validation",
           "Description": "Validating certificate chains which use policies is unexpectedly inefficient when certificates in the chain contain a very large number of policy mappings, possibly causing denial of service. This only affects validation of otherwise trusted certificate chains, issued by a root CA in the VerifyOptions.Roots CertPool, or in the system certificate pool.",
           "Severity": "HIGH",
@@ -21998,7 +21998,7 @@
             "Name": "The Go Vulnerability Database",
             "URL": "https://pkg.go.dev/vuln/"
           },
-          "Fingerprint": "sha256:d699ea60fbb7424b35510e371578c6c9185f9d94c19b97350145f1a2ef286d14",
+          "Fingerprint": "sha256:332886e7c5df1ee1a35dcd694467156cc9b176a1a1b3f99bf689d0466b146d79",
           "Title": "crypto/tls: golang: Go crypto/tls: Denial of Service via multiple TLS 1.3 key update messages",
           "Description": "If one side of the TLS connection sends multiple key update messages post-handshake in a single record, the connection can deadlock, causing uncontrolled consumption of resources. This can lead to a denial of service. This only affects TLS 1.3.",
           "Severity": "HIGH",
@@ -22215,7 +22215,7 @@
             "Name": "The Go Vulnerability Database",
             "URL": "https://pkg.go.dev/vuln/"
           },
-          "Fingerprint": "sha256:893596e90ff4f4eeef83f28a9f9aaa3867fdb14104e384fd546995121462e4a8",
+          "Fingerprint": "sha256:2b25de5ad6d81d1765d4565eb9ad54bfce31139674121ef055aafcb2fbdde8dd",
           "Title": "net: golang: Go net package: Denial of Service via long CNAME response in LookupCNAME",
           "Description": "When using LookupCNAME with the cgo DNS resolver, a very long CNAME response can trigger a double-free of C memory and a crash.",
           "Severity": "HIGH",
@@ -22415,7 +22415,7 @@
             "Name": "The Go Vulnerability Database",
             "URL": "https://pkg.go.dev/vuln/"
           },
-          "Fingerprint": "sha256:34b08c37d955d3ead0d37b79a5f9756af9e8199c4b2753fabe19c2b71e0b40f3",
+          "Fingerprint": "sha256:9d08cdc93f0e68bc92d72dc5baeb6423312a241997b91726a9d83f47f9f0a6de",
           "Title": "net/http/internal/http2: golang: golang.org/x/net: Go HTTP/2: Denial of Service via malformed SETTINGS_MAX_FRAME_SIZE frame",
           "Description": "When processing HTTP/2 SETTINGS frames, transport will enter an infinite loop of writing CONTINUATION frames if it receives a SETTINGS_MAX_FRAME_SIZE with a value of 0.",
           "Severity": "HIGH",
@@ -22576,7 +22576,7 @@
             "Name": "The Go Vulnerability Database",
             "URL": "https://pkg.go.dev/vuln/"
           },
-          "Fingerprint": "sha256:4632fc24e6114187360a023cbe210b8129295e57de2869af96f106135b2b2cf9",
+          "Fingerprint": "sha256:1aacf5cef12b2727d6a361e7dfd0e56c1a5065e970d40800277665324e1debba",
           "Title": "encoding/asn1: golang: Go encoding/asn1: Denial of Service via excessive recursion in Unmarshal",
           "Description": "Enforce a recursion limit in Unmarshal to prevent stack exhaustion when parsing deeply-nested, recursive structures.",
           "Severity": "HIGH",
@@ -22656,7 +22656,7 @@
             "Name": "The Go Vulnerability Database",
             "URL": "https://pkg.go.dev/vuln/"
           },
-          "Fingerprint": "sha256:631e1187403af48b6f2c2670c7f30937d26b308725ba34d5db42ac8795213d70",
+          "Fingerprint": "sha256:7a08c258aa93afc70f421ca4963b164af46e3583f0bdea2e37ffb7d1b3ce3bcc",
           "Title": "net/mail: golang: Go net/mail: Denial of Service via crafted email inputs",
           "Description": "Well-crafted inputs reaching ParseAddress, ParseAddressList, and ParseDate were able to trigger excessive CPU exhaustion and memory allocations.",
           "Severity": "HIGH",
@@ -22830,7 +22830,7 @@
             "Name": "The Go Vulnerability Database",
             "URL": "https://pkg.go.dev/vuln/"
           },
-          "Fingerprint": "sha256:49c0914dbd5001215d67ec75691e209688f4ee8446c922ba5558af8a77299efe",
+          "Fingerprint": "sha256:9bb6e039573a70e3cc72ff7ebd1ea3dbbb7d1c395e4fd7a5c5e5bc5a9c871087",
           "Title": "golang.org/x/net/idna: golang: net/http: golang.org/x/net/idna: Privilege escalation via incorrect Punycode label processing",
           "Description": "The ToASCII and ToUnicode functions incorrectly accept Punycode-encoded labels that decode to an ASCII-only label. For example, ToUnicode(\"xn--example-.com\") incorrectly returns the name \"example.com\" rather than an error. This behavior can lead to privilege escalation in programs using the idna package. For example, a program which performs privilege checks on the ASCII hostname may reject \"example.com\" but permit \"xn--example-.com\". If that program subsequently converts the ASCII hostname to Unicode, it will inadvertently permits access to the Unicode name \"example.com\".",
           "Severity": "HIGH",
@@ -23040,7 +23040,7 @@
             "Name": "The Go Vulnerability Database",
             "URL": "https://pkg.go.dev/vuln/"
           },
-          "Fingerprint": "sha256:0b7da1a84fe8d5abf99058903fb79ed56ed30e63499190c53f4e48b9fa5a1697",
+          "Fingerprint": "sha256:5dcb22c09f4d0bf48a4ca3bf01be7c58bd861e1ec85bc0b191f679371eb42942",
           "Title": "golang: Go os.Root: Symlink following vulnerability allows directory traversal",
           "Description": "On Unix systems, opening a file in an os.Root improperly follows symlinks to locations outside of the Root when the final path component of the a path is a symbolic link and the path ends in /. For example, 'root.Open(\"symlink/\")' will open \"symlink\" even when \"symlink\" is a symbolic link pointing outside of the root.",
           "Severity": "HIGH",
@@ -23113,7 +23113,7 @@
             "Name": "The Go Vulnerability Database",
             "URL": "https://pkg.go.dev/vuln/"
           },
-          "Fingerprint": "sha256:fad768e93c8ee3d6ecb403b7e16eefb05e25c081b8151084acffc4aceced3400",
+          "Fingerprint": "sha256:1982c60c2e183b49c1a808db1ca5b476637b1931a15afeaaf54c141851a615d0",
           "Title": "net: golang: Go net package: Denial of Service via NUL byte in Dial and LookupPort on Windows",
           "Description": "The Dial and LookupPort functions panic on Windows when provided with an input containing a NUL (0).",
           "Severity": "HIGH",
@@ -23205,7 +23205,7 @@
             "Name": "The Go Vulnerability Database",
             "URL": "https://pkg.go.dev/vuln/"
           },
-          "Fingerprint": "sha256:242d3fef0ffdfe022ccf6bf25f3fda6cbe241fdbbdb82f8b86b320a604d44e7e",
+          "Fingerprint": "sha256:d3da22dbd2a54bc96568802a0dc8728e35ba104b1d6076daf5bb5c3731a64fa9",
           "Title": "net/mail: golang: net/mail: Denial of Service via pathological email address parsing",
           "Description": "Pathological inputs could cause DoS through consumePhrase when parsing an email address according to RFC 5322.",
           "Severity": "HIGH",
@@ -23377,7 +23377,7 @@
             "Name": "The Go Vulnerability Database",
             "URL": "https://pkg.go.dev/vuln/"
           },
-          "Fingerprint": "sha256:3e82d48850a55cfe09085b10180b1afd90aa72d0a9f8de4426693cd2ed448b5d",
+          "Fingerprint": "sha256:d4d86af3a0b53dbef476c167cb39979e89ace584bacf32a310d02937713a5537",
           "Title": "mime: golang: Golang MIME: Denial of Service via maliciously-crafted MIME header",
           "Description": "Decoding a maliciously-crafted MIME header containing many invalid encoded-words can consume excessive CPU.",
           "Severity": "HIGH",
@@ -23464,7 +23464,7 @@
             "Name": "The Go Vulnerability Database",
             "URL": "https://pkg.go.dev/vuln/"
           },
-          "Fingerprint": "sha256:a7ce8a37b21c47149391147d04d17b45fa9d9b72056bb829b551346bae75f561",
+          "Fingerprint": "sha256:d59038d31c53d0e7e8f58a02b451947eb9709ca6a48ee54d2952497ec4887cb9",
           "Title": "net/http: golang: Go net/http: Unencrypted HTTP/2 connections vulnerable to Denial of Service",
           "Description": "When a server is configured to support unencrypted HTTP/2, it reads a few bytes from each new connection to see if they contain the HTTP/2 client preface. ReadHeaderTimeout is unexpectedly not being applied when doing this.",
           "Severity": "HIGH",
@@ -23555,7 +23555,7 @@
             "Name": "The Go Vulnerability Database",
             "URL": "https://pkg.go.dev/vuln/"
           },
-          "Fingerprint": "sha256:a9c668c0beedaf86c7592ad0141d043ff7617e263ca0be33a5056a7b4f24c0d3",
+          "Fingerprint": "sha256:2e957f89adda0401d908203ab4a3cbf2d4a95289d0769a1438b71070a0f37d91",
           "Title": "html/template: golang: Go html/template: Cross-Site Scripting via pathological input",
           "Description": "Previously, pathological inputs could close an unescaped '/' early, allowing for attack-controlled data to inject arbitrary content, potentially leading to XSS.",
           "Severity": "HIGH",
@@ -23634,7 +23634,7 @@
             "Name": "The Go Vulnerability Database",
             "URL": "https://pkg.go.dev/vuln/"
           },
-          "Fingerprint": "sha256:9d0b6aee8a884c16b9c2265999e5843a570d716cb25d9c706fd08fcba50dd8e0",
+          "Fingerprint": "sha256:ce9d0db4b6b656f0b897dbc01c1199dc328d7d51c35a2723fee0d308d0dfabaf",
           "Title": "encoding/xml: golang: Go: Denial of Service via XML decoding recursion depth issue",
           "Description": "Previously, DecodeElement would reset the depth counter causing it to never fire; this could lead to stack exhaustion.",
           "Severity": "HIGH",
@@ -23725,7 +23725,7 @@
             "Name": "The Go Vulnerability Database",
             "URL": "https://pkg.go.dev/vuln/"
           },
-          "Fingerprint": "sha256:b4d23851c2bee878f704562c626a31e480d7cd3f3b589041d80491fa5a7b5708",
+          "Fingerprint": "sha256:1a40386947f7bf8465ff5b953fe35f964af042ee8db9de181df20138c443f4fc",
           "Title": "net/url: golang: golang net/url: Denial of Service from quadratic complexity in path resolution",
           "Description": "Previously, resolving relative paths containing parent directory ('..') segments performed string conversions and buffer rewrites on each step, resulting in quadratic time complexity and high memory allocation overhead. Now, path resolution operates on a byte buffer using index-based backtracking for '..' segments, eliminating the quadratic time complexity and significantly reducing memory allocations.",
           "Severity": "HIGH",
@@ -23804,7 +23804,7 @@
             "Name": "The Go Vulnerability Database",
             "URL": "https://pkg.go.dev/vuln/"
           },
-          "Fingerprint": "sha256:c0652314a741c92a6c06377d71088ec16f39cb5be54c4454d3af6a3a54e116f1",
+          "Fingerprint": "sha256:7481c0494b41d30a753bd648ad2d7c3dc8dc733e69ce2be2ceb64cfbb5b7b855",
           "Title": "crypto/tls: golang: Golang crypto/tls: Denial of Service via indefinite KeyUpdate messages",
           "Description": "Handshake messages, such as KeyUpdate, are always considered as state-advancing, regardless of whether a handshake has been completed or not. As a result, a malicious client can keep sending KeyUpdate messages to force the server to keep performing key derivation operations indefinitely.",
           "Severity": "HIGH",
