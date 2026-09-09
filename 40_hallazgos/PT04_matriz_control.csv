@@ -1,0 +1,581 @@
+﻿herramienta,tipo,hallazgo,severidad,iso27001,cobit2019
+Lynis,Suggestion,BOOT-5180|Determine runlevel and services at startup|-|-|,Suggestion,A.8.9,DSS01.03
+Lynis,Suggestion,KRNL-5788|Determine why /vmlinuz or /boot/vmlinuz is missing on this Debian/Ubuntu system.|/vmlinuz or /boot/vmlinuz|-|,Suggestion,Sin clasificar,Sin clasificar
+Lynis,Suggestion,"KRNL-5820|If not required, consider explicit disabling of core dump in /etc/security/limits.conf file|-|-|",Suggestion,Sin clasificar,Sin clasificar
+Lynis,Suggestion,AUTH-9262|Install a PAM module for password strength testing like pam_cracklib or pam_passwdqc or libpam-passwdqc|-|-|,Suggestion,A.5.17,DSS05.04
+Lynis,Suggestion,AUTH-9284|Look at the locked accounts and consider removing them|-|-|,Suggestion,A.5.17,DSS05.04
+Lynis,Suggestion,AUTH-9286|Configure minimum password age in /etc/login.defs|-|-|,Suggestion,A.5.17,DSS05.04
+Lynis,Suggestion,AUTH-9286|Configure maximum password age in /etc/login.defs|-|-|,Suggestion,A.5.17,DSS05.04
+Lynis,Suggestion,"AUTH-9328|Default umask in /etc/login.defs could not be found and defaults usually to 022, which could be more strict like 027|-|-|",Suggestion,A.5.17,DSS05.04
+Lynis,Suggestion,"FILE-6310|To decrease the impact of a full /home file system, place /home on a separate partition|-|-|",Suggestion,A.8.9,BAI10.02
+Lynis,Suggestion,"FILE-6310|To decrease the impact of a full /tmp file system, place /tmp on a separate partition|-|-|",Suggestion,A.8.9,BAI10.02
+Lynis,Suggestion,"FILE-6310|To decrease the impact of a full /var file system, place /var on a separate partition|-|-|",Suggestion,A.8.9,BAI10.02
+Lynis,Suggestion,"USB-1000|Disable drivers like USB storage when not used, to prevent unauthorized storage or data theft|-|-|",Suggestion,A.5.17,DSS05.04
+Lynis,Suggestion,"STRG-1846|Disable drivers like firewire storage when not used, to prevent unauthorized storage or data theft|-|-|",Suggestion,A.5.17,DSS05.04
+Lynis,Suggestion,NAME-4028|Check DNS configuration for the dns domain name|-|-|,Suggestion,A.8.9,BAI10.02
+Lynis,Suggestion,PKGS-7370|Install debsums utility for the verification of packages with known good database.|-|-|,Suggestion,A.8.8,DSS05.07
+Lynis,Warning,PKGS-7392|Found one or more vulnerable packages.|-|-|,Warning,A.8.8,DSS05.07
+Lynis,Suggestion,"PKGS-7392|Update your system with apt-get update, apt-get upgrade, apt-get dist-upgrade and/or unattended-upgrades|-|-|",Suggestion,A.8.8,DSS05.07
+Lynis,Suggestion,PKGS-7394|Install package apt-show-versions for patch management purposes|-|-|,Suggestion,A.8.8,DSS05.07
+Lynis,Suggestion,PKGS-7420|Consider using a tool to automatically apply upgrades|-|-|,Suggestion,Sin clasificar,Sin clasificar
+Lynis,Suggestion,NETW-3200|Determine if protocol 'dccp' is really needed on this system|-|-|,Suggestion,Sin clasificar,Sin clasificar
+Lynis,Suggestion,NETW-3200|Determine if protocol 'sctp' is really needed on this system|-|-|,Suggestion,Sin clasificar,Sin clasificar
+Lynis,Suggestion,NETW-3200|Determine if protocol 'rds' is really needed on this system|-|-|,Suggestion,Sin clasificar,Sin clasificar
+Lynis,Suggestion,NETW-3200|Determine if protocol 'tipc' is really needed on this system|-|-|,Suggestion,Sin clasificar,Sin clasificar
+Lynis,Suggestion,LOGG-2130|Check if any syslog daemon is running and correctly configured.|-|-|,Suggestion,A.8.15,DSS01.03
+Lynis,Warning,"LOGG-2138|klogd is not running, which could lead to missing kernel messages in log files|-|-|",Warning,A.8.15,DSS01.03
+Lynis,Suggestion,"BANN-7126|Add a legal banner to /etc/issue, to warn unauthorized users|-|-|",Suggestion,A.5.17,DSS05.04
+Lynis,Suggestion,"BANN-7130|Add legal banner to /etc/issue.net, to warn unauthorized users|-|-|",Suggestion,A.5.17,DSS05.04
+Lynis,Suggestion,ACCT-9622|Enable process accounting|-|-|,Suggestion,A.8.9,DSS01.03
+Lynis,Suggestion,ACCT-9626|Enable sysstat to collect accounting (no results)|-|-|,Suggestion,Sin clasificar,Sin clasificar
+Lynis,Suggestion,ACCT-9628|Enable auditd to collect audit information|-|-|,Suggestion,A.8.15,DSS01.03
+Lynis,Suggestion,FINT-4350|Install a file integrity tool to monitor changes to critical and sensitive files|-|-|,Suggestion,Sin clasificar,Sin clasificar
+Lynis,Suggestion,TOOL-5002|Determine if automation tools are present for system management|-|-|,Suggestion,Sin clasificar,Sin clasificar
+Lynis,Suggestion,FILE-7524|Consider restricting file permissions|See screen output or log file|text:Use chmod to change file permissions|,Suggestion,A.8.15,DSS01.03
+Lynis,Suggestion,KRNL-6000|One or more sysctl values differ from the scan profile and could be tweaked||Change sysctl value or disable test (skip-test=KRNL-6000:<sysctl-key>)|,Suggestion,Sin clasificar,Sin clasificar
+Lynis,Suggestion,"HRDN-7230|Harden the system by installing at least one malware scanner, to perform periodic file system scans|-|Install a tool like rkhunter, chkrootkit, OSSEC, Wazuh|",Suggestion,A.8.2,DSS05.04
+Docker Bench,WARN,[WARN] 1.1.1 - Ensure a separate partition for containers has been created (Automated),Warning,A.8.9,BAI10.02
+Docker Bench,WARN,[WARN] 1.1.3 - Ensure auditing is configured for the Docker daemon (Automated),Warning,A.8.15,DSS01.03
+Docker Bench,WARN,[WARN] 1.1.4 - Ensure auditing is configured for Docker files and directories -/run/containerd (Automated),Warning,A.8.15,DSS01.03
+Docker Bench,WARN,[WARN] 1.1.5 - Ensure auditing is configured for Docker files and directories - /var/lib/docker (Automated),Warning,A.8.15,DSS01.03
+Docker Bench,WARN,[WARN] 2.2 - Ensure network traffic is restricted between containers on the default bridge (Scored),Warning,A.8.20,DSS05.02
+Docker Bench,WARN,[WARN] 2.9 - Enable user namespace support (Scored),Warning,A.8.20,DSS05.02
+Docker Bench,WARN,[WARN] 2.12 - Ensure that authorization for Docker client commands is enabled (Scored),Warning,A.5.17,DSS05.04
+Docker Bench,WARN,[WARN] 2.13 - Ensure centralized and remote logging is configured (Scored),Warning,A.8.15,DSS01.03
+Docker Bench,WARN,[WARN] 2.14 - Ensure containers are restricted from acquiring new privileges (Scored),Warning,A.8.2,DSS05.04
+Docker Bench,WARN,[WARN] 2.15 - Ensure live restore is enabled (Scored),Warning,A.8.13,DSS04.07
+Docker Bench,WARN,[WARN] 2.16 - Ensure Userland Proxy is Disabled (Scored),Warning,A.8.9,BAI10.02
+Docker Bench,WARN,[WARN] 3.15 - Ensure that the Docker socket file ownership is set to root:docker (Automated),Warning,A.8.2,DSS05.04
+Docker Bench,WARN,[WARN]       * Wrong ownership for /var/run/docker.sock,Warning,A.8.3,DSS05.04
+Docker Bench,WARN,[WARN] 4.1 - Ensure that a user for the container has been created (Automated),Warning,A.8.9,BAI10.02
+Docker Bench,WARN,[WARN]      * Running as root: greenbone-community-edition-nginx-1,Warning,A.8.2,DSS05.04
+Docker Bench,WARN,[WARN]      * Running as root: greenbone-community-edition-gsad-1,Warning,A.8.2,DSS05.04
+Docker Bench,WARN,[WARN]      * Running as root: greenbone-community-edition-gvmd-1,Warning,A.8.2,DSS05.04
+Docker Bench,WARN,[WARN]      * Running as root: greenbone-community-edition-pg-gvm-1,Warning,A.8.2,DSS05.04
+Docker Bench,WARN,[WARN]      * Running as root: greenbone-community-edition-ospd-openvas-1,Warning,A.8.2,DSS05.04
+Docker Bench,WARN,[WARN]      * Running as root: greenbone-community-edition-openvasd-1,Warning,A.8.2,DSS05.04
+Docker Bench,WARN,[WARN]      * Running as root: si084_dvwa,Warning,A.8.2,DSS05.04
+Docker Bench,WARN,[WARN] 4.5 - Ensure Content trust for Docker is Enabled (Automated),Warning,A.8.9,BAI10.02
+Docker Bench,WARN,[WARN] 4.6 - Ensure that HEALTHCHECK instructions have been added to container images (Automated),Warning,A.8.9,BAI10.02
+Docker Bench,WARN,[WARN]      * No Healthcheck found: [lynis:latest],Warning,A.8.9,BAI10.02
+Docker Bench,WARN,[WARN]      * No Healthcheck found: [ubuntu:24.04],Warning,A.8.9,BAI10.02
+Docker Bench,WARN,[WARN]      * No Healthcheck found: [ubuntu:22.04],Warning,A.8.9,BAI10.02
+Docker Bench,WARN,[WARN]      * No Healthcheck found: [registry.community.greenbone.net/community/openvas-scanner:stable],Warning,A.8.9,BAI10.02
+Docker Bench,WARN,[WARN]      * No Healthcheck found: [registry.community.greenbone.net/community/nginx:latest],Warning,A.8.9,BAI10.02
+Docker Bench,WARN,[WARN]      * No Healthcheck found: [registry.community.greenbone.net/community/gpg-data:latest],Warning,A.8.9,BAI10.02
+Docker Bench,WARN,[WARN]      * No Healthcheck found: [registry.community.greenbone.net/community/gsa:stable-slim],Warning,A.8.9,BAI10.02
+Docker Bench,WARN,[WARN]      * No Healthcheck found: [registry.community.greenbone.net/community/gsad:stable],Warning,A.8.9,BAI10.02
+Docker Bench,WARN,[WARN]      * No Healthcheck found: [wordpress:latest],Warning,A.8.9,BAI10.02
+Docker Bench,WARN,[WARN]      * No Healthcheck found: [postgres:16],Warning,A.8.9,BAI10.02
+Docker Bench,WARN,[WARN]      * No Healthcheck found: [mariadb:11],Warning,A.8.9,BAI10.02
+Docker Bench,WARN,[WARN]      * No Healthcheck found: [registry.community.greenbone.net/community/ospd-openvas:stable],Warning,A.8.9,BAI10.02
+Docker Bench,WARN,[WARN]      * No Healthcheck found: [registry.community.greenbone.net/community/gvm-tools:latest],Warning,A.8.9,BAI10.02
+Docker Bench,WARN,[WARN]      * No Healthcheck found: [bkimminich/juice-shop:latest],Warning,A.8.9,BAI10.02
+Docker Bench,WARN,[WARN]      * No Healthcheck found: [registry.community.greenbone.net/community/redis-server:latest],Warning,A.8.9,BAI10.02
+Docker Bench,WARN,[WARN]      * No Healthcheck found: [vulnerables/web-dvwa:latest],Warning,A.8.8,DSS05.07
+Docker Bench,WARN,"[WARN] 5.2 - Ensure that, if applicable, an AppArmor Profile is enabled (Automated)",Warning,Sin clasificar,Sin clasificar
+Docker Bench,WARN,[WARN]      * No AppArmorProfile Found: greenbone-community-edition-nginx-1,Warning,Sin clasificar,Sin clasificar
+Docker Bench,WARN,[WARN]      * No AppArmorProfile Found: greenbone-community-edition-gsad-1,Warning,Sin clasificar,Sin clasificar
+Docker Bench,WARN,[WARN]      * No AppArmorProfile Found: greenbone-community-edition-gvmd-1,Warning,Sin clasificar,Sin clasificar
+Docker Bench,WARN,[WARN]      * No AppArmorProfile Found: greenbone-community-edition-pg-gvm-1,Warning,Sin clasificar,Sin clasificar
+Docker Bench,WARN,[WARN]      * No AppArmorProfile Found: greenbone-community-edition-ospd-openvas-1,Warning,Sin clasificar,Sin clasificar
+Docker Bench,WARN,[WARN]      * No AppArmorProfile Found: greenbone-community-edition-openvasd-1,Warning,Sin clasificar,Sin clasificar
+Docker Bench,WARN,[WARN]      * No AppArmorProfile Found: greenbone-community-edition-redis-server-1,Warning,Sin clasificar,Sin clasificar
+Docker Bench,WARN,[WARN]      * No AppArmorProfile Found: si084_juiceshop,Warning,Sin clasificar,Sin clasificar
+Docker Bench,WARN,[WARN]      * No AppArmorProfile Found: si084_dvwa,Warning,Sin clasificar,Sin clasificar
+Docker Bench,WARN,"[WARN] 5.3 - Ensure that, if applicable, SELinux security options are set (Automated)",Warning,Sin clasificar,Sin clasificar
+Docker Bench,WARN,[WARN]      * No SecurityOptions Found: greenbone-community-edition-nginx-1,Warning,Sin clasificar,Sin clasificar
+Docker Bench,WARN,[WARN]      * No SecurityOptions Found: greenbone-community-edition-gsad-1,Warning,Sin clasificar,Sin clasificar
+Docker Bench,WARN,[WARN]      * No SecurityOptions Found: greenbone-community-edition-gvmd-1,Warning,Sin clasificar,Sin clasificar
+Docker Bench,WARN,[WARN]      * No SecurityOptions Found: greenbone-community-edition-pg-gvm-1,Warning,Sin clasificar,Sin clasificar
+Docker Bench,WARN,[WARN]      * No SecurityOptions Found: greenbone-community-edition-openvasd-1,Warning,Sin clasificar,Sin clasificar
+Docker Bench,WARN,[WARN]      * No SecurityOptions Found: greenbone-community-edition-redis-server-1,Warning,Sin clasificar,Sin clasificar
+Docker Bench,WARN,[WARN]      * No SecurityOptions Found: si084_juiceshop,Warning,Sin clasificar,Sin clasificar
+Docker Bench,WARN,[WARN]      * No SecurityOptions Found: si084_dvwa,Warning,Sin clasificar,Sin clasificar
+Docker Bench,WARN,[WARN] 5.4 - Ensure that Linux kernel capabilities are restricted within containers (Automated),Warning,A.8.2,DSS05.04
+Docker Bench,WARN,[WARN]      * Capabilities added: CapAdd=[CAP_NET_ADMIN] to greenbone-community-edition-ospd-openvas-1,Warning,A.8.2,DSS05.04
+Docker Bench,WARN,[WARN] 5.8 - Ensure privileged ports are not mapped within containers (Automated),Warning,A.8.2,DSS05.04
+Docker Bench,WARN,[WARN]      * Privileged Port in use: 443 in greenbone-community-edition-nginx-1,Warning,A.8.2,DSS05.04
+Docker Bench,WARN,[WARN] 5.9 - Ensure that only needed ports are open on the container (Manual),Warning,A.8.20,DSS05.02
+Docker Bench,WARN,[WARN]      * Port in use: 443 in greenbone-community-edition-nginx-1,Warning,A.8.20,DSS05.02
+Docker Bench,WARN,[WARN]      * Port in use: 9392 in greenbone-community-edition-nginx-1,Warning,A.8.20,DSS05.02
+Docker Bench,WARN,[WARN]      * Port in use: 3000 in si084_juiceshop,Warning,A.8.20,DSS05.02
+Docker Bench,WARN,[WARN]      * Port in use: 8081 in si084_dvwa,Warning,A.8.20,DSS05.02
+Docker Bench,WARN,[WARN] 5.11 - Ensure that the memory usage for containers is limited (Automated),Warning,A.8.9,BAI10.02
+Docker Bench,WARN,[WARN]       * Container running without memory restrictions: greenbone-community-edition-nginx-1,Warning,A.8.9,BAI10.02
+Docker Bench,WARN,[WARN]       * Container running without memory restrictions: greenbone-community-edition-gsad-1,Warning,A.8.9,BAI10.02
+Docker Bench,WARN,[WARN]       * Container running without memory restrictions: greenbone-community-edition-gvmd-1,Warning,A.8.9,BAI10.02
+Docker Bench,WARN,[WARN]       * Container running without memory restrictions: greenbone-community-edition-pg-gvm-1,Warning,A.8.9,BAI10.02
+Docker Bench,WARN,[WARN]       * Container running without memory restrictions: greenbone-community-edition-ospd-openvas-1,Warning,A.8.9,BAI10.02
+Docker Bench,WARN,[WARN]       * Container running without memory restrictions: greenbone-community-edition-openvasd-1,Warning,A.8.9,BAI10.02
+Docker Bench,WARN,[WARN]       * Container running without memory restrictions: greenbone-community-edition-redis-server-1,Warning,A.8.9,BAI10.02
+Docker Bench,WARN,[WARN]       * Container running without memory restrictions: si084_juiceshop,Warning,A.8.9,BAI10.02
+Docker Bench,WARN,[WARN]       * Container running without memory restrictions: si084_dvwa,Warning,A.8.9,BAI10.02
+Docker Bench,WARN,[WARN] 5.12 - Ensure that CPU priority is set appropriately on containers (Automated),Warning,A.8.9,BAI10.02
+Docker Bench,WARN,[WARN]       * Container running without CPU restrictions: greenbone-community-edition-nginx-1,Warning,A.8.9,BAI10.02
+Docker Bench,WARN,[WARN]       * Container running without CPU restrictions: greenbone-community-edition-gsad-1,Warning,A.8.9,BAI10.02
+Docker Bench,WARN,[WARN]       * Container running without CPU restrictions: greenbone-community-edition-gvmd-1,Warning,A.8.9,BAI10.02
+Docker Bench,WARN,[WARN]       * Container running without CPU restrictions: greenbone-community-edition-pg-gvm-1,Warning,A.8.9,BAI10.02
+Docker Bench,WARN,[WARN]       * Container running without CPU restrictions: greenbone-community-edition-ospd-openvas-1,Warning,A.8.9,BAI10.02
+Docker Bench,WARN,[WARN]       * Container running without CPU restrictions: greenbone-community-edition-openvasd-1,Warning,A.8.9,BAI10.02
+Docker Bench,WARN,[WARN]       * Container running without CPU restrictions: greenbone-community-edition-redis-server-1,Warning,A.8.9,BAI10.02
+Docker Bench,WARN,[WARN]       * Container running without CPU restrictions: si084_juiceshop,Warning,A.8.9,BAI10.02
+Docker Bench,WARN,[WARN]       * Container running without CPU restrictions: si084_dvwa,Warning,A.8.9,BAI10.02
+Docker Bench,WARN,[WARN] 5.13 - Ensure that the container's root filesystem is mounted as read only (Automated),Warning,A.8.2,DSS05.04
+Docker Bench,WARN,[WARN]       * Container running with root FS mounted R/W: greenbone-community-edition-nginx-1,Warning,A.8.2,DSS05.04
+Docker Bench,WARN,[WARN]       * Container running with root FS mounted R/W: greenbone-community-edition-gsad-1,Warning,A.8.2,DSS05.04
+Docker Bench,WARN,[WARN]       * Container running with root FS mounted R/W: greenbone-community-edition-gvmd-1,Warning,A.8.2,DSS05.04
+Docker Bench,WARN,[WARN]       * Container running with root FS mounted R/W: greenbone-community-edition-pg-gvm-1,Warning,A.8.2,DSS05.04
+Docker Bench,WARN,[WARN]       * Container running with root FS mounted R/W: greenbone-community-edition-ospd-openvas-1,Warning,A.8.2,DSS05.04
+Docker Bench,WARN,[WARN]       * Container running with root FS mounted R/W: greenbone-community-edition-openvasd-1,Warning,A.8.2,DSS05.04
+Docker Bench,WARN,[WARN]       * Container running with root FS mounted R/W: greenbone-community-edition-redis-server-1,Warning,A.8.2,DSS05.04
+Docker Bench,WARN,[WARN]       * Container running with root FS mounted R/W: si084_juiceshop,Warning,A.8.2,DSS05.04
+Docker Bench,WARN,[WARN]       * Container running with root FS mounted R/W: si084_dvwa,Warning,A.8.2,DSS05.04
+Docker Bench,WARN,[WARN] 5.22 - Ensure the default seccomp profile is not Disabled (Automated),Warning,A.8.9,BAI10.02
+Docker Bench,WARN,[WARN]       * Default seccomp profile disabled: greenbone-community-edition-ospd-openvas-1,Warning,A.8.9,BAI10.02
+Docker Bench,WARN,[WARN] 5.26 - Ensure that the container is restricted from acquiring additional privileges (Automated),Warning,A.8.2,DSS05.04
+Docker Bench,WARN,[WARN]       * Privileges not restricted: greenbone-community-edition-nginx-1,Warning,A.8.2,DSS05.04
+Docker Bench,WARN,[WARN]       * Privileges not restricted: greenbone-community-edition-gsad-1,Warning,A.8.2,DSS05.04
+Docker Bench,WARN,[WARN]       * Privileges not restricted: greenbone-community-edition-gvmd-1,Warning,A.8.2,DSS05.04
+Docker Bench,WARN,[WARN]       * Privileges not restricted: greenbone-community-edition-pg-gvm-1,Warning,A.8.2,DSS05.04
+Docker Bench,WARN,[WARN]       * Privileges not restricted: greenbone-community-edition-ospd-openvas-1,Warning,A.8.2,DSS05.04
+Docker Bench,WARN,[WARN]       * Privileges not restricted: greenbone-community-edition-openvasd-1,Warning,A.8.2,DSS05.04
+Docker Bench,WARN,[WARN]       * Privileges not restricted: greenbone-community-edition-redis-server-1,Warning,A.8.2,DSS05.04
+Docker Bench,WARN,[WARN]       * Privileges not restricted: si084_juiceshop,Warning,A.8.2,DSS05.04
+Docker Bench,WARN,[WARN]       * Privileges not restricted: si084_dvwa,Warning,A.8.2,DSS05.04
+Docker Bench,WARN,[WARN] 5.27 - Ensure that container health is checked at runtime (Automated),Warning,A.8.9,BAI10.02
+Docker Bench,WARN,[WARN]       * Health check not set: greenbone-community-edition-nginx-1,Warning,Sin clasificar,Sin clasificar
+Docker Bench,WARN,[WARN]       * Health check not set: greenbone-community-edition-gsad-1,Warning,Sin clasificar,Sin clasificar
+Docker Bench,WARN,[WARN]       * Health check not set: greenbone-community-edition-ospd-openvas-1,Warning,Sin clasificar,Sin clasificar
+Docker Bench,WARN,[WARN]       * Health check not set: greenbone-community-edition-openvasd-1,Warning,Sin clasificar,Sin clasificar
+Docker Bench,WARN,[WARN]       * Health check not set: greenbone-community-edition-redis-server-1,Warning,Sin clasificar,Sin clasificar
+Docker Bench,WARN,[WARN]       * Health check not set: si084_juiceshop,Warning,Sin clasificar,Sin clasificar
+Docker Bench,WARN,[WARN]       * Health check not set: si084_dvwa,Warning,Sin clasificar,Sin clasificar
+Docker Bench,WARN,[WARN] 5.29 - Ensure that the PIDs cgroup limit is used (Automated),Warning,Sin clasificar,Sin clasificar
+Docker Bench,WARN,[WARN]       * PIDs limit not set: greenbone-community-edition-nginx-1,Warning,Sin clasificar,Sin clasificar
+Docker Bench,WARN,[WARN]       * PIDs limit not set: greenbone-community-edition-gsad-1,Warning,Sin clasificar,Sin clasificar
+Docker Bench,WARN,[WARN]       * PIDs limit not set: greenbone-community-edition-gvmd-1,Warning,Sin clasificar,Sin clasificar
+Docker Bench,WARN,[WARN]       * PIDs limit not set: greenbone-community-edition-pg-gvm-1,Warning,Sin clasificar,Sin clasificar
+Docker Bench,WARN,[WARN]       * PIDs limit not set: greenbone-community-edition-ospd-openvas-1,Warning,Sin clasificar,Sin clasificar
+Docker Bench,WARN,[WARN]       * PIDs limit not set: greenbone-community-edition-openvasd-1,Warning,Sin clasificar,Sin clasificar
+Docker Bench,WARN,[WARN]       * PIDs limit not set: greenbone-community-edition-redis-server-1,Warning,Sin clasificar,Sin clasificar
+Docker Bench,WARN,[WARN]       * PIDs limit not set: si084_juiceshop,Warning,Sin clasificar,Sin clasificar
+Docker Bench,WARN,[WARN]       * PIDs limit not set: si084_dvwa,Warning,Sin clasificar,Sin clasificar
+Trivy,Vulnerability,CVE-2026-14456 | libssl3t64 | bkimminich/juice-shop:latest (debian 13.6) | openssl: OpenSSL: Denial of Service via unbounded memory growth in QUIC server,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,NSWG-ECO-428 | base64url | Node.js | Out-of-bounds Read,HIGH,Sin clasificar,Sin clasificar
+Trivy,Vulnerability,"CVE-2023-46233 | crypto-js | Node.js | crypto-js: PBKDF2 1,000 times weaker than specified in 1993 and 1.3M times weaker than current standard",CRITICAL,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-71851 | crypto-js | Node.js | crypto-js is a JavaScript library of crypto standards. Versions of cry ...,CRITICAL,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-53486 | decompress | Node.js | decompress: @xhmikosr/decompress: Decompress: Arbitrary file read/write via crafted archive extraction,CRITICAL,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-59725 | engine.io | Node.js | socket.io: engine.io: Socket.IO: Denial of Service via invalid binary POST requests,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2020-15084 | express-jwt | Node.js | Authorization bypass in express-jwt,HIGH,A.5.17,DSS05.04
+Trivy,Vulnerability,CVE-2022-25881 | http-cache-semantics | Node.js | http-cache-semantics: Regular Expression Denial of Service (ReDoS) vulnerability,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-84375 | js-yaml | Node.js | js-yaml: js-yaml: Denial of Service vulnerability in YAML parsing,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2015-9235 | jsonwebtoken | Node.js | nodejs-jsonwebtoken: verification step bypass with an altered token,CRITICAL,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2022-23539 | jsonwebtoken | Node.js | jsonwebtoken: Unrestricted key type could lead to legacy keys usagen,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,NSWG-ECO-17 | jsonwebtoken | Node.js | Verification Bypass,HIGH,Sin clasificar,Sin clasificar
+Trivy,Vulnerability,CVE-2015-9235 | jsonwebtoken | Node.js | nodejs-jsonwebtoken: verification step bypass with an altered token,CRITICAL,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2022-23539 | jsonwebtoken | Node.js | jsonwebtoken: Unrestricted key type could lead to legacy keys usagen,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,NSWG-ECO-17 | jsonwebtoken | Node.js | Verification Bypass,HIGH,Sin clasificar,Sin clasificar
+Trivy,Vulnerability,CVE-2016-1000223 | jws | Node.js | Forgeable Public/Private Tokens,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2025-65945 | jws | Node.js | node-jws: auth0/node-jws: Improper signature verification in HS256 algorithm,HIGH,A.5.17,DSS05.04
+Trivy,Vulnerability,CVE-2019-10744 | lodash | Node.js | nodejs-lodash: prototype pollution in defaultsDeep function leading to modifying properties,CRITICAL,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2018-16487 | lodash | Node.js | lodash: Prototype pollution in utilities function,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2021-23337 | lodash | Node.js | nodejs-lodash: command injection via template,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,GHSA-5mrr-rgp6-x4gr | marsdb | Node.js | Command Injection in marsdb,CRITICAL,Sin clasificar,Sin clasificar
+Trivy,Vulnerability,CVE-2026-26996 | minimatch | Node.js | minimatch: minimatch: Denial of Service via specially crafted glob patterns,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-27903 | minimatch | Node.js | minimatch: minimatch: Denial of Service due to unbounded recursive backtracking via crafted glob patterns,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-27904 | minimatch | Node.js | minimatch: Minimatch: Denial of Service via catastrophic backtracking in glob expressions,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2017-18214 | moment | Node.js | nodejs-moment: Regular expression denial of service,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2022-24785 | moment | Node.js | Moment.js: Path traversal  in moment.locale,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2025-47935 | multer | Node.js | Multer vulnerable to Denial of Service via memory leaks from unclosed streams,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2025-47944 | multer | Node.js | Multer vulnerable to Denial of Service from maliciously crafted requests,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2025-48997 | multer | Node.js | multer: Multer vulnerable to Denial of Service via unhandled exception,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2025-7338 | multer | Node.js | multer: Multer Denial of Service,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-2359 | multer | Node.js | multer: Multer: Denial of Service via dropped file upload connections,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-3304 | multer | Node.js | multer: Multer: Denial of Service via malformed requests,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-3520 | multer | Node.js | multer: Multer: Denial of Service via malformed requests,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-5079 | multer | Node.js | multer: Multer: Denial of Service via deeply nested field names in multipart form data,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-77078 | multer | Node.js | multer vulnerable to Denial of Service via crafted multipart field names,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-82333 | multer | Node.js | multer vulnerable to Denial of Service via oversized array index in field names,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2022-25887 | sanitize-html | Node.js | sanitize-html: insecure global regular expression replacement logic may lead to ReDoS,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-33151 | socket.io-parser | Node.js | socket.io: Socket.IO: Denial of Service due to excessive buffering of specially crafted packets,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-69185 | socket.io-parser | Node.js | socket.io-parser: Socket.IO: Denial of Service via memory exhaustion from crafted packets,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-59873 | tar | Node.js | tar: node-tar: Denial of Service via crafted gzip bomb,CRITICAL,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-23745 | tar | Node.js | node-tar: tar: node-tar: Arbitrary file overwrite and symlink poisoning via unsanitized linkpaths in archives,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-23950 | tar | Node.js | node-tar: tar: node-tar: Arbitrary file overwrite via Unicode path collision race condition,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-24842 | tar | Node.js | node-tar: tar: node-tar: Arbitrary file creation via path traversal bypass in hardlink security check,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-26960 | tar | Node.js | node-tar: node-tar: Arbitrary file read/write via malicious archive hardlink creation,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-29786 | tar | Node.js | node-tar: hardlink path traversal via drive-relative linkpath,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-31802 | tar | Node.js | tar: tar: File overwrite via drive-relative symlink traversal,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-59874 | tar | Node.js | tar: Node-tar: Denial of Service via malformed tar archive header,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-73566 | tar | Node.js | tar: node-tar: Denial of Service via crafted long-path tar archive,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-12151 | undici | Node.js | undici: undici: Denial of Service due to unbounded memory growth via WebSocket frames,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-1526 | undici | Node.js | undici: undici: Denial of Service via unbounded memory consumption during WebSocket permessage-deflate decompression,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-2229 | undici | Node.js | undici: Undici: Denial of Service via invalid WebSocket permessage-deflate extension parameter,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2024-37890 | ws | Node.js | nodejs-ws: denial of service when handling a request with many HTTP headers,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-48779 | ws | Node.js | ws: ws: Denial of Service via memory exhaustion from small WebSocket fragments,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2025-68121 | stdlib | usr/local/bin/gosu | crypto/tls: crypto/tls: Incorrect certificate validation during TLS session resumption,CRITICAL,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2025-61726 | stdlib | usr/local/bin/gosu | golang: net/url: Memory exhaustion in query parameter parsing in net/url,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2025-61729 | stdlib | usr/local/bin/gosu | crypto/x509: golang: Denial of Service due to excessive resource consumption via crafted certificate,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-25679 | stdlib | usr/local/bin/gosu | net/url: Incorrect parsing of IPv6 host literals in net/url,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-27145 | stdlib | usr/local/bin/gosu | crypto/x509: golang: golang crypto/x509: Denial of Service via excessive processing of DNS SAN entries,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-32280 | stdlib | usr/local/bin/gosu | crypto/x509: crypto/tls: golang: Go: Denial of Service vulnerability in certificate chain building,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-32281 | stdlib | usr/local/bin/gosu | crypto/x509: golang: Go crypto/x509: Denial of Service via inefficient certificate chain validation,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-32283 | stdlib | usr/local/bin/gosu | crypto/tls: golang: Go crypto/tls: Denial of Service via multiple TLS 1.3 key update messages,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-33811 | stdlib | usr/local/bin/gosu | net: golang: Go net package: Denial of Service via long CNAME response in LookupCNAME,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-33814 | stdlib | usr/local/bin/gosu | net/http/internal/http2: golang: golang.org/x/net: Go HTTP/2: Denial of Service via malformed SETTINGS_MAX_FRAME_SIZE frame,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-33818 | stdlib | usr/local/bin/gosu | encoding/asn1: golang: Go encoding/asn1: Denial of Service via excessive recursion in Unmarshal,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-39820 | stdlib | usr/local/bin/gosu | net/mail: golang: Go net/mail: Denial of Service via crafted email inputs,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-39821 | stdlib | usr/local/bin/gosu | golang.org/x/net/idna: golang: net/http: golang.org/x/net/idna: Privilege escalation via incorrect Punycode label processing,HIGH,A.8.2,DSS05.04
+Trivy,Vulnerability,CVE-2026-39822 | stdlib | usr/local/bin/gosu | golang: Go os.Root: Symlink following vulnerability allows directory traversal,HIGH,A.8.2,DSS05.04
+Trivy,Vulnerability,CVE-2026-39836 | stdlib | usr/local/bin/gosu | net: golang: Go net package: Denial of Service via NUL byte in Dial and LookupPort on Windows,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-42499 | stdlib | usr/local/bin/gosu | net/mail: golang: net/mail: Denial of Service via pathological email address parsing,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-42504 | stdlib | usr/local/bin/gosu | mime: golang: Golang MIME: Denial of Service via maliciously-crafted MIME header,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-56853 | stdlib | usr/local/bin/gosu | net/http: golang: Go net/http: Unencrypted HTTP/2 connections vulnerable to Denial of Service,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-56858 | stdlib | usr/local/bin/gosu | html/template: golang: Go html/template: Cross-Site Scripting via pathological input,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-56859 | stdlib | usr/local/bin/gosu | encoding/xml: golang: Go: Denial of Service via XML decoding recursion depth issue,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-56860 | stdlib | usr/local/bin/gosu | net/url: golang: golang net/url: Denial of Service from quadratic complexity in path resolution,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-56862 | stdlib | usr/local/bin/gosu | crypto/tls: golang: Golang crypto/tls: Denial of Service via indefinite KeyUpdate messages,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-76642 | bsdutils | postgres:16 (debian 13.6) | util-linux: util-linux: failed external mount helper still runs privileged X-mount post-hooks,HIGH,A.8.2,DSS05.04
+Trivy,Vulnerability,CVE-2026-78408 | bsdutils | postgres:16 (debian 13.6) | util-linux: util-linux: nsenter --join-cgroup leaks root cgroup migration authority,HIGH,A.8.2,DSS05.04
+Trivy,Vulnerability,CVE-2026-78409 | bsdutils | postgres:16 (debian 13.6) | util-linux: util-linux: X-mount.subdir detached-tree resolution can escape via intermediate symlinks,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,"CVE-2026-78410 | bsdutils | postgres:16 (debian 13.6) | util-linux: util-linux: restricted bind mounts do not pin the source, allowing X-mount.owner/group/mode redirection",HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-24882 | dirmngr | postgres:16 (debian 13.6) | GnuPG: GnuPG: Stack-based buffer overflow in tpm2daemon allows arbitrary code execution,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-24882 | gnupg | postgres:16 (debian 13.6) | GnuPG: GnuPG: Stack-based buffer overflow in tpm2daemon allows arbitrary code execution,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-24882 | gnupg-l10n | postgres:16 (debian 13.6) | GnuPG: GnuPG: Stack-based buffer overflow in tpm2daemon allows arbitrary code execution,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-24882 | gpg | postgres:16 (debian 13.6) | GnuPG: GnuPG: Stack-based buffer overflow in tpm2daemon allows arbitrary code execution,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-24882 | gpg-agent | postgres:16 (debian 13.6) | GnuPG: GnuPG: Stack-based buffer overflow in tpm2daemon allows arbitrary code execution,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-24882 | gpgconf | postgres:16 (debian 13.6) | GnuPG: GnuPG: Stack-based buffer overflow in tpm2daemon allows arbitrary code execution,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-24882 | gpgsm | postgres:16 (debian 13.6) | GnuPG: GnuPG: Stack-based buffer overflow in tpm2daemon allows arbitrary code execution,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-41992 | gzip | postgres:16 (debian 13.6) | gzip: gzip: Information disclosure via global buffer overflow in LZH decompression,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-54369 | libacl1 | postgres:16 (debian 13.6) | acl: Symlink traversal privilege escalation via libacl functions,HIGH,A.8.2,DSS05.04
+Trivy,Vulnerability,CVE-2026-76642 | libblkid1 | postgres:16 (debian 13.6) | util-linux: util-linux: failed external mount helper still runs privileged X-mount post-hooks,HIGH,A.8.2,DSS05.04
+Trivy,Vulnerability,CVE-2026-78408 | libblkid1 | postgres:16 (debian 13.6) | util-linux: util-linux: nsenter --join-cgroup leaks root cgroup migration authority,HIGH,A.8.2,DSS05.04
+Trivy,Vulnerability,CVE-2026-78409 | libblkid1 | postgres:16 (debian 13.6) | util-linux: util-linux: X-mount.subdir detached-tree resolution can escape via intermediate symlinks,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,"CVE-2026-78410 | libblkid1 | postgres:16 (debian 13.6) | util-linux: util-linux: restricted bind mounts do not pin the source, allowing X-mount.owner/group/mode redirection",HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-76642 | liblastlog2-2 | postgres:16 (debian 13.6) | util-linux: util-linux: failed external mount helper still runs privileged X-mount post-hooks,HIGH,A.8.2,DSS05.04
+Trivy,Vulnerability,CVE-2026-78408 | liblastlog2-2 | postgres:16 (debian 13.6) | util-linux: util-linux: nsenter --join-cgroup leaks root cgroup migration authority,HIGH,A.8.2,DSS05.04
+Trivy,Vulnerability,CVE-2026-78409 | liblastlog2-2 | postgres:16 (debian 13.6) | util-linux: util-linux: X-mount.subdir detached-tree resolution can escape via intermediate symlinks,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,"CVE-2026-78410 | liblastlog2-2 | postgres:16 (debian 13.6) | util-linux: util-linux: restricted bind mounts do not pin the source, allowing X-mount.owner/group/mode redirection",HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-76642 | libmount1 | postgres:16 (debian 13.6) | util-linux: util-linux: failed external mount helper still runs privileged X-mount post-hooks,HIGH,A.8.2,DSS05.04
+Trivy,Vulnerability,CVE-2026-78408 | libmount1 | postgres:16 (debian 13.6) | util-linux: util-linux: nsenter --join-cgroup leaks root cgroup migration authority,HIGH,A.8.2,DSS05.04
+Trivy,Vulnerability,CVE-2026-78409 | libmount1 | postgres:16 (debian 13.6) | util-linux: util-linux: X-mount.subdir detached-tree resolution can escape via intermediate symlinks,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,"CVE-2026-78410 | libmount1 | postgres:16 (debian 13.6) | util-linux: util-linux: restricted bind mounts do not pin the source, allowing X-mount.owner/group/mode redirection",HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2025-69720 | libncursesw6 | postgres:16 (debian 13.6) | ncurses: ncurses: Buffer overflow vulnerability may lead to arbitrary code execution.,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-13221 | libperl5.40 | postgres:16 (debian 13.6) | perl: Perl: Incorrect regular expression processing via large regular expressions,CRITICAL,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-42496 | libperl5.40 | postgres:16 (debian 13.6) | perl-archive-tar: perl-archive-tar: Path traversal via crafted symlinks allows arbitrary file access,CRITICAL,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-8376 | libperl5.40 | postgres:16 (debian 13.6) | perl: Perl: Heap buffer overflow when compiling regular expressions on 32-bit builds,CRITICAL,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-42497 | libperl5.40 | postgres:16 (debian 13.6) | perl-Archive-Tar: perl-Archive-Tar: Arbitrary file modification via crafted hardlinks during archive extraction,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-48962 | libperl5.40 | postgres:16 (debian 13.6) | perl-IO-Compress: perl-IO-Compress: Arbitrary code execution via attacker-controlled output glob,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-57432 | libperl5.40 | postgres:16 (debian 13.6) | perl: Perl: Information disclosure via integer overflow in pack/unpack operations,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-57433 | libperl5.40 | postgres:16 (debian 13.6) | Storable: Storable: Denial of Service via signed integer overflow in deserialization,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-9538 | libperl5.40 | postgres:16 (debian 13.6) | perl-Archive-Tar: perl-Archive-Tar: Denial of Service via crafted tar header with large entry size,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-76642 | libsmartcols1 | postgres:16 (debian 13.6) | util-linux: util-linux: failed external mount helper still runs privileged X-mount post-hooks,HIGH,A.8.2,DSS05.04
+Trivy,Vulnerability,CVE-2026-78408 | libsmartcols1 | postgres:16 (debian 13.6) | util-linux: util-linux: nsenter --join-cgroup leaks root cgroup migration authority,HIGH,A.8.2,DSS05.04
+Trivy,Vulnerability,CVE-2026-78409 | libsmartcols1 | postgres:16 (debian 13.6) | util-linux: util-linux: X-mount.subdir detached-tree resolution can escape via intermediate symlinks,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,"CVE-2026-78410 | libsmartcols1 | postgres:16 (debian 13.6) | util-linux: util-linux: restricted bind mounts do not pin the source, allowing X-mount.owner/group/mode redirection",HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-11822 | libsqlite3-0 | postgres:16 (debian 13.6) | sqlite: SQLite: Arbitrary code execution via crafted FTS5 full-text search data,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-11824 | libsqlite3-0 | postgres:16 (debian 13.6) | sqlite: SQLite: Arbitrary code execution and crash via heap-based buffer overflow in FTS5,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-14456 | libssl3t64 | postgres:16 (debian 13.6) | openssl: OpenSSL: Denial of Service via unbounded memory growth in QUIC server,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-16742 | libsystemd0 | postgres:16 (debian 13.6) | systemd: systemd-homed: Local privilege escalation via missing home-record signature verification,HIGH,A.8.2,DSS05.04
+Trivy,Vulnerability,CVE-2025-69720 | libtinfo6 | postgres:16 (debian 13.6) | ncurses: ncurses: Buffer overflow vulnerability may lead to arbitrary code execution.,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-16742 | libudev1 | postgres:16 (debian 13.6) | systemd: systemd-homed: Local privilege escalation via missing home-record signature verification,HIGH,A.8.2,DSS05.04
+Trivy,Vulnerability,CVE-2026-76642 | libuuid1 | postgres:16 (debian 13.6) | util-linux: util-linux: failed external mount helper still runs privileged X-mount post-hooks,HIGH,A.8.2,DSS05.04
+Trivy,Vulnerability,CVE-2026-78408 | libuuid1 | postgres:16 (debian 13.6) | util-linux: util-linux: nsenter --join-cgroup leaks root cgroup migration authority,HIGH,A.8.2,DSS05.04
+Trivy,Vulnerability,CVE-2026-78409 | libuuid1 | postgres:16 (debian 13.6) | util-linux: util-linux: X-mount.subdir detached-tree resolution can escape via intermediate symlinks,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,"CVE-2026-78410 | libuuid1 | postgres:16 (debian 13.6) | util-linux: util-linux: restricted bind mounts do not pin the source, allowing X-mount.owner/group/mode redirection",HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-6653 | libxml2 | postgres:16 (debian 13.6) | libxml2: mingw-libxml2: libxml2: Denial of Service via crafted XML input due to use-after-free,CRITICAL,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-86140 | libxml2 | postgres:16 (debian 13.6) | libxml2: libxml2: Arbitrary code execution via stack-based buffer overflow in xmlSnprintfElements,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-76642 | login | postgres:16 (debian 13.6) | util-linux: util-linux: failed external mount helper still runs privileged X-mount post-hooks,HIGH,A.8.2,DSS05.04
+Trivy,Vulnerability,CVE-2026-78408 | login | postgres:16 (debian 13.6) | util-linux: util-linux: nsenter --join-cgroup leaks root cgroup migration authority,HIGH,A.8.2,DSS05.04
+Trivy,Vulnerability,CVE-2026-78409 | login | postgres:16 (debian 13.6) | util-linux: util-linux: X-mount.subdir detached-tree resolution can escape via intermediate symlinks,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,"CVE-2026-78410 | login | postgres:16 (debian 13.6) | util-linux: util-linux: restricted bind mounts do not pin the source, allowing X-mount.owner/group/mode redirection",HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-76642 | mount | postgres:16 (debian 13.6) | util-linux: util-linux: failed external mount helper still runs privileged X-mount post-hooks,HIGH,A.8.2,DSS05.04
+Trivy,Vulnerability,CVE-2026-78408 | mount | postgres:16 (debian 13.6) | util-linux: util-linux: nsenter --join-cgroup leaks root cgroup migration authority,HIGH,A.8.2,DSS05.04
+Trivy,Vulnerability,CVE-2026-78409 | mount | postgres:16 (debian 13.6) | util-linux: util-linux: X-mount.subdir detached-tree resolution can escape via intermediate symlinks,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,"CVE-2026-78410 | mount | postgres:16 (debian 13.6) | util-linux: util-linux: restricted bind mounts do not pin the source, allowing X-mount.owner/group/mode redirection",HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2025-69720 | ncurses-base | postgres:16 (debian 13.6) | ncurses: ncurses: Buffer overflow vulnerability may lead to arbitrary code execution.,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2025-69720 | ncurses-bin | postgres:16 (debian 13.6) | ncurses: ncurses: Buffer overflow vulnerability may lead to arbitrary code execution.,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-14456 | openssl | postgres:16 (debian 13.6) | openssl: OpenSSL: Denial of Service via unbounded memory growth in QUIC server,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-14456 | openssl-provider-legacy | postgres:16 (debian 13.6) | openssl: OpenSSL: Denial of Service via unbounded memory growth in QUIC server,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-13221 | perl | postgres:16 (debian 13.6) | perl: Perl: Incorrect regular expression processing via large regular expressions,CRITICAL,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-42496 | perl | postgres:16 (debian 13.6) | perl-archive-tar: perl-archive-tar: Path traversal via crafted symlinks allows arbitrary file access,CRITICAL,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-8376 | perl | postgres:16 (debian 13.6) | perl: Perl: Heap buffer overflow when compiling regular expressions on 32-bit builds,CRITICAL,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-42497 | perl | postgres:16 (debian 13.6) | perl-Archive-Tar: perl-Archive-Tar: Arbitrary file modification via crafted hardlinks during archive extraction,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-48962 | perl | postgres:16 (debian 13.6) | perl-IO-Compress: perl-IO-Compress: Arbitrary code execution via attacker-controlled output glob,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-57432 | perl | postgres:16 (debian 13.6) | perl: Perl: Information disclosure via integer overflow in pack/unpack operations,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-57433 | perl | postgres:16 (debian 13.6) | Storable: Storable: Denial of Service via signed integer overflow in deserialization,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-9538 | perl | postgres:16 (debian 13.6) | perl-Archive-Tar: perl-Archive-Tar: Denial of Service via crafted tar header with large entry size,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-13221 | perl-base | postgres:16 (debian 13.6) | perl: Perl: Incorrect regular expression processing via large regular expressions,CRITICAL,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-42496 | perl-base | postgres:16 (debian 13.6) | perl-archive-tar: perl-archive-tar: Path traversal via crafted symlinks allows arbitrary file access,CRITICAL,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-8376 | perl-base | postgres:16 (debian 13.6) | perl: Perl: Heap buffer overflow when compiling regular expressions on 32-bit builds,CRITICAL,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-42497 | perl-base | postgres:16 (debian 13.6) | perl-Archive-Tar: perl-Archive-Tar: Arbitrary file modification via crafted hardlinks during archive extraction,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-48962 | perl-base | postgres:16 (debian 13.6) | perl-IO-Compress: perl-IO-Compress: Arbitrary code execution via attacker-controlled output glob,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-57432 | perl-base | postgres:16 (debian 13.6) | perl: Perl: Information disclosure via integer overflow in pack/unpack operations,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-57433 | perl-base | postgres:16 (debian 13.6) | Storable: Storable: Denial of Service via signed integer overflow in deserialization,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-9538 | perl-base | postgres:16 (debian 13.6) | perl-Archive-Tar: perl-Archive-Tar: Denial of Service via crafted tar header with large entry size,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-13221 | perl-modules-5.40 | postgres:16 (debian 13.6) | perl: Perl: Incorrect regular expression processing via large regular expressions,CRITICAL,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-42496 | perl-modules-5.40 | postgres:16 (debian 13.6) | perl-archive-tar: perl-archive-tar: Path traversal via crafted symlinks allows arbitrary file access,CRITICAL,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-8376 | perl-modules-5.40 | postgres:16 (debian 13.6) | perl: Perl: Heap buffer overflow when compiling regular expressions on 32-bit builds,CRITICAL,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-42497 | perl-modules-5.40 | postgres:16 (debian 13.6) | perl-Archive-Tar: perl-Archive-Tar: Arbitrary file modification via crafted hardlinks during archive extraction,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-48962 | perl-modules-5.40 | postgres:16 (debian 13.6) | perl-IO-Compress: perl-IO-Compress: Arbitrary code execution via attacker-controlled output glob,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-57432 | perl-modules-5.40 | postgres:16 (debian 13.6) | perl: Perl: Information disclosure via integer overflow in pack/unpack operations,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-57433 | perl-modules-5.40 | postgres:16 (debian 13.6) | Storable: Storable: Denial of Service via signed integer overflow in deserialization,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-9538 | perl-modules-5.40 | postgres:16 (debian 13.6) | perl-Archive-Tar: perl-Archive-Tar: Denial of Service via crafted tar header with large entry size,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-76642 | util-linux | postgres:16 (debian 13.6) | util-linux: util-linux: failed external mount helper still runs privileged X-mount post-hooks,HIGH,A.8.2,DSS05.04
+Trivy,Vulnerability,CVE-2026-78408 | util-linux | postgres:16 (debian 13.6) | util-linux: util-linux: nsenter --join-cgroup leaks root cgroup migration authority,HIGH,A.8.2,DSS05.04
+Trivy,Vulnerability,CVE-2026-78409 | util-linux | postgres:16 (debian 13.6) | util-linux: util-linux: X-mount.subdir detached-tree resolution can escape via intermediate symlinks,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,"CVE-2026-78410 | util-linux | postgres:16 (debian 13.6) | util-linux: util-linux: restricted bind mounts do not pin the source, allowing X-mount.owner/group/mode redirection",HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2025-68121 | stdlib | usr/local/bin/gosu | crypto/tls: crypto/tls: Incorrect certificate validation during TLS session resumption,CRITICAL,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2025-61726 | stdlib | usr/local/bin/gosu | golang: net/url: Memory exhaustion in query parameter parsing in net/url,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2025-61729 | stdlib | usr/local/bin/gosu | crypto/x509: golang: Denial of Service due to excessive resource consumption via crafted certificate,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-25679 | stdlib | usr/local/bin/gosu | net/url: Incorrect parsing of IPv6 host literals in net/url,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-27145 | stdlib | usr/local/bin/gosu | crypto/x509: golang: golang crypto/x509: Denial of Service via excessive processing of DNS SAN entries,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-32280 | stdlib | usr/local/bin/gosu | crypto/x509: crypto/tls: golang: Go: Denial of Service vulnerability in certificate chain building,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-32281 | stdlib | usr/local/bin/gosu | crypto/x509: golang: Go crypto/x509: Denial of Service via inefficient certificate chain validation,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-32283 | stdlib | usr/local/bin/gosu | crypto/tls: golang: Go crypto/tls: Denial of Service via multiple TLS 1.3 key update messages,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-33811 | stdlib | usr/local/bin/gosu | net: golang: Go net package: Denial of Service via long CNAME response in LookupCNAME,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-33814 | stdlib | usr/local/bin/gosu | net/http/internal/http2: golang: golang.org/x/net: Go HTTP/2: Denial of Service via malformed SETTINGS_MAX_FRAME_SIZE frame,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-33818 | stdlib | usr/local/bin/gosu | encoding/asn1: golang: Go encoding/asn1: Denial of Service via excessive recursion in Unmarshal,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-39820 | stdlib | usr/local/bin/gosu | net/mail: golang: Go net/mail: Denial of Service via crafted email inputs,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-39821 | stdlib | usr/local/bin/gosu | golang.org/x/net/idna: golang: net/http: golang.org/x/net/idna: Privilege escalation via incorrect Punycode label processing,HIGH,A.8.2,DSS05.04
+Trivy,Vulnerability,CVE-2026-39822 | stdlib | usr/local/bin/gosu | golang: Go os.Root: Symlink following vulnerability allows directory traversal,HIGH,A.8.2,DSS05.04
+Trivy,Vulnerability,CVE-2026-39836 | stdlib | usr/local/bin/gosu | net: golang: Go net package: Denial of Service via NUL byte in Dial and LookupPort on Windows,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-42499 | stdlib | usr/local/bin/gosu | net/mail: golang: net/mail: Denial of Service via pathological email address parsing,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-42504 | stdlib | usr/local/bin/gosu | mime: golang: Golang MIME: Denial of Service via maliciously-crafted MIME header,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-56853 | stdlib | usr/local/bin/gosu | net/http: golang: Go net/http: Unencrypted HTTP/2 connections vulnerable to Denial of Service,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-56858 | stdlib | usr/local/bin/gosu | html/template: golang: Go html/template: Cross-Site Scripting via pathological input,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-56859 | stdlib | usr/local/bin/gosu | encoding/xml: golang: Go: Denial of Service via XML decoding recursion depth issue,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-56860 | stdlib | usr/local/bin/gosu | net/url: golang: golang net/url: Denial of Service from quadratic complexity in path resolution,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-56862 | stdlib | usr/local/bin/gosu | crypto/tls: golang: Golang crypto/tls: Denial of Service via indefinite KeyUpdate messages,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-76642 | bsdutils | wordpress:latest (debian 13.6) | util-linux: util-linux: failed external mount helper still runs privileged X-mount post-hooks,HIGH,A.8.2,DSS05.04
+Trivy,Vulnerability,CVE-2026-78408 | bsdutils | wordpress:latest (debian 13.6) | util-linux: util-linux: nsenter --join-cgroup leaks root cgroup migration authority,HIGH,A.8.2,DSS05.04
+Trivy,Vulnerability,CVE-2026-78409 | bsdutils | wordpress:latest (debian 13.6) | util-linux: util-linux: X-mount.subdir detached-tree resolution can escape via intermediate symlinks,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,"CVE-2026-78410 | bsdutils | wordpress:latest (debian 13.6) | util-linux: util-linux: restricted bind mounts do not pin the source, allowing X-mount.owner/group/mode redirection",HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-12064 | curl | wordpress:latest (debian 13.6) | curl: curl: SSH host verification bypass when using schemeless URLs with SFTP/SCP,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-8286 | curl | wordpress:latest (debian 13.6) | curl: curl: Insecure connection establishment due to TLS configuration mismatch,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-8458 | curl | wordpress:latest (debian 13.6) | curl: libcurl: Unauthorized connection reuse due to a logical error,HIGH,A.5.17,DSS05.04
+Trivy,Vulnerability,CVE-2026-8927 | curl | wordpress:latest (debian 13.6) | curl: Information disclosure due to uncleared proxy authentication state,HIGH,A.5.17,DSS05.04
+Trivy,Vulnerability,CVE-2026-41992 | gzip | wordpress:latest (debian 13.6) | gzip: gzip: Information disclosure via global buffer overflow in LZH decompression,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-56372 | imagemagick-7-common | wordpress:latest (debian 13.6) | ImageMagick: ImageMagick: Information Disclosure and Denial of Service,CRITICAL,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-56374 | imagemagick-7-common | wordpress:latest (debian 13.6) | ImageMagick: ImageMagick: Denial of Service and Information Disclosure via heap buffer overflow in FTXT encoder,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-61857 | imagemagick-7-common | wordpress:latest (debian 13.6) | ImageMagick: ImageMagick: Application crashes via malicious XMP profiles,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-61861 | imagemagick-7-common | wordpress:latest (debian 13.6) | ImageMagick: ImageMagick: Use-after-free vulnerability leading to denial of service or code execution,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-61863 | imagemagick-7-common | wordpress:latest (debian 13.6) | ImageMagick: ImageMagick: Memory leak in TIFF encoder,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-61866 | imagemagick-7-common | wordpress:latest (debian 13.6) | ImageMagick: ImageMagick: Memory leak in JNG encoder can lead to denial of service,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-61870 | imagemagick-7-common | wordpress:latest (debian 13.6) | ImageMagick: ImageMagick: Denial of Service via specially crafted VIFF images,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-86420 | imagemagick-7-common | wordpress:latest (debian 13.6) | ImageMagick: ImageMagick: Denial of Service due to memory budget exhaustion,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-86421 | imagemagick-7-common | wordpress:latest (debian 13.6) | ImageMagick: ImageMagick: Denial of Service via memory leak in MSL decoder,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-54369 | libacl1 | wordpress:latest (debian 13.6) | acl: Symlink traversal privilege escalation via libacl functions,HIGH,A.8.2,DSS05.04
+Trivy,Vulnerability,CVE-2026-76642 | libblkid1 | wordpress:latest (debian 13.6) | util-linux: util-linux: failed external mount helper still runs privileged X-mount post-hooks,HIGH,A.8.2,DSS05.04
+Trivy,Vulnerability,CVE-2026-78408 | libblkid1 | wordpress:latest (debian 13.6) | util-linux: util-linux: nsenter --join-cgroup leaks root cgroup migration authority,HIGH,A.8.2,DSS05.04
+Trivy,Vulnerability,CVE-2026-78409 | libblkid1 | wordpress:latest (debian 13.6) | util-linux: util-linux: X-mount.subdir detached-tree resolution can escape via intermediate symlinks,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,"CVE-2026-78410 | libblkid1 | wordpress:latest (debian 13.6) | util-linux: util-linux: restricted bind mounts do not pin the source, allowing X-mount.owner/group/mode redirection",HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-34980 | libcups2t64 | wordpress:latest (debian 13.6) | cups: OpenPrinting CUPS: Shared PostScript queue lets anonymous Print-Job requests reach `lp` code execution over the network,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-12064 | libcurl4t64 | wordpress:latest (debian 13.6) | curl: curl: SSH host verification bypass when using schemeless URLs with SFTP/SCP,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-8286 | libcurl4t64 | wordpress:latest (debian 13.6) | curl: curl: Insecure connection establishment due to TLS configuration mismatch,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-8458 | libcurl4t64 | wordpress:latest (debian 13.6) | curl: libcurl: Unauthorized connection reuse due to a logical error,HIGH,A.5.17,DSS05.04
+Trivy,Vulnerability,CVE-2026-8927 | libcurl4t64 | wordpress:latest (debian 13.6) | curl: Information disclosure due to uncleared proxy authentication state,HIGH,A.5.17,DSS05.04
+Trivy,Vulnerability,CVE-2026-33164 | libde265-0 | wordpress:latest (debian 13.6) | libde265 is an open source implementation of the h.265 video codec. Pr ...,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-76956 | libexpat1 | wordpress:latest (debian 13.6) | libexpat: libexpat: Denial of Service via hash flooding attack with crafted XML,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-76957 | libexpat1 | wordpress:latest (debian 13.6) | libexpat: libexpat: Memory corruption vulnerability allows arbitrary code execution or denial of service,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,"CVE-2026-58016 | libglib2.0-0t64 | wordpress:latest (debian 13.6) | glib: integer underflow in gio/gdbusintrospection.c via ""g_dbus_node_info_new_for_xml""",CRITICAL,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-58010 | libglib2.0-0t64 | wordpress:latest (debian 13.6) | glib: buffer over-read in glib/gvariant-serialiser.c via gvs_tuple_is_normal(),HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-58011 | libglib2.0-0t64 | wordpress:latest (debian 13.6) | glib: out-of-bounds read in glib/gdatetime.c:g_date_time_get_ymd via invalid GDateTime,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-58012 | libglib2.0-0t64 | wordpress:latest (debian 13.6) | glib: buffer over-read in g_regex_replace() via glib/gregex.c:string_append() and g_utf8_next_char(),HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,"CVE-2026-58013 | libglib2.0-0t64 | wordpress:latest (debian 13.6) | glib: buffer over-read in glib/giochannel.c via ""g_io_channel_read_line_backend""",HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,"CVE-2026-58014 | libglib2.0-0t64 | wordpress:latest (debian 13.6) | glib: off-by-one error in glib/gkeyfile.c via ""g_key_file_get_locale_string_list""",HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-58015 | libglib2.0-0t64 | wordpress:latest (debian 13.6) | glib: path traversal in glib/gio/gdbusauthmechanismsha1.c via keyring_lookup_entry and mechanism_client_data_receive,HIGH,A.5.17,DSS05.04
+Trivy,Vulnerability,CVE-2026-76642 | liblastlog2-2 | wordpress:latest (debian 13.6) | util-linux: util-linux: failed external mount helper still runs privileged X-mount post-hooks,HIGH,A.8.2,DSS05.04
+Trivy,Vulnerability,CVE-2026-78408 | liblastlog2-2 | wordpress:latest (debian 13.6) | util-linux: util-linux: nsenter --join-cgroup leaks root cgroup migration authority,HIGH,A.8.2,DSS05.04
+Trivy,Vulnerability,CVE-2026-78409 | liblastlog2-2 | wordpress:latest (debian 13.6) | util-linux: util-linux: X-mount.subdir detached-tree resolution can escape via intermediate symlinks,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,"CVE-2026-78410 | liblastlog2-2 | wordpress:latest (debian 13.6) | util-linux: util-linux: restricted bind mounts do not pin the source, allowing X-mount.owner/group/mode redirection",HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-56372 | libmagickcore-7.q16-10 | wordpress:latest (debian 13.6) | ImageMagick: ImageMagick: Information Disclosure and Denial of Service,CRITICAL,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-56374 | libmagickcore-7.q16-10 | wordpress:latest (debian 13.6) | ImageMagick: ImageMagick: Denial of Service and Information Disclosure via heap buffer overflow in FTXT encoder,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-61857 | libmagickcore-7.q16-10 | wordpress:latest (debian 13.6) | ImageMagick: ImageMagick: Application crashes via malicious XMP profiles,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-61861 | libmagickcore-7.q16-10 | wordpress:latest (debian 13.6) | ImageMagick: ImageMagick: Use-after-free vulnerability leading to denial of service or code execution,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-61863 | libmagickcore-7.q16-10 | wordpress:latest (debian 13.6) | ImageMagick: ImageMagick: Memory leak in TIFF encoder,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-61866 | libmagickcore-7.q16-10 | wordpress:latest (debian 13.6) | ImageMagick: ImageMagick: Memory leak in JNG encoder can lead to denial of service,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-61870 | libmagickcore-7.q16-10 | wordpress:latest (debian 13.6) | ImageMagick: ImageMagick: Denial of Service via specially crafted VIFF images,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-86420 | libmagickcore-7.q16-10 | wordpress:latest (debian 13.6) | ImageMagick: ImageMagick: Denial of Service due to memory budget exhaustion,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-86421 | libmagickcore-7.q16-10 | wordpress:latest (debian 13.6) | ImageMagick: ImageMagick: Denial of Service via memory leak in MSL decoder,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-56372 | libmagickwand-7.q16-10 | wordpress:latest (debian 13.6) | ImageMagick: ImageMagick: Information Disclosure and Denial of Service,CRITICAL,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-56374 | libmagickwand-7.q16-10 | wordpress:latest (debian 13.6) | ImageMagick: ImageMagick: Denial of Service and Information Disclosure via heap buffer overflow in FTXT encoder,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-61857 | libmagickwand-7.q16-10 | wordpress:latest (debian 13.6) | ImageMagick: ImageMagick: Application crashes via malicious XMP profiles,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-61861 | libmagickwand-7.q16-10 | wordpress:latest (debian 13.6) | ImageMagick: ImageMagick: Use-after-free vulnerability leading to denial of service or code execution,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-61863 | libmagickwand-7.q16-10 | wordpress:latest (debian 13.6) | ImageMagick: ImageMagick: Memory leak in TIFF encoder,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-61866 | libmagickwand-7.q16-10 | wordpress:latest (debian 13.6) | ImageMagick: ImageMagick: Memory leak in JNG encoder can lead to denial of service,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-61870 | libmagickwand-7.q16-10 | wordpress:latest (debian 13.6) | ImageMagick: ImageMagick: Denial of Service via specially crafted VIFF images,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-86420 | libmagickwand-7.q16-10 | wordpress:latest (debian 13.6) | ImageMagick: ImageMagick: Denial of Service due to memory budget exhaustion,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-86421 | libmagickwand-7.q16-10 | wordpress:latest (debian 13.6) | ImageMagick: ImageMagick: Denial of Service via memory leak in MSL decoder,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-76642 | libmount1 | wordpress:latest (debian 13.6) | util-linux: util-linux: failed external mount helper still runs privileged X-mount post-hooks,HIGH,A.8.2,DSS05.04
+Trivy,Vulnerability,CVE-2026-78408 | libmount1 | wordpress:latest (debian 13.6) | util-linux: util-linux: nsenter --join-cgroup leaks root cgroup migration authority,HIGH,A.8.2,DSS05.04
+Trivy,Vulnerability,CVE-2026-78409 | libmount1 | wordpress:latest (debian 13.6) | util-linux: util-linux: X-mount.subdir detached-tree resolution can escape via intermediate symlinks,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,"CVE-2026-78410 | libmount1 | wordpress:latest (debian 13.6) | util-linux: util-linux: restricted bind mounts do not pin the source, allowing X-mount.owner/group/mode redirection",HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2025-69720 | libncursesw6 | wordpress:latest (debian 13.6) | ncurses: ncurses: Buffer overflow vulnerability may lead to arbitrary code execution.,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-13221 | libperl5.40 | wordpress:latest (debian 13.6) | perl: Perl: Incorrect regular expression processing via large regular expressions,CRITICAL,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-42496 | libperl5.40 | wordpress:latest (debian 13.6) | perl-archive-tar: perl-archive-tar: Path traversal via crafted symlinks allows arbitrary file access,CRITICAL,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-8376 | libperl5.40 | wordpress:latest (debian 13.6) | perl: Perl: Heap buffer overflow when compiling regular expressions on 32-bit builds,CRITICAL,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-42497 | libperl5.40 | wordpress:latest (debian 13.6) | perl-Archive-Tar: perl-Archive-Tar: Arbitrary file modification via crafted hardlinks during archive extraction,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-48962 | libperl5.40 | wordpress:latest (debian 13.6) | perl-IO-Compress: perl-IO-Compress: Arbitrary code execution via attacker-controlled output glob,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-57432 | libperl5.40 | wordpress:latest (debian 13.6) | perl: Perl: Information disclosure via integer overflow in pack/unpack operations,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-57433 | libperl5.40 | wordpress:latest (debian 13.6) | Storable: Storable: Denial of Service via signed integer overflow in deserialization,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-9538 | libperl5.40 | wordpress:latest (debian 13.6) | perl-Archive-Tar: perl-Archive-Tar: Denial of Service via crafted tar header with large entry size,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-20884 | libraw23t64 | wordpress:latest (debian 13.6) | LibRaw: LibRaw: Arbitrary code execution via integer overflow in deflate_dng_load_raw,CRITICAL,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-24450 | libraw23t64 | wordpress:latest (debian 13.6) | LibRaw: LibRaw: Arbitrary code execution via a specially crafted malicious file,CRITICAL,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-24660 | libraw23t64 | wordpress:latest (debian 13.6) | LibRaw: LibRaw: Memory Corruption via Malicious File Processing,CRITICAL,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-20889 | libraw23t64 | wordpress:latest (debian 13.6) | LibRaw: LibRaw: Arbitrary code execution via specially crafted image file,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-21413 | libraw23t64 | wordpress:latest (debian 13.6) | LibRaw: LibRaw: Arbitrary code execution via heap-based buffer overflow in lossless JPEG loading,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-76642 | libsmartcols1 | wordpress:latest (debian 13.6) | util-linux: util-linux: failed external mount helper still runs privileged X-mount post-hooks,HIGH,A.8.2,DSS05.04
+Trivy,Vulnerability,CVE-2026-78408 | libsmartcols1 | wordpress:latest (debian 13.6) | util-linux: util-linux: nsenter --join-cgroup leaks root cgroup migration authority,HIGH,A.8.2,DSS05.04
+Trivy,Vulnerability,CVE-2026-78409 | libsmartcols1 | wordpress:latest (debian 13.6) | util-linux: util-linux: X-mount.subdir detached-tree resolution can escape via intermediate symlinks,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,"CVE-2026-78410 | libsmartcols1 | wordpress:latest (debian 13.6) | util-linux: util-linux: restricted bind mounts do not pin the source, allowing X-mount.owner/group/mode redirection",HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-11822 | libsqlite3-0 | wordpress:latest (debian 13.6) | sqlite: SQLite: Arbitrary code execution via crafted FTS5 full-text search data,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-11824 | libsqlite3-0 | wordpress:latest (debian 13.6) | sqlite: SQLite: Arbitrary code execution and crash via heap-based buffer overflow in FTS5,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-58050 | libssh2-1t64 | wordpress:latest (debian 13.6) | libssh2: libssh2: Heap buffer overflow via integer overflow in publickey attribute allocation,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-14456 | libssl3t64 | wordpress:latest (debian 13.6) | openssl: OpenSSL: Denial of Service via unbounded memory growth in QUIC server,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-16742 | libsystemd0 | wordpress:latest (debian 13.6) | systemd: systemd-homed: Local privilege escalation via missing home-record signature verification,HIGH,A.8.2,DSS05.04
+Trivy,Vulnerability,CVE-2026-36849 | libtiff6 | wordpress:latest (debian 13.6) | [Denial of Service via large SamplesPerPixel tag],HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-52490 | libtiff6 | wordpress:latest (debian 13.6) | libtiff: libtiff: Arbitrary code execution via process_command_opts() function,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2025-69720 | libtinfo6 | wordpress:latest (debian 13.6) | ncurses: ncurses: Buffer overflow vulnerability may lead to arbitrary code execution.,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-16742 | libudev1 | wordpress:latest (debian 13.6) | systemd: systemd-homed: Local privilege escalation via missing home-record signature verification,HIGH,A.8.2,DSS05.04
+Trivy,Vulnerability,CVE-2026-76642 | libuuid1 | wordpress:latest (debian 13.6) | util-linux: util-linux: failed external mount helper still runs privileged X-mount post-hooks,HIGH,A.8.2,DSS05.04
+Trivy,Vulnerability,CVE-2026-78408 | libuuid1 | wordpress:latest (debian 13.6) | util-linux: util-linux: nsenter --join-cgroup leaks root cgroup migration authority,HIGH,A.8.2,DSS05.04
+Trivy,Vulnerability,CVE-2026-78409 | libuuid1 | wordpress:latest (debian 13.6) | util-linux: util-linux: X-mount.subdir detached-tree resolution can escape via intermediate symlinks,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,"CVE-2026-78410 | libuuid1 | wordpress:latest (debian 13.6) | util-linux: util-linux: restricted bind mounts do not pin the source, allowing X-mount.owner/group/mode redirection",HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-6653 | libxml2 | wordpress:latest (debian 13.6) | libxml2: mingw-libxml2: libxml2: Denial of Service via crafted XML input due to use-after-free,CRITICAL,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-86140 | libxml2 | wordpress:latest (debian 13.6) | libxml2: libxml2: Arbitrary code execution via stack-based buffer overflow in xmlSnprintfElements,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-43185 | linux-libc-dev | wordpress:latest (debian 13.6) | kernel: ksmbd: fix signededness bug in smb_direct_prepare_negotiation(),CRITICAL,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2013-7445 | linux-libc-dev | wordpress:latest (debian 13.6) | kernel: memory exhaustion via crafted Graphics Execution Manager (GEM) objects,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2019-19449 | linux-libc-dev | wordpress:latest (debian 13.6) | kernel: mounting a crafted f2fs filesystem image can lead to slab-out-of-bounds read access in f2fs_build_segment_manager in fs/f2fs/segment.c,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2019-19814 | linux-libc-dev | wordpress:latest (debian 13.6) | kernel: out-of-bounds write in __remove_dirty_segment in fs/f2fs/segment.c,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2021-3847 | linux-libc-dev | wordpress:latest (debian 13.6) | kernel: low-privileged user privileges escalation,HIGH,A.8.2,DSS05.04
+Trivy,Vulnerability,CVE-2021-3864 | linux-libc-dev | wordpress:latest (debian 13.6) | kernel: descendant's dumpable setting with certain SUID binaries,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2024-21803 | linux-libc-dev | wordpress:latest (debian 13.6) | kernel: bluetooth: use-after-free vulnerability in af_bluetooth.c,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2024-58015 | linux-libc-dev | wordpress:latest (debian 13.6) | kernel: wifi: ath12k: Fix for out-of bound access error,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2025-22104 | linux-libc-dev | wordpress:latest (debian 13.6) | kernel: ibmvnic: Use kernel helpers for hex dumps,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2025-38137 | linux-libc-dev | wordpress:latest (debian 13.6) | kernel: PCI/pwrctrl: Cancel outstanding rescan work when unregistering,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2025-38187 | linux-libc-dev | wordpress:latest (debian 13.6) | kernel: drm/nouveau: fix a use-after-free in r535_gsp_rpc_push(),HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2025-38204 | linux-libc-dev | wordpress:latest (debian 13.6) | kernel: jfs: fix array-index-out-of-bounds read in add_missing_indices,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2025-38206 | linux-libc-dev | wordpress:latest (debian 13.6) | kernel: Kernel: Double free vulnerability in exFAT filesystem can lead to denial of service,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2025-38421 | linux-libc-dev | wordpress:latest (debian 13.6) | kernel: platform/x86/amd: pmf: Use device managed allocations,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2025-38636 | linux-libc-dev | wordpress:latest (debian 13.6) | kernel: rv: Use strings in da monitors tracepoints,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2025-39859 | linux-libc-dev | wordpress:latest (debian 13.6) | kernel: ptp: ocp: fix use-after-free bugs causing by ptp_ocp_watchdog,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2025-39862 | linux-libc-dev | wordpress:latest (debian 13.6) | kernel: wifi: mt76: mt7915: fix list corruption after hardware restart,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2025-39958 | linux-libc-dev | wordpress:latest (debian 13.6) | kernel: iommu/s390: Make attach succeed when the device was surprise removed,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2025-40025 | linux-libc-dev | wordpress:latest (debian 13.6) | kernel: f2fs: fix to do sanity check on node footer for non inode dnode,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2025-68174 | linux-libc-dev | wordpress:latest (debian 13.6) | kernel: Linux kernel AMD KFD: Race condition causes system crash,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2025-68735 | linux-libc-dev | wordpress:latest (debian 13.6) | kernel: Kernel: Privilege escalation via use-after-free in drm/panthor,HIGH,A.8.2,DSS05.04
+Trivy,Vulnerability,CVE-2026-23102 | linux-libc-dev | wordpress:latest (debian 13.6) | kernel: Linux kernel: Denial of Service due to incorrect SVE context restoration,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-23208 | linux-libc-dev | wordpress:latest (debian 13.6) | kernel: ALSA: usb-audio: Prevent excessive number of frames,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-23327 | linux-libc-dev | wordpress:latest (debian 13.6) | kernel: cxl/mbox: validate payload size before accessing contents in cxl_payload_from_user_allowed(),HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-31493 | linux-libc-dev | wordpress:latest (debian 13.6) | kernel: RDMA/efa: Fix use of completion ctx after free,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-31536 | linux-libc-dev | wordpress:latest (debian 13.6) | kernel: smb: server: let send_done handle a completion without IB_SEND_SIGNALED,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-31568 | linux-libc-dev | wordpress:latest (debian 13.6) | kernel: s390/mm: Add missing secure storage access fixups for donated memory,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-43198 | linux-libc-dev | wordpress:latest (debian 13.6) | kernel: tcp: fix potential race in tcp_v6_syn_recv_sock(),HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-43263 | linux-libc-dev | wordpress:latest (debian 13.6) | kernel: media: chips-media: wave5: Fix Null reference while testing fluster,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-46130 | linux-libc-dev | wordpress:latest (debian 13.6) | kernel: dm-verity-fec: fix reading parity bytes split across blocks (take 3),HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-46181 | linux-libc-dev | wordpress:latest (debian 13.6) | kernel: RDMA/mlx4: Fix mis-use of RCU in mlx4_srq_event(),HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-46279 | linux-libc-dev | wordpress:latest (debian 13.6) | kernel: mm/alloc_tag: clear codetag for pages allocated before page_ext initialization,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-52991 | linux-libc-dev | wordpress:latest (debian 13.6) | kernel: sched/psi: fix race between file release and pressure write,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-53000 | linux-libc-dev | wordpress:latest (debian 13.6) | kernel: netfilter: nat: use kfree_rcu to release ops,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-53010 | linux-libc-dev | wordpress:latest (debian 13.6) | kernel: ksmbd: fix use-after-free in smb2_open during durable reconnect,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-53089 | linux-libc-dev | wordpress:latest (debian 13.6) | kernel: bpf: Fix use-after-free in offloaded map/prog info fill,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-53091 | linux-libc-dev | wordpress:latest (debian 13.6) | kernel: net: pull headers in qdisc_pkt_len_segs_init(),HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-53109 | linux-libc-dev | wordpress:latest (debian 13.6) | kernel: powerpc/pgtable-frag: Fix bad page state in pte_frag_destroy,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-53118 | linux-libc-dev | wordpress:latest (debian 13.6) | kernel: vdpa: use generic driver_override infrastructure,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-53277 | linux-libc-dev | wordpress:latest (debian 13.6) | kernel: KVM: arm64: Take the SRCU lock for page table walks in fault injection and AT emulation,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-53330 | linux-libc-dev | wordpress:latest (debian 13.6) | kernel: drm/amd/display: Fix out-of-bounds read in dp_get_eq_aux_rd_interval(),HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-63879 | linux-libc-dev | wordpress:latest (debian 13.6) | kernel: drm/amdgpu: fix amdgpu_hmm_range_get_pages,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-64017 | linux-libc-dev | wordpress:latest (debian 13.6) | kernel: blk-mq: pop cached request if it is usable,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-64283 | linux-libc-dev | wordpress:latest (debian 13.6) | kernel: KVM: guest_memfd: Treat memslot binding offset+size as unsigned values,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-68159 | linux-libc-dev | wordpress:latest (debian 13.6) | kernel: Linux kernel: libceph stack out-of-bounds write via crafted OSDMap,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-68166 | linux-libc-dev | wordpress:latest (debian 13.6) | kernel: Linux kernel: Arbitrary code execution via userfaultfd shadow stack manipulation,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-68264 | linux-libc-dev | wordpress:latest (debian 13.6) | kernel: drm/xe/pt: Reset current_op in xe_pt_update_ops_init(),HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-68409 | linux-libc-dev | wordpress:latest (debian 13.6) | kernel: wifi: mac80211: defer link RX stats percpu free to RCU,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-68426 | linux-libc-dev | wordpress:latest (debian 13.6) | kernel: xfrm: fix stale skb->prev after async crypto steals a GSO segment,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-68470 | linux-libc-dev | wordpress:latest (debian 13.6) | kernel: wifi: mac80211: validate extension-frame layout before RX,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-68480 | linux-libc-dev | wordpress:latest (debian 13.6) | kernel: AMD-SN-7061: Safe RET Interrupt Vulnerability,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-72042 | linux-libc-dev | wordpress:latest (debian 13.6) | kernel: ipmi: Fix user refcount underflow in event delivery,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-72098 | linux-libc-dev | wordpress:latest (debian 13.6) | kernel: dm-verity: fix buffer overflow in FEC calculation,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-72463 | linux-libc-dev | wordpress:latest (debian 13.6) | kernel: xfrm: Fix dev use-after-free in xfrm async resumption,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,"CVE-2026-74268 | linux-libc-dev | wordpress:latest (debian 13.6) | In the Linux kernel, the following vulnerability has been resolved:  t ...",HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-74269 | linux-libc-dev | wordpress:latest (debian 13.6) | kernel: bnxt: fix head underflow on XDP head-grow,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-74446 | linux-libc-dev | wordpress:latest (debian 13.6) | kernel: drm/amdkfd: hold event_mutex while checkpointing CRIU events,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-74476 | linux-libc-dev | wordpress:latest (debian 13.6) | kernel: veth: convert frag_list skbs before running XDP,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-74480 | linux-libc-dev | wordpress:latest (debian 13.6) | kernel: net: bridge: stop fast-leave after deleting a port group,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-74488 | linux-libc-dev | wordpress:latest (debian 13.6) | kernel: wifi: mwifiex: use the subframe length when parsing A-MSDU TDLS frames,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-74502 | linux-libc-dev | wordpress:latest (debian 13.6) | kernel: ALSA: ump: fix double free of out_cvts on rawmidi error,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-74503 | linux-libc-dev | wordpress:latest (debian 13.6) | kernel: ALSA: timer: Clear SNDRV_TIMER_IFLG_DEAD once the close completes,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-74509 | linux-libc-dev | wordpress:latest (debian 13.6) | kernel: Bluetooth: hci_sync: Fix advertising data UAFs,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-74516 | linux-libc-dev | wordpress:latest (debian 13.6) | kernel: KVM: SVM: Update x2APIC MSR intercepts if AVIC is inhibited while L2 is active,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-74518 | linux-libc-dev | wordpress:latest (debian 13.6) | kernel: mm/hugetlb: fix list corruption in allocate_file_region_entries(),HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-74520 | linux-libc-dev | wordpress:latest (debian 13.6) | kernel: iommu/iommufd: Fix IOPF group ownership UAF,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-74556 | linux-libc-dev | wordpress:latest (debian 13.6) | kernel: scsi: libiscsi_tcp: Bound SCSI Response data segment to the connection buffer,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-74569 | linux-libc-dev | wordpress:latest (debian 13.6) | kernel: netfilter: nf_conntrack_sip: widen NAT rewrite delta to s32 in sip_help_tcp(),HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-74580 | linux-libc-dev | wordpress:latest (debian 13.6) | kernel: vhost: reset the vring metadata cache on vring reconfiguration,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-74581 | linux-libc-dev | wordpress:latest (debian 13.6) | kernel: net: ipv6: use-after-free in fib6_rule_suppress due to stale res->rt6 pointer,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-74582 | linux-libc-dev | wordpress:latest (debian 13.6) | kernel: packet: use consistent hard_header_len in non-ring send paths,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-74583 | linux-libc-dev | wordpress:latest (debian 13.6) | kernel: net/sched: cls_route: fix fastmap use-after-free on filter,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-74586 | linux-libc-dev | wordpress:latest (debian 13.6) | kernel: sctp: clear new_transport when removing a peer,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-74588 | linux-libc-dev | wordpress:latest (debian 13.6) | kernel: sctp: keep chunk->transport in step with the list it is queued on,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-74597 | linux-libc-dev | wordpress:latest (debian 13.6) | kernel: ip6_tunnel: clear skb2->cb[] in ip6ip6_err(),HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-74611 | linux-libc-dev | wordpress:latest (debian 13.6) | kernel: tls: rx: restore msg_iter before TLS 1.3 optimistic retry,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-74615 | linux-libc-dev | wordpress:latest (debian 13.6) | kernel: vxlan: do not arm the ageing timer on a device that is down,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-74616 | linux-libc-dev | wordpress:latest (debian 13.6) | kernel: xdp: reject clones that overrun skb_shared_info tailroom,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-74630 | linux-libc-dev | wordpress:latest (debian 13.6) | kernel: ipv6: prevent in6_dev_get() from resurrecting inet6_dev,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-74631 | linux-libc-dev | wordpress:latest (debian 13.6) | kernel: net: smc: fix splice entry lifetime imbalance in smc_rx_splice,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-74662 | linux-libc-dev | wordpress:latest (debian 13.6) | kernel: inet: frags: publish queues before arming timer,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-74669 | linux-libc-dev | wordpress:latest (debian 13.6) | kernel: ipvs: clear IPv4 options after rebasing tunnel ICMP errors,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-74743 | linux-libc-dev | wordpress:latest (debian 13.6) | kernel: macvlan: inherit needed_headroom and needed_tailroom from lowerdev,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-74744 | linux-libc-dev | wordpress:latest (debian 13.6) | kernel: ipvlan: inherit needed_headroom and needed_tailroom from phy_dev,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-74746 | linux-libc-dev | wordpress:latest (debian 13.6) | kernel: netfilter: flowtable: publish GC-visible tuple last,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-74752 | linux-libc-dev | wordpress:latest (debian 13.6) | kernel: sctp: validate cookie AUTH state before use,HIGH,A.5.17,DSS05.04
+Trivy,Vulnerability,CVE-2026-74753 | linux-libc-dev | wordpress:latest (debian 13.6) | kernel: perf: Reject exited events as group leaders,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-80522 | linux-libc-dev | wordpress:latest (debian 13.6) | kernel: crypto: tegra - fix rctx->cryptlen calculation in tegra_gcm_do_one_req(),HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-80530 | linux-libc-dev | wordpress:latest (debian 13.6) | kernel: xfs: fix exchange-range reflink flag clearing issue with INO1_WRITTEN,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-80586 | linux-libc-dev | wordpress:latest (debian 13.6) | kernel: mptcp: options: reset DSS fields in case of unexpected size,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-80590 | linux-libc-dev | wordpress:latest (debian 13.6) | kernel: inet: frags: strip GSO state from fragments before reassembly,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-80714 | linux-libc-dev | wordpress:latest (debian 13.6) | kernel: ipvs: do not propagate one-packet flag to synced conns,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-80725 | linux-libc-dev | wordpress:latest (debian 13.6) | kernel: net: gro: properly validate BIG TCP aggregation criteria,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-80726 | linux-libc-dev | wordpress:latest (debian 13.6) | kernel: KVM: x86/mmu: WARN and clear role.invalid when creating a child shadow page,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-76642 | login | wordpress:latest (debian 13.6) | util-linux: util-linux: failed external mount helper still runs privileged X-mount post-hooks,HIGH,A.8.2,DSS05.04
+Trivy,Vulnerability,CVE-2026-78408 | login | wordpress:latest (debian 13.6) | util-linux: util-linux: nsenter --join-cgroup leaks root cgroup migration authority,HIGH,A.8.2,DSS05.04
+Trivy,Vulnerability,CVE-2026-78409 | login | wordpress:latest (debian 13.6) | util-linux: util-linux: X-mount.subdir detached-tree resolution can escape via intermediate symlinks,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,"CVE-2026-78410 | login | wordpress:latest (debian 13.6) | util-linux: util-linux: restricted bind mounts do not pin the source, allowing X-mount.owner/group/mode redirection",HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-76642 | mount | wordpress:latest (debian 13.6) | util-linux: util-linux: failed external mount helper still runs privileged X-mount post-hooks,HIGH,A.8.2,DSS05.04
+Trivy,Vulnerability,CVE-2026-78408 | mount | wordpress:latest (debian 13.6) | util-linux: util-linux: nsenter --join-cgroup leaks root cgroup migration authority,HIGH,A.8.2,DSS05.04
+Trivy,Vulnerability,CVE-2026-78409 | mount | wordpress:latest (debian 13.6) | util-linux: util-linux: X-mount.subdir detached-tree resolution can escape via intermediate symlinks,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,"CVE-2026-78410 | mount | wordpress:latest (debian 13.6) | util-linux: util-linux: restricted bind mounts do not pin the source, allowing X-mount.owner/group/mode redirection",HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2025-69720 | ncurses-base | wordpress:latest (debian 13.6) | ncurses: ncurses: Buffer overflow vulnerability may lead to arbitrary code execution.,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2025-69720 | ncurses-bin | wordpress:latest (debian 13.6) | ncurses: ncurses: Buffer overflow vulnerability may lead to arbitrary code execution.,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-14456 | openssl | wordpress:latest (debian 13.6) | openssl: OpenSSL: Denial of Service via unbounded memory growth in QUIC server,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-14456 | openssl-provider-legacy | wordpress:latest (debian 13.6) | openssl: OpenSSL: Denial of Service via unbounded memory growth in QUIC server,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-13221 | perl | wordpress:latest (debian 13.6) | perl: Perl: Incorrect regular expression processing via large regular expressions,CRITICAL,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-42496 | perl | wordpress:latest (debian 13.6) | perl-archive-tar: perl-archive-tar: Path traversal via crafted symlinks allows arbitrary file access,CRITICAL,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-8376 | perl | wordpress:latest (debian 13.6) | perl: Perl: Heap buffer overflow when compiling regular expressions on 32-bit builds,CRITICAL,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-42497 | perl | wordpress:latest (debian 13.6) | perl-Archive-Tar: perl-Archive-Tar: Arbitrary file modification via crafted hardlinks during archive extraction,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-48962 | perl | wordpress:latest (debian 13.6) | perl-IO-Compress: perl-IO-Compress: Arbitrary code execution via attacker-controlled output glob,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-57432 | perl | wordpress:latest (debian 13.6) | perl: Perl: Information disclosure via integer overflow in pack/unpack operations,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-57433 | perl | wordpress:latest (debian 13.6) | Storable: Storable: Denial of Service via signed integer overflow in deserialization,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-9538 | perl | wordpress:latest (debian 13.6) | perl-Archive-Tar: perl-Archive-Tar: Denial of Service via crafted tar header with large entry size,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-13221 | perl-base | wordpress:latest (debian 13.6) | perl: Perl: Incorrect regular expression processing via large regular expressions,CRITICAL,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-42496 | perl-base | wordpress:latest (debian 13.6) | perl-archive-tar: perl-archive-tar: Path traversal via crafted symlinks allows arbitrary file access,CRITICAL,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-8376 | perl-base | wordpress:latest (debian 13.6) | perl: Perl: Heap buffer overflow when compiling regular expressions on 32-bit builds,CRITICAL,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-42497 | perl-base | wordpress:latest (debian 13.6) | perl-Archive-Tar: perl-Archive-Tar: Arbitrary file modification via crafted hardlinks during archive extraction,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-48962 | perl-base | wordpress:latest (debian 13.6) | perl-IO-Compress: perl-IO-Compress: Arbitrary code execution via attacker-controlled output glob,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-57432 | perl-base | wordpress:latest (debian 13.6) | perl: Perl: Information disclosure via integer overflow in pack/unpack operations,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-57433 | perl-base | wordpress:latest (debian 13.6) | Storable: Storable: Denial of Service via signed integer overflow in deserialization,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-9538 | perl-base | wordpress:latest (debian 13.6) | perl-Archive-Tar: perl-Archive-Tar: Denial of Service via crafted tar header with large entry size,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-13221 | perl-modules-5.40 | wordpress:latest (debian 13.6) | perl: Perl: Incorrect regular expression processing via large regular expressions,CRITICAL,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-42496 | perl-modules-5.40 | wordpress:latest (debian 13.6) | perl-archive-tar: perl-archive-tar: Path traversal via crafted symlinks allows arbitrary file access,CRITICAL,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-8376 | perl-modules-5.40 | wordpress:latest (debian 13.6) | perl: Perl: Heap buffer overflow when compiling regular expressions on 32-bit builds,CRITICAL,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-42497 | perl-modules-5.40 | wordpress:latest (debian 13.6) | perl-Archive-Tar: perl-Archive-Tar: Arbitrary file modification via crafted hardlinks during archive extraction,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-48962 | perl-modules-5.40 | wordpress:latest (debian 13.6) | perl-IO-Compress: perl-IO-Compress: Arbitrary code execution via attacker-controlled output glob,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-57432 | perl-modules-5.40 | wordpress:latest (debian 13.6) | perl: Perl: Information disclosure via integer overflow in pack/unpack operations,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-57433 | perl-modules-5.40 | wordpress:latest (debian 13.6) | Storable: Storable: Denial of Service via signed integer overflow in deserialization,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-9538 | perl-modules-5.40 | wordpress:latest (debian 13.6) | perl-Archive-Tar: perl-Archive-Tar: Denial of Service via crafted tar header with large entry size,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,CVE-2026-76642 | util-linux | wordpress:latest (debian 13.6) | util-linux: util-linux: failed external mount helper still runs privileged X-mount post-hooks,HIGH,A.8.2,DSS05.04
+Trivy,Vulnerability,CVE-2026-78408 | util-linux | wordpress:latest (debian 13.6) | util-linux: util-linux: nsenter --join-cgroup leaks root cgroup migration authority,HIGH,A.8.2,DSS05.04
+Trivy,Vulnerability,CVE-2026-78409 | util-linux | wordpress:latest (debian 13.6) | util-linux: util-linux: X-mount.subdir detached-tree resolution can escape via intermediate symlinks,HIGH,A.8.8,DSS05.07
+Trivy,Vulnerability,"CVE-2026-78410 | util-linux | wordpress:latest (debian 13.6) | util-linux: util-linux: restricted bind mounts do not pin the source, allowing X-mount.owner/group/mode redirection",HIGH,A.8.8,DSS05.07
