@@ -1,0 +1,13 @@
+﻿63235401f705caba746dbbb024641997668b50770a9b2fdbc80931beba36a12f  C:\Users\HP\Documents\deeeeeeeeee\auditoria-si084\20_evidencia\E04_config\docker-bench.log
+2347875e2e92960e11e6176b1291667626e491e3df34c366f3e5bfd90473e00a  C:\Users\HP\Documents\deeeeeeeeee\auditoria-si084\20_evidencia\E04_config\lynis-consola.txt
+b0e5c2227875b9a3acbc01f063ac5f39c45ec1b28e62be2adb201b2e4c0508ae  C:\Users\HP\Documents\deeeeeeeeee\auditoria-si084\20_evidencia\E04_config\lynis-report.dat
+b935de20c215fd1d20d053a4d898b2cf3113e6529a02fed2a57f4c2199e37d6c  C:\Users\HP\Documents\deeeeeeeeee\auditoria-si084\20_evidencia\E04_config\oscap-reporte.html
+bd233838f5a5e40fb7f4b260a8d2844898c0ac383d1910b13756ddb3ec62b974  C:\Users\HP\Documents\deeeeeeeeee\auditoria-si084\20_evidencia\E04_config\oscap-resultados.xml
+01c922770d26513e1076b3d13b8a4690dd0001d96fda21d2394625850a9dadec  C:\Users\HP\Documents\deeeeeeeeee\auditoria-si084\20_evidencia\E04_config\sbom_juiceshop.json
+7d8e39c7f072d6ad4ea8d5f738812f0861151b2a985afc7cf2fb9e0ab1ac1659  C:\Users\HP\Documents\deeeeeeeeee\auditoria-si084\20_evidencia\E04_config\trivy_iac.txt
+f6fa9ab9f344a583866442451e29dc0ad048b72e9507b91570a5602b5164e097  C:\Users\HP\Documents\deeeeeeeeee\auditoria-si084\20_evidencia\E04_config\trivy_juice-shop.json
+05923465cd1729b429583ad872dfd59dcd8dff9cca35b65ce7753f2825aef56d  C:\Users\HP\Documents\deeeeeeeeee\auditoria-si084\20_evidencia\E04_config\trivy_mariadb_11.json
+8a5acb38e14d2f2f8a80963c1a5bc66d442f7fbf821c8a0637420dce79773352  C:\Users\HP\Documents\deeeeeeeeee\auditoria-si084\20_evidencia\E04_config\trivy_postgres_16.json
+cb18f620db827e0c14ceb732f4dcadea8a022308798e5d1cd8f15294611f7264  C:\Users\HP\Documents\deeeeeeeeee\auditoria-si084\20_evidencia\E04_config\trivy_secretos.txt
+a831ab6de485bf665056aeba430b3e9acca8aeb546be03e1203f51cee0d90fa4  C:\Users\HP\Documents\deeeeeeeeee\auditoria-si084\20_evidencia\E04_config\trivy_wordpress_latest.json
+a71de1b0ce5c5736a1e72c2a2248d2b5d158bca3e721c7ef7e99c2cccaa0d9b7  C:\Users\HP\Documents\deeeeeeeeee\auditoria-si084\40_hallazgos\PT04_matriz_control.csv
